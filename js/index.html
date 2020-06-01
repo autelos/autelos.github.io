@@ -35,7 +35,7 @@
       function writetimestamp() {
         var tmp = document.getElementById("textArea").value;
         var t = document.getElementById("myAudio").currentTime
-        document.getElementById("textArea").innerHTML = tmp + formatTime(t)
+        document.getElementById("textArea").value = tmp + formatTime(t)
       }
 
       function savetextarea() {
