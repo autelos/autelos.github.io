@@ -33,9 +33,9 @@
       });
 
       function writetimestamp() {
-        var tmp = document.getElementById("textArea").value;
+        //var tmp = document.getElementById("textArea").value;
         var t = document.getElementById("myAudio").currentTime
-        document.getElementById("textArea").value = tmp + formatTime(t)
+        document.getElementById("textArea").value += formatTime(t)
       }
 
       function savetextarea() {
