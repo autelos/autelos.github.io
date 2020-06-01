@@ -11,7 +11,8 @@
             }
 
           body {
-            padding:10px;
+            margin:20px;
+            padding:0px;
           }
 
         </style>
@@ -39,8 +40,10 @@
 	<h2>3.</h2>
 <textarea id = "textArea" style="width:100%;height:100px;">
 </textarea>
-	<button onclick="loadvtt()" type="button">open</button>
-    <button onclick="savetextarea()" type="button">save</button>
+	<!--<button onclick="loadvtt()" type="button">open</button>-->
+    <button onclick="savevtt()" type="button">save</button>
+
+
     <script type="text/javascript">
       var fname = "";
       var timeIn, timeOut, note;
@@ -87,7 +90,11 @@
         document.getElementById("textArea").value += "\n\n" + formatTime(t) + " --> " + formatTime(t+1) + "\n";
       }
 
-      function savetextarea() {
+      function loadvtt() {
+      	alert("doesn't work yet");
+      }
+
+      function savevtt() {
         var txt = document.getElementById("textArea").value;
         var blob = new Blob([txt], {type: "text/plain;charset=utf-8"});
         saveAs(blob, fname+".vtt");
