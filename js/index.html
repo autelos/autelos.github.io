@@ -2,7 +2,6 @@
 <html>
 	<head>
     <meta charset="utf-8">
-    <title>The HTML5 Herald</title>
 		<script src="FileSaver.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	</head>
@@ -36,7 +35,7 @@
       function writetimestamp() {
         //var tmp = document.getElementById("textArea").value;
         var t = document.getElementById("myAudio").currentTime
-        document.getElementById("textArea").value += formatTime(t)
+        document.getElementById("textArea").value += "\n" + formatTime(t) + "-->" + formatTime(t+1) + "\n";
       }
 
       function savetextarea() {
@@ -50,7 +49,7 @@
         minutes = (minutes >= 10) ? minutes : "0" + minutes;
         seconds = Math.floor(seconds % 60);
         seconds = (seconds >= 10) ? seconds : "0" + seconds;
-        return minutes + ":" + seconds;
+        return minutes + ":" + seconds + ".000";
       }
 
       function msToTime(duration) {
