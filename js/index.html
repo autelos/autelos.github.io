@@ -4,24 +4,42 @@
     <meta charset="utf-8">
 		<script src="FileSaver.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <style>
+        	* {
+            color:green;
+            }
+        </style>
 	</head>
 	<body>
 
     <audio controls id="myAudio" autoplay></audio>
-		<input type="file">
-    <br>
-		<textarea id = "textArea"></textarea>
-		<button onclick="writetimestamp()" type="button">Timestamp Me</button>
-		<button onclick="savetextarea()" type="button">Save</button>
+
+    <div>
+	<input type="file">
+	</div>
+
+    <div>
+    <input id = "inputtext" type="text" onkeypress="handle(event)">
+    </div>
+    <div id="msg1">
+    hi :) just choose a file to listen to, start typing to annotate, hit enter to end region
+    </div>
+
+    <textarea id = "textArea"></textarea>
+    <button onclick="writetimestamp()" type="button">Timestamp Me</button>
+    <button onclick="savetextarea()" type="button">Save</button>
+
 
     <script type="text/javascript">
+      var fname = "";
+      var timeIn, timeOut, note;
       var $audio = $('#myAudio');
       $('input').on('change', function(e) {
         var target = e.currentTarget;
         var file = target.files[0];
         var reader = new FileReader();
 
-        console.log($audio[0]);
+        fname=file.name;
          if (target.files && file) {
           var reader = new FileReader();
           reader.onload = function (e) {
@@ -32,16 +50,35 @@
         }
       });
 
+      function handle(e){
+      	var input = document.getElementById("inputtext").value;
+        var t = formatTime(document.getElementById("myAudio").currentTime);
+
+        if (input.length==1) timeIn = t;
+
+        note = document.getElementById("inputtext").value;
+        timeOut = t;
+
+        var key=e.keyCode || e.which;
+        if (key==13){
+          document.getElementById("textArea").value += timeIn + " --> " + timeOut + "\n";
+          document.getElementById("textArea").value += note + "\n\n"
+          document.getElementById("inputtext").value = "";
+        }
+
+        document.getElementById("msg1").innerHTML = timeIn + " --> " + timeOut + "<br>" + note;
+
+      }
+
       function writetimestamp() {
-        //var tmp = document.getElementById("textArea").value;
         var t = document.getElementById("myAudio").currentTime
-        document.getElementById("textArea").value += "\n" + formatTime(t) + "-->" + formatTime(t+1) + "\n";
+        document.getElementById("textArea").value += "\n\n" + formatTime(t) + " --> " + formatTime(t+1) + "\n";
       }
 
       function savetextarea() {
         var txt = document.getElementById("textArea").value;
         var blob = new Blob([txt], {type: "text/plain;charset=utf-8"});
-        saveAs(blob, "hello world.txt");
+        saveAs(blob, fname+".vtt");
       }
 
       function formatTime(seconds) {
@@ -50,19 +87,6 @@
         seconds = Math.floor(seconds % 60);
         seconds = (seconds >= 10) ? seconds : "0" + seconds;
         return minutes + ":" + seconds + ".000";
-      }
-
-      function msToTime(duration) {
-        var milliseconds = parseInt((duration%1000))
-        , seconds = parseInt((duration/1000)%60)
-        , minutes = parseInt((duration/(1000*60))%60)
-        , hours = parseInt((duration/(1000*60*60))%24);
-
-        hours = (hours < 10) ? "0" + hours : hours;
-        minutes = (minutes < 10) ? "0" + minutes : minutes;
-        seconds = (seconds < 10) ? "0" + seconds : seconds;
-
-        return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
       }
     </script>
   </body>
