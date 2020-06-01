@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<script src="FileSaver.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<input type="file">
+		<audio controls id="myAudio" autoplay></audio>
+		<p>maybe this works :)</p>
+		<textarea id = "textArea"></textarea>
+		<button onclick="writetimestamp()" type="button">Timestamp Me</button>
+		<button onclick="savetextarea()" type="button">Save</button>
+	</body>
+  <script type="text/javascript">
+    var $audio = $('#myAudio');
+    $('input').on('change', function(e) {
+      var target = e.currentTarget;
+      var file = target.files[0];
+      var reader = new FileReader();
+
+      console.log($audio[0]);
+       if (target.files && file) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          $audio.attr('src', e.target.result);
+          $audio.play();
+        }
+        reader.readAsDataURL(file);
+      }
+    });
+
+    function writetimestamp() {
+      var tmp = document.getElementById("textArea").value;
+      var t = document.getElementById("myAudio").currentTime
+      document.getElementById("textArea").innerHTML = tmp + formatTime(t)
+    }
+
+    function savetextarea() {
+      var txt = document.getElementById("textArea").value;
+      var blob = new Blob([txt], {type: "text/plain;charset=utf-8"});
+      saveAs(blob, "hello world.txt");
+    }
+
+    function formatTime(seconds) {
+      minutes = Math.floor(seconds / 60);
+      minutes = (minutes >= 10) ? minutes : "0" + minutes;
+      seconds = Math.floor(seconds % 60);
+      seconds = (seconds >= 10) ? seconds : "0" + seconds;
+      return minutes + ":" + seconds;
+    }
+
+    function msToTime(duration) {
+      var milliseconds = parseInt((duration%1000))
+      , seconds = parseInt((duration/1000)%60)
+      , minutes = parseInt((duration/(1000*60))%60)
+      , hours = parseInt((duration/(1000*60*60))%24);
+
+      hours = (hours < 10) ? "0" + hours : hours;
+      minutes = (minutes < 10) ? "0" + minutes : minutes;
+      seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+      return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
+    }
+  </script>
+</html>
