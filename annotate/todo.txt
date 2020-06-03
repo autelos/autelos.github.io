@@ -1,0 +1,11 @@
+dolist
+--
+
+display soundfilename
+general annotation control (textarea description)?
+export as reaper project
+- [x] export reaper region csv
+
+text-based annotation:
+- rm -> mark for removal (make region red)
+

@@ -29,10 +29,16 @@
 	<input type="file" id="regioninput" style="visibility:hidden;width:0px;"/>
 
 	<button onclick="saveRegions()" type="button">Save regions</button>
+	<button onclick="exportRegionsToReaper()" type="button">Export to Reaper</button>
 	</div>
 
 	<section style="width: 100%; background-color: rgba(80, 80, 80, 0.1);">
-		<div id="waveform"></div>
+		<div id="waveform">
+			<div id="progress">
+			</div>
+		</div>
+		<div id="wave-spectrogram">
+		</div>
 	</section>
 
 
@@ -51,6 +57,7 @@
 <script src="https://unpkg.com/wavesurfer.js"></script>
 <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.regions.min.js"></script>
 <script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.cursor.js"></script>
+<script src="https://unpkg.com/wavesurfer.js/dist/plugin/wavesurfer.spectrogram.js"></script>
 	<script src="FileSaver.js"></script>
 <!--keycodes <script src="trivia.js"></script>-->
 
@@ -60,7 +67,7 @@
 	// init wavesurfer
 	var wavesurfer = WaveSurfer.create({
 		container: document.querySelector('#waveform'),
-		height: 512,
+		height: 200,
 		normalize: true,
 		plugins: [
 			WaveSurfer.regions.create({ dragSelection: { slop: 5 }}),
@@ -73,9 +80,71 @@
 					padding: '2px',
 					'font-size': '10px'
 				}
-			})
+			}),
+			/*WaveSurfer.spectrogram.create({
+				wavesurfer: wavesurfer,
+				container: "#wave-spectrogram",
+				labels: true
+			})*/
 		],
 	});
+
+	/* Progress bar */
+	//(function() {
+			var progressDiv = document.querySelector('#progress');
+			//var progressBar = progressDiv.querySelector('.progress-bar');
+
+			var showProgress = function(percent) {
+					progressDiv.style.display = 'block';
+					progressDiv.innerHTML = 'Loading sound file... ' + percent + '%';
+					if (percent==100) {
+						progressDiv.innerHTML += '<br>getting peaks...'
+					}
+					//progressBar.style.width = percent + '%';
+			};
+
+			var hideProgress = function() {
+					progressDiv.style.display = 'none';
+			};
+
+			wavesurfer.on('loading', showProgress);
+			wavesurfer.on('ready', hideProgress);
+			wavesurfer.on('destroy', hideProgress);
+			wavesurfer.on('error', hideProgress);
+	//})();
+
+	/*document.addEventListener('DOMContentLoaded', function() {
+	    // Load a colormap json file to be passed to the spectrogram.create method.
+	    WaveSurfer.util
+	        .fetchFile({ url: 'hot-colormap.json', responseType: 'json' })
+	        .on('success', colorMap => {
+	            initAndLoadSpectrogram(colorMap);
+	        });
+	});*/
+
+
+	function exportRegionsToReaper() {
+		var csv = '#,Name,Start,End,Length,Color';
+		var count = 1;
+
+		Object.keys(wavesurfer.regions.list).forEach(function (id) {
+			var region = wavesurfer.regions.list[id];
+
+			csv += '\n'
+			csv += 'R' + count + ','
+			csv += region.attributes.label + ','
+			csv += region.start + ','
+			csv += region.end + ','
+			csv += region.end-region.start + ','
+
+			/*if (region.data.group == 'user comments') {
+					userCommentRegions.push(region);
+			}*/
+		});
+
+		var blob = new Blob([csv], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, sfName+"_regions.csv");
+	}
 
 	//zoom
 	document.querySelector('[data-action="zoom"]').oninput = function () {
@@ -146,28 +215,12 @@
 
 	wavesurfer.on('region-dblclick', function(region, e) {
         region.remove();
-    });
+  });
 
 	var lastSelectedRegion, selectedRegion;
 
-	/*wavesurfer.on('region-click', function(region) {
-		var input = document.getElementById("inputtext");
-		input.focus();
-
-		if (region.attributes.label!=null) input.value = region.attributes.label;
-
-		lastSelectedRegion = selectedRegion;
-		selectedRegion = region;
-        selectedRegion.update({ color: 'rgba(0, 255, 0, 0.1)' });
-		if (lastSelectedRegion != null) {
-			lastSelectedRegion.update({ color: 'rgba(0, 0, 0, 0.1)' });
-		}
-    });*/
-
-
 	wavesurfer.on('region-click', regionFocus);
 	wavesurfer.on('region-update-end', regionFocus);
-	//wavesurfer.on('region-created', regionFocus);
 	wavesurfer.on('interaction', handlePlayheadClick);
 
 	var regionClicked = false;
@@ -216,34 +269,34 @@
         note = input;
         timeOut = t;
 
-		if (selectedRegion!=null) {
-			selectedRegion.update({
-				attributes: {
-					label: note
-				},
-			});
-		}
+				if (selectedRegion!=null) {
+					selectedRegion.update({
+						attributes: {
+							label: note
+						},
+					});
+				}
 
         var key=e.keyCode || e.which;
         if (key==13){
 
-			//document.getElementById("msg1").innerHTML = formatTime(timeIn) + " --> " + formatTime(timeOut) + "<br>" + note;
+				//document.getElementById("msg1").innerHTML = formatTime(timeIn) + " --> " + formatTime(timeOut) + "<br>" + note;
 
-			if (selectedRegion!=null) {
-				selectedRegion.update({
-					color: 'rgba(0, 0, 0, 0.1)'
-				});
-				selectedRegion=null;
-			} else {
-				wavesurfer.addRegion({
-				  start: timeIn,
-				  end: timeOut,
-				  attributes: {
-					label: note
-				  }
-				});
-			}
-			document.getElementById("inputtext").value='';
+				if (selectedRegion!=null) {
+					selectedRegion.update({
+						color: 'rgba(0, 0, 0, 0.1)'
+					});
+					selectedRegion=null;
+				} else {
+					wavesurfer.addRegion({
+					  start: timeIn,
+					  end: timeOut,
+					  attributes: {
+							label: note
+					  }
+					});
+				}
+				document.getElementById("inputtext").value='';
 
         }
       }
@@ -258,7 +311,7 @@
       }
 
 
-	/**
+/**
  * Save annotations
  */
 function saveRegions() {
@@ -269,21 +322,13 @@ function saveRegions() {
                 start: region.start,
                 end: region.end,
                 attributes: region.attributes,
-                data: region.data
+                //data: region.data
             };
         })
     );
 
-        var blob = new Blob([jsonData], {type: "text/plain;charset=utf-8"});
-        saveAs(blob, sfName+"_regions.json");
-}
-
-function download(content, fileName, contentType) {
-    var a = document.createElement("a");
-    var file = new Blob([content], {type: contentType});
-    a.href = URL.createObjectURL(file);
-    a.download = fileName;
-    a.click();
+    var blob = new Blob([jsonData], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, sfName+"_regions.json");
 }
 
 /**
