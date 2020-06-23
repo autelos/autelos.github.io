@@ -38,9 +38,12 @@ hr {
 }
 
 .sf{
-  width: 50%;
-  /*border:2px solid;*/
-  margin:0.5em;
+  width: 75%;
+  border-left:2px solid;
+  margin:0;
+  margin-top:0.5em;
+  margin-bottom:0.5em;
+  padding-left:0.5em;
 }
 
 div.progress {
