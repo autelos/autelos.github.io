@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>masi - modules tag</title>
+        <title>masi - Articles by Martin Simpson</title>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
         <link rel="stylesheet" type="text/css" href="https://autelos.github.io/masi/theme/css/style.css" />
@@ -26,31 +26,64 @@
         </ul></nav><!-- /#menu -->
 
   <section id="content">
+<h2>Articles by Martin Simpson</h2>
 
 <!--articles-->
-  <div class="date">2020.06.19   <a href="https://autelos.github.io/masi/pd">pd</a>  <a href="https://autelos.github.io/masi/modules">modules</a>  </div>
+  <div class="date">2020.06.11   <a href="https://autelos.github.io/masi/field-recording">field recording</a>  </div>
 
-  <h2><a href="https://autelos.github.io/masi/5d-routing-matrix/">5D routing matrix</a></h2>
+  <h2><a href="https://autelos.github.io/masi/am-ginsterpfad/">Am Ginsterpfad</a></h2>
 
+  <div class="sf" id="2020-06-11_2036.ogg"></div>
+  <div class="sf" id="2020-06-11_2049.ogg"></div>
+  <div class="sf" id="2020-06-11_2131.ogg"></div>
+  <div class="sf" id="2020-06-12_1856.ogg"></div>
 
-  <div class="entry-content"> <p>A 5D routing matrix for PD affords programatic/instruction-based access to conduct signal routing on-the-fly with variable destinations, fade-time, and scheduling (wait x-ms first).</p>
-<p>Syntax:</p>
-<pre><code>[; route &lt;out&gt; &lt;in&gt; &lt;value&gt; &lt;ms-to-fade&gt; &lt;ms-to-wait&gt;(
+  <div class="entry-content"> <p>walking soundscape, slowly-changing filters as attention-prompts. elements:</p>
+<ul>
+<li>footstep rhythm</li>
+<li>car drone<ul>
+<li>how to work with?</li>
+</ul>
+</li>
+</ul> </div>
+  <div class="date">2020.06.11   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
+
+  <h2><a href="https://autelos.github.io/masi/pd-in-the-park/">pd in the park</a></h2>
+
+  <div class="sf" id="2020-06-11_2140.ogg"></div>
+
+  <div class="entry-content"> <p>how to work with droning car sounds? trying to reinforce them with sinewave organ.</p>
+<p><a href="https://autelos.github.io/masi/media/2020-06-11_2140_pd-in-the-park.pd">pd in the park patch</a></p> </div>
+  <div class="date">2020.06.09   <a href="https://autelos.github.io/masi/pd">pd</a>  <a href="https://autelos.github.io/masi/landing">landing</a>  </div>
+
+  <h2><a href="https://autelos.github.io/masi/fur-iem-graz/">für iem-graz</a></h2>
+
+  <div class="sf" id="2020-06-09_121053.ogg"></div>
+
+  <div class="entry-content"> <p>slow morning play with asynchronous piano loops and tapeshift~</p>
+<p><span class="date">23:52</span><br />
+<video src="https://autelos.github.io/masi/media/2020-06-09_2352.mov" controls></video></p> </div>
+  <div class="date">2020.06.07   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
+
+  <h2><a href="https://autelos.github.io/masi/ppgrainer-t03-organ/">[pp.grainer~] T03 organ</a></h2>
+
+  <div class="sf" id="2020-06-07_122700.ogg"></div>
+  <div class="sf" id="2020-06-07_1356.ogg"></div>
+  <div class="sf" id="2020-06-07_145600.ogg"></div>
+
+  <div class="entry-content"> <p>testing sequencer with pp.grainer~ and KHG organ sample</p>
+<pre><code>process=khg-organ.wav:pp.grainer~
 </code></pre>
 
-<p>This effectively decouples the patching interface from the PD GUI, allowing control to be given to, ie., the MobMuPLat touchscreen interface, which implements a grid control and 3 sliders (value, ms-to-fade, ms-to-wait).</p>
-<p>This also exposes the potential for live-coding/text-based triggering, ie:</p>
-<pre><code>[x]
-|
-[metro 100]
-|
-[; route &lt;dac~&gt; &lt;adc~ 1&gt; 1 10 0; r &lt;dac~&gt; &lt;adc~ 1&gt; 0 10 20(
-[x]
-|
-[metro 101]
-|
-[; route &lt;dac~&gt; &lt;adc~ 2&gt; 1 10 0; r &lt;dac~&gt; &lt;adc~ 2&gt; 0 10 20(
+<pre><code>[pp.grainer~]&lt;:([tapeshift~].[pan~].[fade~],2)
 </code></pre> </div>
+  <div class="date">2020.06.06   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
+
+  <h2><a href="https://autelos.github.io/masi/g01/">G01</a></h2>
+
+  <div class="sf" id="2020-06-06_211452.ogg"></div>
+
+  <div class="entry-content"> <p>ma jumps on piano loops</p> </div>
   <div class="date">2020.06.06   <a href="https://autelos.github.io/masi/pd">pd</a>  <a href="https://autelos.github.io/masi/modules">modules</a>  </div>
 
   <h2><a href="https://autelos.github.io/masi/pd-smoother-t01/">[pd smoother] T01</a></h2>
@@ -59,6 +92,21 @@
 
   <div class="entry-content"> <p>[pd smoother] handles timing for fading level to zero while changing playPos</p>
 <p><img alt="screenshot of pd-smoother" src="https://autelos.github.io/masi/patches/2020-06-06_smoother.pd.png#pd-screenshot" /></p> </div>
+  <div class="date">2020.06.05   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
+
+  <h2><a href="https://autelos.github.io/masi/2020-06-05_102557/">2020-06-05_102557</a></h2>
+
+  <div class="sf" id="2020-06-05_102557.ogg"></div>
+
+  <div class="date">2020.06.04   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
+
+  <h2><a href="https://autelos.github.io/masi/2020-06-04_221410/">2020-06-04_221410</a></h2>
+
+  <div class="sf" id="2020-06-04_221410.ogg"></div>
+
+  <div class="entry-content"> <p>patch notes: two asynchronous loops, one ma loop</p>
+<p>tapeshift~ delay on live input</p>
+<p>would be nice: easy control of tapeshift~ volume (at least)</p> </div>
   <div class="date">2020.05.30   <a href="https://autelos.github.io/masi/pd">pd</a>  <a href="https://autelos.github.io/masi/modules">modules</a>  </div>
 
   <h2><a href="https://autelos.github.io/masi/krupp-gm7-and-the-dogs-outside/">krupp gm7 and the dogs outside</a></h2>
@@ -68,30 +116,25 @@
   <div class="entry-content"> <p>testing chord with rhymthic 1/8 playpos jumping as carpet</p>
 <p>listened through through schmalfußs tape-IR. consider feeding through, re-recording?</p>
 <p>todo: add playpos-jumping module</p> </div>
-  <div class="date">2020.05.20   <a href="https://autelos.github.io/masi/pd">pd</a>  <a href="https://autelos.github.io/masi/modules">modules</a>  </div>
+  <div class="date">2020.05.25   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
 
-  <h2><a href="https://autelos.github.io/masi/buffer-looper-router-t01/">Buffer Looper-Router T01</a></h2>
+  <h2><a href="https://autelos.github.io/masi/2020-05-25_175236/">2020-05-25_175236</a></h2>
 
-  <div class="sf" id="2020-05-20_1921.ogg"></div>
+  <div class="sf" id="2020-05-25_175236.ogg"></div>
 
-  <div class="entry-content"> <p>getting back to the launchpad-looper-router-interface, checking that it works as expected after a few days away. testing with a sample</p>
-<p>patch notes: sample (taiwan-junglebirds.wav) looped, buffer looped, routed into tape-shift effect with feedback, starting to find something, hit record</p>
-<p>todo:</p>
-<ul>
-<li>[x] get input routing working, so that can happen on the pad</li>
-<li>[ ] get resonanant filter+tapeshift also mapped to pad buttons</li>
-<li>[x] add record button to launchpad</li>
-</ul> </div>
-  <div class="date">2020.01.23   <a href="https://autelos.github.io/masi/pd">pd</a>  <a href="https://autelos.github.io/masi/modules">modules</a>  </div>
-
-  <h2><a href="https://autelos.github.io/masi/figure-ground-delayline-modulator/">Figure-Ground Delayline Modulator</a></h2>
-
-  <div class="sf" id="2020-02-05_225924-mawamama-t01.ogg"></div>
-
-  <div class="entry-content"> <p>the length of a sound-object (distinguished as a ‘figure’) modulates the length of a delayline such that sounds made in a room are fed back to the room at varying–controllable–later times</p>
-<p><a href="https://autelos.github.io/masi/patches/figure-ground-delayline-modulator.pd">figure-ground-delayline-modulator.pd</a></p> </div>
+  <div class="entry-content"> <p>past sound as rhythmic pulse</p>
+<p>spring between random segments of the loop</p>
+<pre><code>every 1/8, jumping 1/8*lengthOfLoop * random(8)
+</code></pre> </div>
 <!--/articles-->
 
+<p class="paginator">
+        <a href="https://autelos.github.io/masi/author/martin-simpson.html">&#8647;</a>
+        <a href="https://autelos.github.io/masi/author/martin-simpson.html">&laquo;</a>
+    Page 2 / 3
+        <a href="https://autelos.github.io/masi/author/martin-simpson3.html">&raquo;</a>
+        <a href="https://autelos.github.io/masi/author/martin-simpson3.html">&#8649;</a>
+</p>
   </section>
 
   <section id="wavesurfer-gui">
