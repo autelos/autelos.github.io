@@ -5,7 +5,7 @@ var sfTitle;
 
 var phpUrl = "http://damasi.be/masi";
 //var phpUrl = "http://0.0.0.0:7000";
-var mediaUrl = "/media/";
+var mediaUrl = "/masi/media/";
 var mainColor = 'rgb(250,250,250)'; //'rgb(11, 91, 162)';
 var waveBackgroundColor = 'inherit';
 var progressColor = mainColor;
