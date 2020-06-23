@@ -38,17 +38,19 @@
   <h2><a href="https://autelos.github.io/masi/drafts/invert-pd-screenshot.html">invert pd screenshot</a></h2>
 
 
-  <div class="entry-content"> <p>Goal: pd screenshots should be displayed as white-on-transparent
-Means: css filtering
+  <div class="entry-content"> <p>Goal: pd screenshots should be displayed as white-on-transparent<br />
+Means: css filtering<br />
 Questions: how to tag pd screenshots in markdown?</p>
 <p>update 2020-06-23:</p>
-<p><code>css
-img[src$='#pd-screenshot'] {
+<pre><code class="css">img[src$='#pd-screenshot'] {
   filter: invert();
   mix-blend-mode: screen;
-}</code></p>
-<p><code>markdown
-![alt]({static}/patches/demo.pd.png#pd-screenshot)</code></p>
+}
+</code></pre>
+
+<pre><code class="markdown">![alt]({static}/patches/demo.pd.png#pd-screenshot)
+</code></pre>
+
 <p>result:</p>
 <p><img alt="alt" src="https://autelos.github.io/masi/patches/demo.pd.png#pd-screenshot" /></p> </div>
 </section>

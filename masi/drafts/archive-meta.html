@@ -50,26 +50,26 @@
 <li>backup orignals elsewhere</li>
 </ul>
 <p>here's a one-line command to list the .ogg files in a directory, handy for making these posts...)</p>
-<p>#!bash
+<p>#!bash<br />
   oggFiles=""; for i in *.ogg; do oggFiles+="$i, "; done; echo $oggFiles</p>
 <p>Generally, the archive should display a light, web-friendly version of the files for viewing, and store the originals elsewhere.</p>
 <p>For this, here's a shell script that turns a folder of .wavs into .ogg:</p>
-<p>#!bash
+<p>#!bash<br />
   #!/bin/sh</p>
-<p>#patterns matching nothing should disappear...
+<p>#patterns matching nothing should disappear...<br />
   shopt -s nullglob</p>
-<p>#rename <em>.WAV to </em>.wav
-  for f in <em>.WAV; do
-    mv "$f" "${f%.</em>}.wav"
+<p>#rename <em>.WAV to </em>.wav<br />
+  for f in <em>.WAV; do<br />
+    mv "$f" "${f%.</em>}.wav"<br />
   done</p>
-<p>#rename <em>.WAV to YYYY-MM-DD_HHMMSS-</em>.wav
-  for f in <em>.wav; do
-    mv -n "$f" "$(date -r "$f" +"%Y-%m-%d_%H%M%S-${f%.</em>}").wav"
+<p>#rename <em>.WAV to YYYY-MM-DD_HHMMSS-</em>.wav<br />
+  for f in <em>.wav; do<br />
+    mv -n "$f" "$(date -r "$f" +"%Y-%m-%d_%H%M%S-${f%.</em>}").wav"<br />
   done</p>
 <p>mkdir "ogg"</p>
-<p>#convert <em>.wav to .ogg
-  for f in </em>.wav; do
-    ffmpeg -i "$f" "ogg/${f%.*}.ogg"
+<p>#convert <em>.wav to .ogg<br />
+  for f in </em>.wav; do<br />
+    ffmpeg -i "$f" "ogg/${f%.*}.ogg"<br />
   done</p>
 <p>(save as wav-to-ogg.sh then in terminal type <code>sudo cdmod 755 wav-to-ogg.sh</code> and to run type ```sh wav-to-ogg.sh)</p>
 <p>For videos, there is the particular challenge of how to deal with 'slow-mo' (120fps captured on iPhone 5s). Maybe add option to change playback speed and slow-mo videos default to slower speed?</p> </div>

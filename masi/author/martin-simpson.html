@@ -45,10 +45,12 @@
 
   <div class="entry-content"> <p>A 5D routing matrix for PD affords programatic/instruction-based access to conduct signal routing on-the-fly with variable destinations, fade-time, and scheduling (wait x-ms first).</p>
 <p>Syntax:</p>
-<p><code>[; route &lt;out&gt; &lt;in&gt; &lt;value&gt; &lt;ms-to-fade&gt; &lt;ms-to-wait&gt;(</code></p>
+<pre><code>[; route &lt;out&gt; &lt;in&gt; &lt;value&gt; &lt;ms-to-fade&gt; &lt;ms-to-wait&gt;(
+</code></pre>
+
 <p>This effectively decouples the patching interface from the PD GUI, allowing control to be given to, ie., the MobMuPLat touchscreen interface, which implements a grid control and 3 sliders (value, ms-to-fade, ms-to-wait).</p>
 <p>This also exposes the potential for live-coding/text-based triggering, ie:</p>
-<p><code>[x]
+<pre><code>[x]
 |
 [metro 100]
 |
@@ -57,7 +59,8 @@
 |
 [metro 101]
 |
-[; route &lt;dac~&gt; &lt;adc~ 2&gt; 1 10 0; r &lt;dac~&gt; &lt;adc~ 2&gt; 0 10 20(</code></p> </div>
+[; route &lt;dac~&gt; &lt;adc~ 2&gt; 1 10 0; r &lt;dac~&gt; &lt;adc~ 2&gt; 0 10 20(
+</code></pre> </div>
   <div class="date">2020.06.19   <a href="https://autelos.github.io/masi/field-recording">field recording</a>  </div>
 
   <h2><a href="https://autelos.github.io/masi/in-the-rain/">in the rain</a></h2>
@@ -171,12 +174,14 @@
   <div class="entry-content"> <p>in situ slow-evolving conducting/scheduling</p>
 <p>first thing in the morning, open up the routing-matrix patch from yesterday, pull in a looped piano recording.</p>
 <p>filtered in feedback and filtered again.</p>
-<p><code>route tapeshift~:dac~ 1 10000
+<pre><code>route tapeshift~:dac~ 1 10000
 X
 |
 metro 125
 |
-route sf~:dac~ 1 0; route sf~:dac~ 0 0 10</code></p>
+route sf~:dac~ 1 0; route sf~:dac~ 0 0 10
+</code></pre>
+
 <p><a href="https://autelos.github.io/masi/patches/routing-matrix/routing-matrix.pd">patch.pd</a></p> </div>
   <div class="date">2020.06.13   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
 
@@ -237,7 +242,7 @@ route sf~:dac~ 1 0; route sf~:dac~ 0 0 10</code></p>
   <div class="sf" id="2020-06-09_121053.ogg"></div>
 
   <div class="entry-content"> <p>slow morning play with asynchronous piano loops and tapeshift~</p>
-<p><span class="date">23:52</span>
+<p><span class="date">23:52</span><br />
 <video src="https://autelos.github.io/masi/media/2020-06-09_2352.mov" controls></video></p> </div>
   <div class="date">2020.06.07   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
 
@@ -248,8 +253,11 @@ route sf~:dac~ 1 0; route sf~:dac~ 0 0 10</code></p>
   <div class="sf" id="2020-06-07_145600.ogg"></div>
 
   <div class="entry-content"> <p>testing sequencer with pp.grainer~ and KHG organ sample</p>
-<p><code>process=khg-organ.wav:pp.grainer~</code></p>
-<p><code>[pp.grainer~]&lt;:([tapeshift~].[pan~].[fade~],2)</code></p> </div>
+<pre><code>process=khg-organ.wav:pp.grainer~
+</code></pre>
+
+<pre><code>[pp.grainer~]&lt;:([tapeshift~].[pan~].[fade~],2)
+</code></pre> </div>
   <div class="date">2020.06.06   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
 
   <h2><a href="https://autelos.github.io/masi/g01/">G01</a></h2>
@@ -264,7 +272,7 @@ route sf~:dac~ 1 0; route sf~:dac~ 0 0 10</code></p>
   <div class="sf" id="2020-06-06_215730.ogg"></div>
 
   <div class="entry-content"> <p>[pd smoother] handles timing for fading level to zero while changing playPos</p>
-<p><img alt="screenshot of pd-smoother" src="https://autelos.github.io/masi/media/2020-06-06_pd-smoother.png" /></p> </div>
+<p><img alt="screenshot of pd-smoother" src="https://autelos.github.io/masi/patches/2020-06-06_smoother.pd.png#pd-screenshot" /></p> </div>
   <div class="date">2020.06.05   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
 
   <h2><a href="https://autelos.github.io/masi/2020-06-05_102557/">2020-06-05_102557</a></h2>
@@ -297,7 +305,8 @@ route sf~:dac~ 1 0; route sf~:dac~ 0 0 10</code></p>
 
   <div class="entry-content"> <p>past sound as rhythmic pulse</p>
 <p>spring between random segments of the loop</p>
-<p><code>every 1/8, jumping 1/8*lengthOfLoop * random(8)</code></p> </div>
+<pre><code>every 1/8, jumping 1/8*lengthOfLoop * random(8)
+</code></pre> </div>
   <div class="date">2020.05.22   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
 
   <h2><a href="https://autelos.github.io/masi/2020-05-22_174851/">2020-05-22_174851</a></h2>
@@ -378,7 +387,7 @@ route sf~:dac~ 1 0; route sf~:dac~ 0 0 10</code></p>
   <div class="sf" id="2019-12-05_122912-LR.ogg"></div>
   <div class="sf" id="2019-12-05_122912-Tr1.ogg"></div>
 
-  <div class="entry-content"> <p><img alt="microbrute snow" src="https://autelos.github.io/masi/media/2019-12-06.jpg" />
+  <div class="entry-content"> <p><img alt="microbrute snow" src="https://autelos.github.io/masi/media/2019-12-06.jpg" /><br />
 <img alt="microbrute stream" src="https://autelos.github.io/masi/media/2019-12-05_114608.jpg" /></p> </div>
   <div class="date">2019.12.03   <a href="https://autelos.github.io/masi/field-recording">field recording</a>  </div>
 
@@ -396,8 +405,8 @@ route sf~:dac~ 1 0; route sf~:dac~ 0 0 10</code></p>
 
   <div class="sf" id="2019-11-29_Soundscape2_paulstretch.mp3"></div>
 
-  <div class="entry-content"> <p>Trumpet: Felix Brohl
-(todo: source soundscape no. 2)
+  <div class="entry-content"> <p>Trumpet: Felix Brohl<br />
+(todo: source soundscape no. 2)<br />
 Looped trumpet and piano free play, and paulstretched snippet.</p> </div>
 <!--/articles-->
 
