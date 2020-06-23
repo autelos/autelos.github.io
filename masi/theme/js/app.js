@@ -80,7 +80,7 @@ function playPause(file) {
 	if (sfName === file) {
 		wavesurfer.playPause();
 	} else {
-		loadSf("/media/"+file);
+		loadSf(mediaUrl+file);
 	}
 
 	document.getElementById(file).style.backgroundColor=activeMediaFileColor;
