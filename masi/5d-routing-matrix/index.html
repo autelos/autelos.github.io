@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <title>5D routing matrix - masi</title>
+        <meta charset="utf-8" />
+        <meta name="generator" content="Pelican" />
+        <link rel="stylesheet" type="text/css" href="http://autelos.github.io/masi/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://autelos.github.io/masi/theme/css/sf-style.css" />
+
+
+
+
+    <meta name="tags" content="pd" />
+    <meta name="tags" content="modules" />
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+          <h1><a href="http://autelos.github.io/masi/">masi</a></h1>
+        </header><!-- /#banner -->
+
+        <nav id="menu"><ul>
+
+            <li><a href="http://autelos.github.io/masi/about/">about</a></li>
+
+            <li><a href="http://autelos.github.io/masi/field-recording">field recording</a></li>
+            <li><a href="http://autelos.github.io/masi/pd">pd</a></li>
+            <li><a href="http://autelos.github.io/masi/modules">modules</a></li>
+            <li><a href="http://autelos.github.io/masi/notes">notes</a></li>
+            <li><a href="http://autelos.github.io/masi/landing">landing</a></li>
+
+        </ul></nav><!-- /#menu -->
+
+<section id="content" class="body">
+
+  <footer class="post-info">
+    <code>2020.06.19</code>
+          <i><a href="http://autelos.github.io/masi/pd">pd</a></i>
+          <i><a href="http://autelos.github.io/masi/modules">modules</a></i>
+  </footer>
+
+  <header>
+    <h2 class="entry-title">
+      <a href="http://autelos.github.io/masi/5d-routing-matrix/" rel="bookmark"
+         title="Permalink to 5D routing matrix">5D routing matrix</a></h2>
+ 
+  </header>
+
+  <div class="entry-content">
+    <p>A 5D routing matrix for PD affords programatic/instruction-based access to conduct signal routing on-the-fly with variable destinations, fade-time, and scheduling (wait x-ms first).</p>
+<p>Syntax:</p>
+<p><code>[; route &lt;out&gt; &lt;in&gt; &lt;value&gt; &lt;ms-to-fade&gt; &lt;ms-to-wait&gt;(</code></p>
+<p>This effectively decouples the patching interface from the PD GUI, allowing control to be given to, ie., the MobMuPLat touchscreen interface, which implements a grid control and 3 sliders (value, ms-to-fade, ms-to-wait).</p>
+<p>This also exposes the potential for live-coding/text-based triggering, ie:</p>
+<p><code>[x]
+|
+[metro 100]
+|
+[; route &lt;dac~&gt; &lt;adc~ 1&gt; 1 10 0; r &lt;dac~&gt; &lt;adc~ 1&gt; 0 10 20(
+[x]
+|
+[metro 101]
+|
+[; route &lt;dac~&gt; &lt;adc~ 2&gt; 1 10 0; r &lt;dac~&gt; &lt;adc~ 2&gt; 0 10 20(</code></p>
+  </div><!-- /.entry-content -->
+</section>
+</body>
+</html>

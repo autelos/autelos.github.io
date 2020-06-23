@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>masi</title>
+        <meta charset="utf-8" />
+        <meta name="generator" content="Pelican" />
+        <link rel="stylesheet" type="text/css" href="http://autelos.github.io/masi/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://autelos.github.io/masi/theme/css/sf-style.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+          <h1><a href="http://autelos.github.io/masi/">masi</a></h1>
+        </header><!-- /#banner -->
+
+        <nav id="menu"><ul>
+
+            <li><a href="http://autelos.github.io/masi/about/">about</a></li>
+
+            <li><a href="http://autelos.github.io/masi/field-recording">field recording</a></li>
+            <li><a href="http://autelos.github.io/masi/pd">pd</a></li>
+            <li><a href="http://autelos.github.io/masi/modules">modules</a></li>
+            <li><a href="http://autelos.github.io/masi/notes">notes</a></li>
+            <li><a href="http://autelos.github.io/masi/landing">landing</a></li>
+
+        </ul></nav><!-- /#menu -->
+
+  <section id="content">
+
+<!--articles-->
+  <div class="date">2020.06.20   <a href="http://autelos.github.io/masi/field-recording">field recording</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/allgau-waydown/">allgäu waydown</a></h2>
+
+  <div class="sf" id="2020-06-20_084248.ogg"></div>
+  <div class="sf" id="2020-06-20_084248[vm].ogg"></div>
+  <div class="sf" id="2020-06-20_084726.ogg"></div>
+  <div class="sf" id="2020-06-20_090718.ogg"></div>
+
+  <div class="date">2020.06.19   <a href="http://autelos.github.io/masi/pd">pd</a>  <a href="http://autelos.github.io/masi/modules">modules</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/5d-routing-matrix/">5D routing matrix</a></h2>
+
+
+  <div class="entry-content"> <p>A 5D routing matrix for PD affords programatic/instruction-based access to conduct signal routing on-the-fly with variable destinations, fade-time, and scheduling (wait x-ms first).</p>
+<p>Syntax:</p>
+<p><code>[; route &lt;out&gt; &lt;in&gt; &lt;value&gt; &lt;ms-to-fade&gt; &lt;ms-to-wait&gt;(</code></p>
+<p>This effectively decouples the patching interface from the PD GUI, allowing control to be given to, ie., the MobMuPLat touchscreen interface, which implements a grid control and 3 sliders (value, ms-to-fade, ms-to-wait).</p>
+<p>This also exposes the potential for live-coding/text-based triggering, ie:</p>
+<p><code>[x]
+|
+[metro 100]
+|
+[; route &lt;dac~&gt; &lt;adc~ 1&gt; 1 10 0; r &lt;dac~&gt; &lt;adc~ 1&gt; 0 10 20(
+[x]
+|
+[metro 101]
+|
+[; route &lt;dac~&gt; &lt;adc~ 2&gt; 1 10 0; r &lt;dac~&gt; &lt;adc~ 2&gt; 0 10 20(</code></p> </div>
+  <div class="date">2020.06.19   <a href="http://autelos.github.io/masi/field-recording">field recording</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/in-the-rain/">in the rain</a></h2>
+
+  <div class="sf" id="2020-06-19_1935.ogg"></div>
+  <div class="sf" id="2020-06-19_1939.ogg"></div>
+  <div class="sf" id="2020-06-19_1954.ogg"></div>
+
+  <div class="entry-content"> <p><img alt="rain setup" src="http://autelos.github.io/masi/media/2020-06-19_183336.jpg" /></p> </div>
+  <div class="date">2020.06.18   <a href="http://autelos.github.io/masi/field-recording">field recording</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/allgau/">allgäu</a></h2>
+
+  <div class="sf" id="2020-06-18_1124.ogg"></div>
+  <div class="sf" id="2020-06-18_1232.ogg"></div>
+  <div class="sf" id="2020-06-18_1233.ogg"></div>
+  <div class="sf" id="2020-06-18_1238.ogg"></div>
+  <div class="sf" id="2020-06-18_1240.ogg"></div>
+  <div class="sf" id="2020-06-18_1701.ogg"></div>
+  <div class="sf" id="2020-06-18_1805.ogg"></div>
+
+  <div class="date">2020.06.18   <a href="http://autelos.github.io/masi/notes">notes</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/transcriptions-to-try/">transcriptions to try</a></h2>
+
+
+  <div class="entry-content"> <p>transcribed from pocketbook in reverse chronological order</p>
+<ul>
+<li>[x] 5D routing matrix<ul>
+<li>on the fly routing patching control</li>
+<li>log of interactions affords easy real-time scripting interface<ul>
+<li>'limiter' of too much clipping could undo last interaction from log?<ul>
+<li>although this only works if feedback was caused by digital interaction, not change to audio in</li>
+<li>sequencer interface for phone</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>stop at the places in between</li>
+<li>walking soundscape<ul>
+<li>footstep rhythm</li>
+<li>car drone<ul>
+<li>how to work with?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[x] make marker in patch</li>
+<li>pd log</li>
+<li>ma - empty containers</li>
+<li>rhythmic moving playheads<ul>
+<li>how to deal with clicks?<ul>
+<li>[x] pd-smoother (envelope)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>buffer recorder recalls ephemeral moments</li>
+<li>moving image as lo-fi sound processor/convolver</li>
+<li>ios sound computing<ul>
+<li>[x] pd x mobmuplat</li>
+</ul>
+</li>
+<li>diffusion and routing as percussion (ambisonic/further away/filtered)</li>
+<li>emergence in gifs, live-arppegio-code</li>
+<li>emergence on the border of control</li>
+<li>sound object delay line... blurring figure-ground by delaying figure-ground<ul>
+<li>delayline changing speed can octave/interval sein</li>
+<li>moving delayline as rhythmic/textural harmonizer</li>
+<li>gesture -&gt; rhythmic delay texture</li>
+<li>slow gestures as play with space/time</li>
+<li>texture from multiple delay lines,</li>
+<li>delay line, listening again</li>
+<li>when changing delay line length, fade it out / have variable gain</li>
+</ul>
+</li>
+<li>environmental music: amplifying/using what is already there<ul>
+<li>attention restoration theory</li>
+<li>walk every day</li>
+</ul>
+</li>
+</ul> </div>
+  <div class="date">2020.06.16 </div>
+
+  <h2><a href="http://autelos.github.io/masi/train-to-allgau/">train to allgäu</a></h2>
+
+  <div class="sf" id="2020-06-16_0133.ogg"></div>
+
+  <div class="entry-content"> <p><img alt="pd in the train" src="http://autelos.github.io/masi/media/2020-06-16_083333.jpg" /></p>
+<p>a space in-between, a space on the way. mediating the loud train ride through a macbook microphone and earlier piano sample to test functionality of the patch accidentally re-situates the listening experience as active and real-time.</p>
+<blockquote>
+<p>the presence of everything, nothing shouts importance ... quiet is quieting ... (Gordon Hempten)</p>
+</blockquote> </div>
+  <div class="date">2020.06.14   <a href="http://autelos.github.io/masi/field-recording">field recording</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/ginsterpfad-ambience/">ginsterpfad ambience</a></h2>
+
+  <div class="sf" id="2020-06-14_2055_ginsterpfad-ambience.ogg"></div>
+
+  <div class="date">2020.06.14   <a href="http://autelos.github.io/masi/pd">pd</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/routing-matrix-pt-2/">routing matrix pt. 2</a></h2>
+
+  <div class="sf" id="2020-06-14_0939.ogg"></div>
+  <div class="sf" id="2020-06-14_0959.ogg"></div>
+  <div class="sf" id="2020-06-14_1022.ogg"></div>
+  <div class="sf" id="2020-06-14_1306.ogg"></div>
+
+  <div class="entry-content"> <p>in situ slow-evolving conducting/scheduling</p>
+<p>first thing in the morning, open up the routing-matrix patch from yesterday, pull in a looped piano recording.</p>
+<p>filtered in feedback and filtered again.</p>
+<p><code>route tapeshift~:dac~ 1 10000
+X
+|
+metro 125
+|
+route sf~:dac~ 1 0; route sf~:dac~ 0 0 10</code></p>
+<p><a href="http://autelos.github.io/masi/patches/routing-matrix/routing-matrix.pd">patch.pd</a></p> </div>
+  <div class="date">2020.06.13   <a href="http://autelos.github.io/masi/pd">pd</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/routing-matrix/">routing matrix</a></h2>
+
+  <div class="sf" id="2020-06-13_1305.ogg"></div>
+  <div class="sf" id="2020-06-13_1308.ogg"></div>
+  <div class="sf" id="2020-06-13_1317.ogg"></div>
+  <div class="sf" id="2020-06-13_1318.ogg"></div>
+  <div class="sf" id="2020-06-13_1322.ogg"></div>
+  <div class="sf" id="2020-06-13_1642.ogg"></div>
+  <div class="sf" id="2020-06-13_1805_stadtwald-crickets.ogg"></div>
+  <div class="sf" id="2020-06-13_2042.ogg"></div>
+  <div class="sf" id="2020-06-13_2101.ogg"></div>
+
+  <div class="entry-content"> <p>routing matrix with variable fade-time working</p>
+<p><a href="http://autelos.github.io/masi/patches/routing-matrix/routing-matrix.pd">patch.pd</a></p>
+<p>recordings feature prominent low-end ambience from traffic - how to use this? filter it out?</p> </div>
+  <div class="date">2020.06.12   <a href="http://autelos.github.io/masi/field-recording">field recording</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/wassermannsee/">Wassermannsee</a></h2>
+
+  <div class="sf" id="2020-06-12_1119.ogg"></div>
+  <div class="sf" id="2020-06-12_1128.ogg"></div>
+  <div class="sf" id="2020-06-12_1856.ogg"></div>
+  <div class="sf" id="2020-06-12_2034_Wassermannsee.ogg"></div>
+
+  <div class="entry-content"> <p>wind through reeds, loud ducks. off-recorder mics make cue-making (almost) silent.</p> </div>
+  <div class="date">2020.06.11   <a href="http://autelos.github.io/masi/field-recording">field recording</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/am-ginsterpfad/">Am Ginsterpfad</a></h2>
+
+  <div class="sf" id="2020-06-11_2036.ogg"></div>
+  <div class="sf" id="2020-06-11_2049.ogg"></div>
+  <div class="sf" id="2020-06-11_2131.ogg"></div>
+  <div class="sf" id="2020-06-12_1856.ogg"></div>
+
+  <div class="entry-content"> <p>walking soundscape, slowly-changing filters as attention-prompts. elements:</p>
+<ul>
+<li>footstep rhythm</li>
+<li>car drone<ul>
+<li>how to work with?</li>
+</ul>
+</li>
+</ul> </div>
+  <div class="date">2020.06.11   <a href="http://autelos.github.io/masi/pd">pd</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/pd-in-the-park/">pd in the park</a></h2>
+
+  <div class="sf" id="2020-06-11_2140.ogg"></div>
+
+  <div class="entry-content"> <p>how to work with droning car sounds? trying to reinforce them with sinewave organ.</p>
+<p><a href="http://autelos.github.io/masi/media/2020-06-11_2140_pd-in-the-park.pd">pd in the park patch</a></p> </div>
+  <div class="date">2020.06.09   <a href="http://autelos.github.io/masi/pd">pd</a>  <a href="http://autelos.github.io/masi/landing">landing</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/fur-iem-graz/">für iem-graz</a></h2>
+
+  <div class="sf" id="2020-06-09_121053.ogg"></div>
+
+  <div class="entry-content"> <p>slow morning play with asynchronous piano loops and tapeshift~</p>
+<p><span class="date">23:52</span>
+<video src="http://autelos.github.io/masi/media/2020-06-09_2352.mov" controls></video></p> </div>
+  <div class="date">2020.06.07   <a href="http://autelos.github.io/masi/pd">pd</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/ppgrainer-t03-organ/">[pp.grainer~] T03 organ</a></h2>
+
+  <div class="sf" id="2020-06-07_122700.ogg"></div>
+  <div class="sf" id="2020-06-07_1356.ogg"></div>
+  <div class="sf" id="2020-06-07_145600.ogg"></div>
+
+  <div class="entry-content"> <p>testing sequencer with pp.grainer~ and KHG organ sample</p>
+<p><code>process=khg-organ.wav:pp.grainer~</code></p>
+<p><code>[pp.grainer~]&lt;:([tapeshift~].[pan~].[fade~],2)</code></p> </div>
+  <div class="date">2020.06.06   <a href="http://autelos.github.io/masi/pd">pd</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/g01/">G01</a></h2>
+
+  <div class="sf" id="2020-06-06_211452.ogg"></div>
+
+  <div class="entry-content"> <p>ma jumps on piano loops</p> </div>
+  <div class="date">2020.06.06   <a href="http://autelos.github.io/masi/pd">pd</a>  <a href="http://autelos.github.io/masi/modules">modules</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/pd-smoother-t01/">[pd smoother] T01</a></h2>
+
+  <div class="sf" id="2020-06-06_215730.ogg"></div>
+
+  <div class="entry-content"> <p>[pd smoother] handles timing for fading level to zero while changing playPos</p>
+<p><img alt="screenshot of pd-smoother" src="http://autelos.github.io/masi/media/2020-06-06_pd-smoother.png" /></p> </div>
+  <div class="date">2020.06.05   <a href="http://autelos.github.io/masi/pd">pd</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/2020-06-05_102557/">2020-06-05_102557</a></h2>
+
+  <div class="sf" id="2020-06-05_102557.ogg"></div>
+
+  <div class="date">2020.06.04   <a href="http://autelos.github.io/masi/pd">pd</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/2020-06-04_221410/">2020-06-04_221410</a></h2>
+
+  <div class="sf" id="2020-06-04_221410.ogg"></div>
+
+  <div class="entry-content"> <p>patch notes: two asynchronous loops, one ma loop</p>
+<p>tapeshift~ delay on live input</p>
+<p>would be nice: easy control of tapeshift~ volume (at least)</p> </div>
+  <div class="date">2020.05.30   <a href="http://autelos.github.io/masi/pd">pd</a>  <a href="http://autelos.github.io/masi/modules">modules</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/krupp-gm7-and-the-dogs-outside/">krupp gm7 and the dogs outside</a></h2>
+
+  <div class="sf" id="2020-05-30_142454.mp3"></div>
+
+  <div class="entry-content"> <p>testing chord with rhymthic 1/8 playpos jumping as carpet</p>
+<p>listened through through schmalfußs tape-IR. consider feeding through, re-recording?</p>
+<p>todo: add playpos-jumping module</p> </div>
+  <div class="date">2020.05.25   <a href="http://autelos.github.io/masi/pd">pd</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/2020-05-25_175236/">2020-05-25_175236</a></h2>
+
+  <div class="sf" id="2020-05-25_175236.ogg"></div>
+
+  <div class="entry-content"> <p>past sound as rhythmic pulse</p>
+<p>spring between random segments of the loop</p>
+<p><code>every 1/8, jumping 1/8*lengthOfLoop * random(8)</code></p> </div>
+  <div class="date">2020.05.22   <a href="http://autelos.github.io/masi/pd">pd</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/2020-05-22_174851/">2020-05-22_174851</a></h2>
+
+  <div class="sf" id="2020-05-22_174851.ogg"></div>
+
+  <div class="entry-content"> <p>1 mic in room with piano with loops and tapeshift</p>
+<p>fix:</p>
+<ul>
+<li>[x] changing cycle length after buffer loop is made removes sound</li>
+</ul>
+<p>todo:</p>
+<ul>
+<li>[x] autogenerate meta.md</li>
+<li>[x] include file automatically</li>
+<li>[x] include date automatically</li>
+<li>[ ] convert to mp3?</li>
+<li>[x] offer voice memo feature? /</li>
+<li>[ ] auto-open text editor with meta file?</li>
+</ul> </div>
+  <div class="date">2020.05.20   <a href="http://autelos.github.io/masi/pd">pd</a>  <a href="http://autelos.github.io/masi/modules">modules</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/buffer-looper-router-t01/">Buffer Looper-Router T01</a></h2>
+
+  <div class="sf" id="2020-05-20_1921.ogg"></div>
+
+  <div class="entry-content"> <p>getting back to the launchpad-looper-router-interface, checking that it works as expected after a few days away. testing with a sample</p>
+<p>patch notes: sample (taiwan-junglebirds.wav) looped, buffer looped, routed into tape-shift effect with feedback, starting to find something, hit record</p>
+<p>todo:</p>
+<ul>
+<li>[x] get input routing working, so that can happen on the pad</li>
+<li>[ ] get resonanant filter+tapeshift also mapped to pad buttons</li>
+<li>[x] add record button to launchpad</li>
+</ul> </div>
+  <div class="date">2020.05.14   <a href="http://autelos.github.io/masi/landing">landing</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/khg-t02/">KHG T02</a></h2>
+
+  <div class="sf" id="2020-05-14_KHG-1.ogg"></div>
+  <div class="sf" id="2020-05-14_KHG-2.ogg"></div>
+  <div class="sf" id="2020-05-14_KHG-3.ogg"></div>
+  <div class="sf" id="2020-05-14_KHG-4.ogg"></div>
+  <div class="sf" id="2020-05-14_KHG-5.ogg"></div>
+  <div class="sf" id="2020-05-14_KHG-6.ogg"></div>
+  <div class="sf" id="2020-05-14_KHG-7.ogg"></div>
+  <div class="sf" id="2020-05-14_KHG-8.ogg"></div>
+
+  <div class="entry-content"> <p><img alt="khg setup" src="http://autelos.github.io/masi/media/2020-05-14_161030.jpg" /></p> </div>
+  <div class="date">2020.03.10   <a href="http://autelos.github.io/masi/pd">pd</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/trainsketch-taiwan/">Trainsketch Taiwan</a></h2>
+
+  <div class="sf" id="2020-03-10_171703_taiwan-trainsketch.ogg"></div>
+
+  <div class="entry-content"> <p><a href="http://autelos.github.io/masi/patches/taiwan-trainsketch.pd">taiwan-trainsketch.pd</a></p> </div>
+  <div class="date">2020.01.23   <a href="http://autelos.github.io/masi/pd">pd</a>  <a href="http://autelos.github.io/masi/modules">modules</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/figure-ground-delayline-modulator/">Figure-Ground Delayline Modulator</a></h2>
+
+  <div class="sf" id="2020-02-05_225924-mawamama-t01.ogg"></div>
+
+  <div class="entry-content"> <p>the length of a sound-object (distinguished as a ‘figure’) modulates the length of a delayline such that sounds made in a room are fed back to the room at varying–controllable–later times</p>
+<p><a href="http://autelos.github.io/masi/patches/figure-ground-delayline-modulator.pd">figure-ground-delayline-modulator.pd</a></p> </div>
+  <div class="date">2019.12.07   <a href="http://autelos.github.io/masi/landing">landing</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/bozen/">Bozen</a></h2>
+
+  <div class="sf" id="2019-12-07_Bozen_F01.ogg"></div>
+  <div class="sf" id="2019-12-07_Bozen_F02.ogg"></div>
+
+  <div class="entry-content"> <p>(todo: insert visuals!)</p>
+<p>A handheld zoom capturing a waterfalls fed through Microbrute sequenced filter formed the basis for later keyboard overdubs.</p> </div>
+  <div class="date">2019.12.05   <a href="http://autelos.github.io/masi/field-recording">field recording</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/bozen-t02/">Bozen T02</a></h2>
+
+  <div class="sf" id="2019-12-05_122648-LR.ogg"></div>
+  <div class="sf" id="2019-12-05_122912-LR.ogg"></div>
+  <div class="sf" id="2019-12-05_122912-Tr1.ogg"></div>
+
+  <div class="entry-content"> <p><img alt="microbrute snow" src="http://autelos.github.io/masi/media/2019-12-06.jpg" />
+<img alt="microbrute stream" src="http://autelos.github.io/masi/media/2019-12-05_114608.jpg" /></p> </div>
+  <div class="date">2019.12.03   <a href="http://autelos.github.io/masi/field-recording">field recording</a>  </div>
+
+  <h2><a href="http://autelos.github.io/masi/bozen-t01/">Bozen T01</a></h2>
+
+  <div class="sf" id="2019-12-03_121832-Tr2.ogg"></div>
+  <div class="sf" id="2019-12-03_122620-Tr2.ogg"></div>
+  <div class="sf" id="2019-12-03_185142-LR.ogg"></div>
+  <div class="sf" id="2019-12-03_185338-LR.ogg"></div>
+  <div class="sf" id="2019-12-03_185454-LR.ogg"></div>
+
+  <div class="date">2019.11.29 </div>
+
+  <h2><a href="http://autelos.github.io/masi/where-it-started/">where it started</a></h2>
+
+  <div class="sf" id="2019-11-29_Soundscape2_paulstretch.mp3"></div>
+
+  <div class="entry-content"> <p>Trumpet: Felix Brohl
+(todo: source soundscape no. 2)
+Looped trumpet and piano free play, and paulstretched snippet.</p> </div>
+<!--/articles-->
+
+  </section>
+
+  <section id="wavesurfer-gui">
+    <div id="gui">
+      <a id="flip" href="">toggle waveform</a><br>
+      <a id="toggleChrome" href="">options</a>
+  		<div class="chrome" style="margin-bottom:0.5em; width:200px;">
+  			<!--<button type="button"><label for="fileinput">load soundfile from disk</label></button>
+  			<input type="file" id="fileinput" style="visibility:hidden;width:0px;"/>
+
+  			<button type="button"><label for="regioninput">load regions from disk</label></button>
+  			<input type="file" id="regioninput" style="visibility:hidden;width:0px;"/>-->
+
+  			<button type="button"><label for="loginput">load log from disk</label></button>
+  			<input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
+
+  			<button onclick="loadVid()" type="button">load vid</button>
+  			<button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+  			<button onclick="removeCloseRegions()" type="button">remove close regions</button>
+  			<button onclick="saveRegions()" type="button">save regions to disk</button>
+
+  			<button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+  			<button onclick="exportReaperProject()" type="button">export rpp</button>
+  		</div>
+    </div>
+
+  	<div id="panel">
+  		<section>
+  			<div id="waveform">
+  				<span id="sfname"></span>
+  				<div id="progress"></div>
+  			</div>
+  		</section>
+
+  		<div class="chrome">
+  			<button data-action="play">play/pause</button>
+  			zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+  			<span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+  		</div>
+      <input id = "inputtext" type="text" onkeyup="handle(event)">
+  	</div>
+
+  	<script src="http://autelos.github.io/masi/theme/js/jquery-3.5.1.min.js"></script>
+  	<script src="http://autelos.github.io/masi/theme/js/wavesurfer.js"></script>
+  	<script src="http://autelos.github.io/masi/theme/js/wavesurfer.regions.min.js"></script>
+  	<script src="http://autelos.github.io/masi/theme/js/wavesurfer.cursor.js"></script>
+  	<script src="http://autelos.github.io/masi/theme/js/FileSaver.js"></script>
+  	<script src="http://autelos.github.io/masi/theme/js/app.js"></script>
+  </section>
+
+</body>
+</html>

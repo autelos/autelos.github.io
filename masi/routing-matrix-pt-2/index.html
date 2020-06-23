@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <title>routing matrix pt. 2 - masi</title>
+        <meta charset="utf-8" />
+        <meta name="generator" content="Pelican" />
+        <link rel="stylesheet" type="text/css" href="http://autelos.github.io/masi/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://autelos.github.io/masi/theme/css/sf-style.css" />
+
+
+
+
+    <meta name="tags" content="pd" />
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+          <h1><a href="http://autelos.github.io/masi/">masi</a></h1>
+        </header><!-- /#banner -->
+
+        <nav id="menu"><ul>
+
+            <li><a href="http://autelos.github.io/masi/about/">about</a></li>
+
+            <li><a href="http://autelos.github.io/masi/field-recording">field recording</a></li>
+            <li><a href="http://autelos.github.io/masi/pd">pd</a></li>
+            <li><a href="http://autelos.github.io/masi/modules">modules</a></li>
+            <li><a href="http://autelos.github.io/masi/notes">notes</a></li>
+            <li><a href="http://autelos.github.io/masi/landing">landing</a></li>
+
+        </ul></nav><!-- /#menu -->
+
+<section id="content" class="body">
+
+  <footer class="post-info">
+    <code>2020.06.14</code>
+          <i><a href="http://autelos.github.io/masi/pd">pd</a></i>
+  </footer>
+
+  <header>
+    <h2 class="entry-title">
+      <a href="http://autelos.github.io/masi/routing-matrix-pt-2/" rel="bookmark"
+         title="Permalink to routing matrix pt. 2">routing matrix pt. 2</a></h2>
+ 
+  </header>
+
+  <div class="entry-content">
+    <p>in situ slow-evolving conducting/scheduling</p>
+<p>first thing in the morning, open up the routing-matrix patch from yesterday, pull in a looped piano recording.</p>
+<p>filtered in feedback and filtered again.</p>
+<p><code>route tapeshift~:dac~ 1 10000
+X
+|
+metro 125
+|
+route sf~:dac~ 1 0; route sf~:dac~ 0 0 10</code></p>
+<p><a href="http://autelos.github.io/masi/patches/routing-matrix/routing-matrix.pd">patch.pd</a></p>
+  </div><!-- /.entry-content -->
+</section>
+</body>
+</html>
