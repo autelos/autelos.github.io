@@ -3,7 +3,7 @@ var sfName, lastSfName;
 var startTime = 0;
 var sfTitle;
 
-var phpUrl = "http://damasi.be/masi";
+var phpUrl = "https://damasi.be/masi";
 //var phpUrl = "http://0.0.0.0:7000";
 var mediaUrl = "/masi/media/";
 var mainColor = 'rgb(250,250,250)'; //'rgb(11, 91, 162)';
