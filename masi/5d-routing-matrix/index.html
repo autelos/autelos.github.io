@@ -34,21 +34,12 @@
 
 <section id="content" class="body">
 
-  <footer class="post-info">
-    <code>2020.06.19</code>
-          <i><a href="https://autelos.github.io/masi/pd">pd</a></i>
-          <i><a href="https://autelos.github.io/masi/modules">modules</a></i>
-  </footer>
+  <div class="date">2020.06.19   <a href="https://autelos.github.io/masi/pd">pd</a>  <a href="https://autelos.github.io/masi/modules">modules</a>  </div>
 
-  <header>
-    <h2 class="entry-title">
-      <a href="https://autelos.github.io/masi/5d-routing-matrix/" rel="bookmark"
-         title="Permalink to 5D routing matrix">5D routing matrix</a></h2>
- 
-  </header>
+  <h2><a href="https://autelos.github.io/masi/5d-routing-matrix/">5D routing matrix</a></h2>
 
-  <div class="entry-content">
-    <p>A 5D routing matrix for PD affords programatic/instruction-based access to conduct signal routing on-the-fly with variable destinations, fade-time, and scheduling (wait x-ms first).</p>
+
+  <div class="entry-content"> <p>A 5D routing matrix for PD affords programatic/instruction-based access to conduct signal routing on-the-fly with variable destinations, fade-time, and scheduling (wait x-ms first).</p>
 <p>Syntax:</p>
 <p><code>[; route &lt;out&gt; &lt;in&gt; &lt;value&gt; &lt;ms-to-fade&gt; &lt;ms-to-wait&gt;(</code></p>
 <p>This effectively decouples the patching interface from the PD GUI, allowing control to be given to, ie., the MobMuPLat touchscreen interface, which implements a grid control and 3 sliders (value, ms-to-fade, ms-to-wait).</p>
@@ -62,8 +53,7 @@
 |
 [metro 101]
 |
-[; route &lt;dac~&gt; &lt;adc~ 2&gt; 1 10 0; r &lt;dac~&gt; &lt;adc~ 2&gt; 0 10 20(</code></p>
-  </div><!-- /.entry-content -->
+[; route &lt;dac~&gt; &lt;adc~ 2&gt; 1 10 0; r &lt;dac~&gt; &lt;adc~ 2&gt; 0 10 20(</code></p> </div>
 </section>
 </body>
 </html>

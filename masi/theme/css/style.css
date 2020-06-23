@@ -20,6 +20,11 @@ body, #panel {
   color: rgb(200,200,200);
 }
 
+img[src$='#pd-screenshot'] {
+  filter: invert();
+  mix-blend-mode: screen;
+}
+
 .date {
   margin-top:6em;
 }

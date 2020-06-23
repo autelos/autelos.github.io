@@ -33,23 +33,24 @@
 
 <section id="content" class="body">
 
-  <footer class="post-info">
-    <code>2020.06.23</code>
-          <i><a href="https://autelos.github.io/masi/meta">meta</a></i>
-  </footer>
+  <div class="date">2020.06.20   <a href="https://autelos.github.io/masi/meta">meta</a>  </div>
 
-  <header>
-    <h2 class="entry-title">
-      <a href="https://autelos.github.io/masi/drafts/invert-pd-screenshot.html" rel="bookmark"
-         title="Permalink to invert pd screenshot">invert pd screenshot</a></h2>
- 
-  </header>
+  <h2><a href="https://autelos.github.io/masi/drafts/invert-pd-screenshot.html">invert pd screenshot</a></h2>
 
-  <div class="entry-content">
-    <p>Goal: pd screenshots should be displayed as white-on-transparent
+
+  <div class="entry-content"> <p>Goal: pd screenshots should be displayed as white-on-transparent
 Means: css filtering
 Questions: how to tag pd screenshots in markdown?</p>
-  </div><!-- /.entry-content -->
+<p>update 2020-06-23:</p>
+<p><code>css
+img[src$='#pd-screenshot'] {
+  filter: invert();
+  mix-blend-mode: screen;
+}</code></p>
+<p><code>markdown
+![alt]({static}/patches/demo.pd.png#pd-screenshot)</code></p>
+<p>result:</p>
+<p><img alt="alt" src="https://autelos.github.io/masi/patches/demo.pd.png#pd-screenshot" /></p> </div>
 </section>
 </body>
 </html>
