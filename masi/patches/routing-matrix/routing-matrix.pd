@@ -1,11 +1,11 @@
-#N struct 1155-template float x float y float c float s float th float
-stretch array 1155-plus 1155-template-y array 1155-minus 1155-template-y
+#N struct 1075-template float x float y float c float s float th float
+stretch array 1075-plus 1075-template-y array 1075-minus 1075-template-y
 ;
-#N struct 1155-template-y float y;
-#N struct 1156-template float x float y float c float s float th float
-stretch array 1156-plus 1156-template-y array 1156-minus 1156-template-y
+#N struct 1075-template-y float y;
+#N struct 1076-template float x float y float c float s float th float
+stretch array 1076-plus 1076-template-y array 1076-minus 1076-template-y
 ;
-#N struct 1156-template-y float y;
+#N struct 1076-template-y float y;
 #N canvas 0 0 1366 746 10;
 #X declare -path autelos;
 #X declare -path audiolab;
@@ -528,6 +528,14 @@ playPos, f 70;
 1;
 #X msg 1062 660 list /5-length-label \$1;
 #X obj 1062 681 s toGUI;
+#X obj 730 -188 r fromSystem;
+#X msg 894 -115 list /getTime;
+#X obj 894 -93 s toSystem;
+#X obj 730 -137 print;
+#X obj 764 -42 s toSystem;
+#X msg 764 -63 list /textDialog text-1 "enter something";
+#X obj 774 -155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 0 0 27 0;
 #X connect 1 0 0 0;
 #X connect 1 1 0 0;
@@ -625,3 +633,7 @@ playPos, f 70;
 #X connect 110 0 58 2;
 #X connect 111 0 110 0;
 #X connect 112 0 113 0;
+#X connect 114 0 117 0;
+#X connect 114 0 120 0;
+#X connect 115 0 116 0;
+#X connect 119 0 118 0;
