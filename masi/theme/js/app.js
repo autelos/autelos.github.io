@@ -2,6 +2,7 @@ var currentRegion;
 var sfName, lastSfName;
 var startTime = 0;
 var sfTitle;
+var fadeTime = 500; //time to fade when programmatically changing playhead position (in ms)
 
 var phpUrl = "https://damasi.be/masi";
 //var phpUrl = "http://0.0.0.0:7000";
@@ -518,15 +519,15 @@ wavesurfer.on('region-in', function(region, e) {
 	if (region.attributes.label==="rm") {
 
 		var currTime = wavesurfer.backend.ac.currentTime;
-		var fadeTime = .1; //in seconds
+		var fadeTimeS = fadeTime/1000; //in seconds
 		var vol = wavesurfer.g.gain.value;
 		wavesurfer.g.gain.linearRampToValueAtTime(vol,currTime);
-		wavesurfer.g.gain.linearRampToValueAtTime(0,currTime+fadeTime);
+		wavesurfer.g.gain.linearRampToValueAtTime(0,currTime+fadeTimeS);
 		setTimeout(function(){
 			wavesurfer.play(region.end);
 			},
-			fadeTime*1000);
-		wavesurfer.g.gain.linearRampToValueAtTime(vol,currTime+fadeTime+fadeTime);
+			fadeTime);
+		wavesurfer.g.gain.linearRampToValueAtTime(vol,currTime+fadeTimeS+fadeTimeS);
 
 	} else {
 		// PRINT TO LOG
