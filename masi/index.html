@@ -17,7 +17,6 @@
 
             <li><a href="https://autelos.github.io/masi/about/">about</a></li>
 
-            <li><a href="https://autelos.github.io/masi/meta">meta</a></li>
             <li><a href="https://autelos.github.io/masi/pd">pd</a></li>
             <li><a href="https://autelos.github.io/masi/field-recording">field recording</a></li>
             <li><a href="https://autelos.github.io/masi/modules">modules</a></li>
@@ -29,32 +28,6 @@
   <section id="content">
 
 <!--articles-->
-  <div class="date">2020.06.30   <a href="https://autelos.github.io/masi/meta">meta</a>  </div>
-
-  <h2><a href="https://autelos.github.io/masi/archive-meta/">archive meta</a></h2>
-
-
-  <div class="entry-content"> <h2>Contents</h2>
-<ul>
-<li>Archive<ul>
-<li>about smoothing workflow</li>
-</ul>
-</li>
-<li>Real-time Composition</li>
-</ul>
-<p>given:<br />
-- the work is rhizomatic<br />
-    - the working process is too<br />
-    - how to organize rhizomatically?<br />
-    - "All nodes are connected and each node is connected to all other nodes, where the position of the nodes is unimportant"<br />
-    - "Nomadic, where the process is as important as the outcome and the program can be changed in the middle of its execution"</p>
-<ul>
-<li>the work can/should/sometimes deal with 'masking' unpleasantness<ul>
-<li>what does it take to mask?</li>
-</ul>
-</li>
-</ul>
-<p>Holistically, this includes the masking effects of ambient soundscape, decreasing entropy, giving space for attending to emergent patterns. Revealing and exploiting elements of human perception that has utility as architecture, a surrounding influence on the state of mind.</p> </div>
   <div class="date">2020.06.26 </div>
 
   <h2><a href="https://autelos.github.io/masi/iphone-modulator-piano/">iphone modulator piano</a></h2>
@@ -206,6 +179,27 @@ process=adc~:tapeshift~:dac~
 
   <div class="sf" id="2020-06-14_2055_ginsterpfad-ambience.ogg"></div>
 
+  <div class="date">2020.06.14   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
+
+  <h2><a href="https://autelos.github.io/masi/routing-matrix-pt-2/">routing matrix pt. 2</a></h2>
+
+  <div class="sf" id="2020-06-14_0939.ogg"></div>
+  <div class="sf" id="2020-06-14_0959.ogg"></div>
+  <div class="sf" id="2020-06-14_1022.ogg"></div>
+  <div class="sf" id="2020-06-14_1306.ogg"></div>
+
+  <div class="entry-content"> <p>in situ slow-evolving conducting/scheduling</p>
+<p>first thing in the morning, open up the routing-matrix patch from yesterday, pull in a looped piano recording.</p>
+<p>filtered in feedback and filtered again.</p>
+<pre><code>route tapeshift~:dac~ 1 10000
+X
+|
+metro 125
+|
+route sf~:dac~ 1 0; route sf~:dac~ 0 0 10
+</code></pre>
+
+<p><a href="https://autelos.github.io/masi/patches/routing-matrix/routing-matrix.pd">patch.pd</a></p> </div>
 <!--/articles-->
 
 <p class="paginator">
