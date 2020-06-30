@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>masi - Articles by Martin Simpson</title>
+        <title>masi - visuals tag</title>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
         <link rel="stylesheet" type="text/css" href="https://autelos.github.io/masi/theme/css/style.css" />
@@ -17,6 +17,7 @@
 
             <li><a href="https://autelos.github.io/masi/about/">about</a></li>
 
+            <li><a href="https://autelos.github.io/masi/visuals">visuals</a></li>
             <li><a href="https://autelos.github.io/masi/pd">pd</a></li>
             <li><a href="https://autelos.github.io/masi/field-recording">field recording</a></li>
             <li><a href="https://autelos.github.io/masi/modules">modules</a></li>
@@ -26,66 +27,117 @@
         </ul></nav><!-- /#menu -->
 
   <section id="content">
-<h2>Articles by Martin Simpson</h2>
 
 <!--articles-->
-  <div class="date">2020.01.23   <a href="https://autelos.github.io/masi/pd">pd</a>  <a href="https://autelos.github.io/masi/modules">modules</a>  </div>
+  <div class="date">2020.06.28   <a href="https://autelos.github.io/masi/visuals">visuals</a>  </div>
 
-  <h2><a href="https://autelos.github.io/masi/figure-ground-delayline-modulator/">Figure-Ground Delayline Modulator</a></h2>
+  <h2><a href="https://autelos.github.io/masi/random-visuals-from-public-google-drive-folder/">random visuals from public google drive folder</a></h2>
 
-  <div class="sf" id="2020-02-05_225924-mawamama-t01.ogg"></div>
 
-  <div class="entry-content"> <p>the length of a sound-object 'figure' modulates the length of a delayline<br />
-sounds received are fed back at varying, controllable, later times<br />
-varying the change in speed pitches the sound being fed back</p>
-<p><img alt="screenshot" src="https://autelos.github.io/masi/patches/figure-ground-delayline-modulator.pd.png#pd-screenshot" /><br />
-<a href="https://autelos.github.io/masi/patches/figure-ground-delayline-modulator.pd">figure-ground-delayline-modulator.pd</a><br />
-<a href="https://autelos.github.io/masi/patches/figure-ground-delayline-modulator-help.pd">figure-ground-delayline-modulator-help.pd</a></p> </div>
-  <div class="date">2019.12.07   <a href="https://autelos.github.io/masi/landing">landing</a>  </div>
+  <div class="entry-content"> 
+  <style>
+    * {
+      background-color: black;
+      color: white;
+      font-family: monospace;
+      font-size: 12px;
+      margin:0;
+      padding:0;
+    }
 
-  <h2><a href="https://autelos.github.io/masi/bozen/">Bozen</a></h2>
+    #video-bg {
+      width:200px;
+      height:200px;
+    }
 
-  <div class="sf" id="2019-12-07_Bozen_F01.ogg"></div>
-  <div class="sf" id="2019-12-07_Bozen_F02.ogg"></div>
+    video {
+      mix-blend-mode:screen;
+      object-fit: cover;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
 
-  <div class="entry-content"> <p>(todo: insert visuals!)</p>
-<p>A handheld zoom capturing a waterfalls fed through Microbrute sequenced filter formed the basis for later keyboard overdubs.</p> </div>
-  <div class="date">2019.12.05   <a href="https://autelos.github.io/masi/field-recording">field recording</a>  </div>
+    .viewport-header {
+      position: relative;
+      height: 100%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+  <div id="top" class="video-bg">
+    <video autoplay loop muted>
+      <source src="">
+    </video>
+  </div>
+  <div id="bottom" class="video-bg">
+    <video autoplay loop muted>
+      <source src="">
+    </video>
+  </div>
+  <!--<div id = "t" class="video-bg">
+    <video autoplay loop muted>
+      <source src= "" >
+    </video>
+  </div>-->
+  <script>
+    var api_key = 'AIzaSyA4BFOCPJzGUXGLMnKyqPz9J_vjaWSMMAI';
+    //var folderId = '1UvBzK87-aXHrzRZFjzt_GOLCdx9uslrx'; //Visuals
+    var folderId = '1O-aMxIQlY-9VRWEU_CAWjtLI64SmvvnJ'; //ma-visuals
+    var url = "https://www.googleapis.com/drive/v3/files?q='" + folderId + "'+in+parents&key=" + api_key;
 
-  <h2><a href="https://autelos.github.io/masi/bozen-t02/">Bozen T02</a></h2>
+    var videoIDs = [];
 
-  <div class="sf" id="2019-12-05_122648-LR.ogg"></div>
-  <div class="sf" id="2019-12-05_122912-LR.ogg"></div>
-  <div class="sf" id="2019-12-05_122912-Tr1.ogg"></div>
+    $(window).on('load', function() {
 
-  <div class="entry-content"> <p><img alt="microbrute snow" src="https://autelos.github.io/masi/media/2019-12-06.jpg" /><br />
-<img alt="microbrute stream" src="https://autelos.github.io/masi/media/2019-12-05_114608.jpg" /></p> </div>
-  <div class="date">2019.12.03   <a href="https://autelos.github.io/masi/field-recording">field recording</a>  </div>
+      var promise = $.getJSON( url, function( data, status){
+          console.log("got files in folder");
+      });
 
-  <h2><a href="https://autelos.github.io/masi/bozen-t01/">Bozen T01</a></h2>
+      promise.done(function( data ){
+          for (var i in data.files) {
+            var file = data.files[i];
+            if (file.mimeType.includes("video")) {
+            	videoIDs.push(file.id);
+            }
+          }
 
-  <div class="sf" id="2019-12-03_121832-Tr2.ogg"></div>
-  <div class="sf" id="2019-12-03_122620-Tr2.ogg"></div>
-  <div class="sf" id="2019-12-03_185142-LR.ogg"></div>
-  <div class="sf" id="2019-12-03_185338-LR.ogg"></div>
-  <div class="sf" id="2019-12-03_185454-LR.ogg"></div>
+          fillWithVideo('top', random());
+          fillWithVideo('bottom', random());
+          //fillWithVideo('t', random());
 
-  <div class="date">2019.11.29 </div>
+      }).fail(function(){
+          console.log("failed to list folder");
+      });
+    });
 
-  <h2><a href="https://autelos.github.io/masi/where-it-started/">where it started</a></h2>
+    function random() {
+        return Math.floor(Math.random() * videoIDs.length);
+    }
 
-  <div class="sf" id="2019-11-29_Soundscape2_paulstretch.mp3"></div>
+    function fillWithVideo(div, index) {
+      var fileID = videoIDs[index];
 
-  <div class="entry-content"> <p>Trumpet: Felix Brohl<br />
-(todo: source soundscape no. 2)<br />
-Looped trumpet and piano free play, and paulstretched snippet.</p> </div>
+      var url2 = "https://www.googleapis.com/drive/v2/files/" + fileID + "?key=" + api_key;
+
+      var promise2 = $.getJSON(url2, function( data, status){ console.log("got file info"); });
+      promise2.done(function(data) {
+        //console.log(data.webContentLink);
+        $('#'+div+' video source').attr('src', data.webContentLink);
+        $('#'+div+' video')[0].load();
+      }).fail(function(){
+        console.log("failed to get file")
+      });
+    }
+
+  </script>
+ </div>
 <!--/articles-->
 
-<p class="paginator">
-        <a href="https://autelos.github.io/masi/author/martin-simpson.html">&#8647;</a>
-        <a href="https://autelos.github.io/masi/author/martin-simpson3.html">&laquo;</a>
-    Page 4 / 4
-</p>
   </section>
 
   <section id="wavesurfer-gui">

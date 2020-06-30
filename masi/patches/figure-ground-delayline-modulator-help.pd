@@ -1,0 +1,36 @@
+#N canvas 650 0 711 746 12;
+#X declare -path audiolab;
+#X obj 61 73 figure-ground-delayline-modulator;
+#X obj 61 44 adc~;
+#X obj 291 397 declare -path audiolab;
+#X obj 82 540 adc~;
+#X obj 89 571 writesf~ 2;
+#X msg 105 469 start;
+#X msg 157 469 stop;
+#X msg 69 516 open \$1-adc~.wav;
+#X obj 202 571 writesf~ 2;
+#X floatatom 201 470 5 0 0 0 - - -;
+#X msg 201 517 open \$1.wav;
+#X obj 358 498 dac~;
+#X obj 281 421 pp.pan~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X connect 0 1 12 0;
+#X connect 1 0 0 0;
+#X connect 3 0 4 0;
+#X connect 3 1 4 1;
+#X connect 5 0 4 0;
+#X connect 5 0 8 0;
+#X connect 6 0 4 0;
+#X connect 6 0 8 0;
+#X connect 7 0 4 0;
+#X connect 9 0 10 0;
+#X connect 9 0 7 0;
+#X connect 10 0 8 0;
+#X connect 12 0 8 0;
+#X connect 12 0 11 0;
+#X connect 12 1 8 1;
+#X connect 12 1 11 1;

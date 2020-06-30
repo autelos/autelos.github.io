@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-          <title>Figure-Ground Delayline Modulator - masi</title>
+          <title>random visuals from public google drive folder - masi</title>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
         <link rel="stylesheet" type="text/css" href="https://autelos.github.io/masi/theme/css/style.css" />
@@ -10,8 +10,7 @@
 
 
 
-    <meta name="tags" content="pd" />
-    <meta name="tags" content="modules" />
+    <meta name="tags" content="visuals" />
 
 </head>
 
@@ -24,6 +23,7 @@
 
             <li><a href="https://autelos.github.io/masi/about/">about</a></li>
 
+            <li><a href="https://autelos.github.io/masi/visuals">visuals</a></li>
             <li><a href="https://autelos.github.io/masi/pd">pd</a></li>
             <li><a href="https://autelos.github.io/masi/field-recording">field recording</a></li>
             <li><a href="https://autelos.github.io/masi/modules">modules</a></li>
@@ -34,18 +34,113 @@
 
 <section id="content" class="body">
 
-  <div class="date">2020.01.23   <a href="https://autelos.github.io/masi/pd">pd</a>  <a href="https://autelos.github.io/masi/modules">modules</a>  </div>
+  <div class="date">2020.06.28   <a href="https://autelos.github.io/masi/visuals">visuals</a>  </div>
 
-  <h2><a href="https://autelos.github.io/masi/figure-ground-delayline-modulator/">Figure-Ground Delayline Modulator</a></h2>
+  <h2><a href="https://autelos.github.io/masi/random-visuals-from-public-google-drive-folder/">random visuals from public google drive folder</a></h2>
 
-  <div class="sf" id="2020-02-05_225924-mawamama-t01.ogg"></div>
 
-  <div class="entry-content"> <p>the length of a sound-object 'figure' modulates the length of a delayline<br />
-sounds received are fed back at varying, controllable, later times<br />
-varying the change in speed pitches the sound being fed back</p>
-<p><img alt="screenshot" src="https://autelos.github.io/masi/patches/figure-ground-delayline-modulator.pd.png#pd-screenshot" /><br />
-<a href="https://autelos.github.io/masi/patches/figure-ground-delayline-modulator.pd">figure-ground-delayline-modulator.pd</a><br />
-<a href="https://autelos.github.io/masi/patches/figure-ground-delayline-modulator-help.pd">figure-ground-delayline-modulator-help.pd</a></p> </div>
+  <div class="entry-content"> 
+  <style>
+    * {
+      background-color: black;
+      color: white;
+      font-family: monospace;
+      font-size: 12px;
+      margin:0;
+      padding:0;
+    }
+
+    #video-bg {
+      width:200px;
+      height:200px;
+    }
+
+    video {
+      mix-blend-mode:screen;
+      object-fit: cover;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    .viewport-header {
+      position: relative;
+      height: 100%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+  <div id="top" class="video-bg">
+    <video autoplay loop muted>
+      <source src="">
+    </video>
+  </div>
+  <div id="bottom" class="video-bg">
+    <video autoplay loop muted>
+      <source src="">
+    </video>
+  </div>
+  <!--<div id = "t" class="video-bg">
+    <video autoplay loop muted>
+      <source src= "" >
+    </video>
+  </div>-->
+  <script>
+    var api_key = 'AIzaSyA4BFOCPJzGUXGLMnKyqPz9J_vjaWSMMAI';
+    //var folderId = '1UvBzK87-aXHrzRZFjzt_GOLCdx9uslrx'; //Visuals
+    var folderId = '1O-aMxIQlY-9VRWEU_CAWjtLI64SmvvnJ'; //ma-visuals
+    var url = "https://www.googleapis.com/drive/v3/files?q='" + folderId + "'+in+parents&key=" + api_key;
+
+    var videoIDs = [];
+
+    $(window).on('load', function() {
+
+      var promise = $.getJSON( url, function( data, status){
+          console.log("got files in folder");
+      });
+
+      promise.done(function( data ){
+          for (var i in data.files) {
+            var file = data.files[i];
+            if (file.mimeType.includes("video")) {
+            	videoIDs.push(file.id);
+            }
+          }
+
+          fillWithVideo('top', random());
+          fillWithVideo('bottom', random());
+          //fillWithVideo('t', random());
+
+      }).fail(function(){
+          console.log("failed to list folder");
+      });
+    });
+
+    function random() {
+        return Math.floor(Math.random() * videoIDs.length);
+    }
+
+    function fillWithVideo(div, index) {
+      var fileID = videoIDs[index];
+
+      var url2 = "https://www.googleapis.com/drive/v2/files/" + fileID + "?key=" + api_key;
+
+      var promise2 = $.getJSON(url2, function( data, status){ console.log("got file info"); });
+      promise2.done(function(data) {
+        //console.log(data.webContentLink);
+        $('#'+div+' video source').attr('src', data.webContentLink);
+        $('#'+div+' video')[0].load();
+      }).fail(function(){
+        console.log("failed to get file")
+      });
+    }
+
+  </script>
+ </div>
 </section>
 
 
