@@ -18,6 +18,7 @@
             <li><a href="https://autelos.github.io/masi/about/">about</a></li>
 
             <li><a href="https://autelos.github.io/masi/pd">pd</a></li>
+            <li><a href="https://autelos.github.io/masi/meta">meta</a></li>
             <li><a href="https://autelos.github.io/masi/field-recording">field recording</a></li>
             <li><a href="https://autelos.github.io/masi/modules">modules</a></li>
             <li><a href="https://autelos.github.io/masi/notes">notes</a></li>
@@ -29,6 +30,27 @@
 <h2>Articles by Martin Simpson</h2>
 
 <!--articles-->
+  <div class="date">2020.06.14   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
+
+  <h2><a href="https://autelos.github.io/masi/routing-matrix-pt-2/">routing matrix pt. 2</a></h2>
+
+  <div class="sf" id="2020-06-14_0939.ogg"></div>
+  <div class="sf" id="2020-06-14_0959.ogg"></div>
+  <div class="sf" id="2020-06-14_1022.ogg"></div>
+  <div class="sf" id="2020-06-14_1306.ogg"></div>
+
+  <div class="entry-content"> <p>in situ slow-evolving conducting/scheduling</p>
+<p>first thing in the morning, open up the routing-matrix patch from yesterday, pull in a looped piano recording.</p>
+<p>filtered in feedback and filtered again.</p>
+<pre><code>route tapeshift~:dac~ 1 10000
+X
+|
+metro 125
+|
+route sf~:dac~ 1 0; route sf~:dac~ 0 0 10
+</code></pre>
+
+<p><a href="https://autelos.github.io/masi/patches/routing-matrix/routing-matrix.pd">patch.pd</a></p> </div>
   <div class="date">2020.06.13   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
 
   <h2><a href="https://autelos.github.io/masi/routing-matrix/">routing matrix</a></h2>
@@ -126,15 +148,6 @@
 
   <div class="sf" id="2020-06-05_102557.ogg"></div>
 
-  <div class="date">2020.06.04   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
-
-  <h2><a href="https://autelos.github.io/masi/2020-06-04_221410/">2020-06-04_221410</a></h2>
-
-  <div class="sf" id="2020-06-04_221410.ogg"></div>
-
-  <div class="entry-content"> <p>patch notes: two asynchronous loops, one ma loop</p>
-<p>tapeshift~ delay on live input</p>
-<p>would be nice: easy control of tapeshift~ volume (at least)</p> </div>
 <!--/articles-->
 
 <p class="paginator">

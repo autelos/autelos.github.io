@@ -18,6 +18,7 @@
             <li><a href="https://autelos.github.io/masi/about/">about</a></li>
 
             <li><a href="https://autelos.github.io/masi/pd">pd</a></li>
+            <li><a href="https://autelos.github.io/masi/meta">meta</a></li>
             <li><a href="https://autelos.github.io/masi/field-recording">field recording</a></li>
             <li><a href="https://autelos.github.io/masi/modules">modules</a></li>
             <li><a href="https://autelos.github.io/masi/notes">notes</a></li>
@@ -47,6 +48,22 @@ process=adc~:tapeshift~:dac~
   <div class="sf" id="2020-06-24_110512_feedback-1.ogg"></div>
   <div class="sf" id="2020-06-24_110956_feedback-2.ogg"></div>
 
+  <div class="date">2020.06.23   <a href="https://autelos.github.io/masi/meta">meta</a>  </div>
+
+  <h2><a href="https://autelos.github.io/masi/inverting-images-pd-screenshots/">inverting images (pd screenshots)</a></h2>
+
+
+  <div class="entry-content"> <p>tiny markup in markdown allows for easy client-side image-inverting</p>
+<p>CSS:</p>
+<pre><code class="css">img[src$='#pd-screenshot'] {
+  filter: invert();
+  mix-blend-mode: screen;
+}
+</code></pre>
+
+<p>Markdown:</p>
+<pre><code class="markdown">![alt]({static}/patches/demo.pd.png#pd-screenshot)
+</code></pre> </div>
   <div class="date">2020.06.20   <a href="https://autelos.github.io/masi/field-recording">field recording</a>  </div>
 
   <h2><a href="https://autelos.github.io/masi/allgau-waydown/">allgäu waydown</a></h2>
@@ -180,27 +197,6 @@ process=adc~:tapeshift~:dac~
 
   <div class="sf" id="2020-06-14_2055_ginsterpfad-ambience.ogg"></div>
 
-  <div class="date">2020.06.14   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
-
-  <h2><a href="https://autelos.github.io/masi/routing-matrix-pt-2/">routing matrix pt. 2</a></h2>
-
-  <div class="sf" id="2020-06-14_0939.ogg"></div>
-  <div class="sf" id="2020-06-14_0959.ogg"></div>
-  <div class="sf" id="2020-06-14_1022.ogg"></div>
-  <div class="sf" id="2020-06-14_1306.ogg"></div>
-
-  <div class="entry-content"> <p>in situ slow-evolving conducting/scheduling</p>
-<p>first thing in the morning, open up the routing-matrix patch from yesterday, pull in a looped piano recording.</p>
-<p>filtered in feedback and filtered again.</p>
-<pre><code>route tapeshift~:dac~ 1 10000
-X
-|
-metro 125
-|
-route sf~:dac~ 1 0; route sf~:dac~ 0 0 10
-</code></pre>
-
-<p><a href="https://autelos.github.io/masi/patches/routing-matrix/routing-matrix.pd">patch.pd</a></p> </div>
 <!--/articles-->
 
 <p class="paginator">

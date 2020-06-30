@@ -18,6 +18,7 @@
             <li><a href="https://autelos.github.io/masi/about/">about</a></li>
 
             <li><a href="https://autelos.github.io/masi/pd">pd</a></li>
+            <li><a href="https://autelos.github.io/masi/meta">meta</a></li>
             <li><a href="https://autelos.github.io/masi/field-recording">field recording</a></li>
             <li><a href="https://autelos.github.io/masi/modules">modules</a></li>
             <li><a href="https://autelos.github.io/masi/notes">notes</a></li>
@@ -83,6 +84,22 @@ process=adc~:tapeshift~:dac~
   <div class="sf" id="2020-06-24_110512_feedback-1.ogg"></div>
   <div class="sf" id="2020-06-24_110956_feedback-2.ogg"></div>
 
+  <div class="date">2020.06.23   <a href="https://autelos.github.io/masi/meta">meta</a>  </div>
+
+  <h2><a href="https://autelos.github.io/masi/inverting-images-pd-screenshots/">inverting images (pd screenshots)</a></h2>
+
+
+  <div class="entry-content"> <p>tiny markup in markdown allows for easy client-side image-inverting</p>
+<p>CSS:</p>
+<pre><code class="css">img[src$='#pd-screenshot'] {
+  filter: invert();
+  mix-blend-mode: screen;
+}
+</code></pre>
+
+<p>Markdown:</p>
+<pre><code class="markdown">![alt]({static}/patches/demo.pd.png#pd-screenshot)
+</code></pre> </div>
   <div class="date">2020.06.20   <a href="https://autelos.github.io/masi/field-recording">field recording</a>  </div>
 
   <h2><a href="https://autelos.github.io/masi/allgau-waydown/">allgäu waydown</a></h2>
@@ -136,69 +153,6 @@ process=adc~:tapeshift~:dac~
   <div class="sf" id="2020-06-18_1701.ogg"></div>
   <div class="sf" id="2020-06-18_1805.ogg"></div>
 
-  <div class="date">2020.06.18   <a href="https://autelos.github.io/masi/notes">notes</a>  </div>
-
-  <h2><a href="https://autelos.github.io/masi/transcriptions-to-try/">transcriptions to try</a></h2>
-
-
-  <div class="entry-content"> <p>transcribed from pocketbook in reverse chronological order</p>
-<ul>
-<li>[x] 5D routing matrix<ul>
-<li>on the fly routing patching control</li>
-<li>log of interactions affords easy real-time scripting interface<ul>
-<li>'limiter' of too much clipping could undo last interaction from log?<ul>
-<li>although this only works if feedback was caused by digital interaction, not change to audio in</li>
-<li>sequencer interface for phone</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>stop at the places in between</li>
-<li>walking soundscape<ul>
-<li>footstep rhythm</li>
-<li>car drone<ul>
-<li>how to work with?</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>[x] make marker in patch</li>
-<li>pd log</li>
-<li>ma - empty containers</li>
-<li>rhythmic moving playheads<ul>
-<li>how to deal with clicks?<ul>
-<li>[x] pd-smoother (envelope)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>buffer recorder recalls ephemeral moments</li>
-<li>moving image as lo-fi sound processor/convolver</li>
-<li>ios sound computing<ul>
-<li>[x] pd x mobmuplat</li>
-</ul>
-</li>
-<li>diffusion and routing as percussion (ambisonic/further away/filtered)</li>
-<li>emergence in gifs, live-arppegio-code</li>
-<li>emergence on the border of control</li>
-<li>sound object delay line... blurring figure-ground by delaying figure-ground<ul>
-<li>delayline changing speed can octave/interval sein</li>
-<li>moving delayline as rhythmic/textural harmonizer</li>
-<li>gesture -&gt; rhythmic delay texture</li>
-<li>slow gestures as play with space/time</li>
-<li>texture from multiple delay lines,</li>
-<li>delay line, listening again</li>
-<li>when changing delay line length, fade it out / have variable gain</li>
-</ul>
-</li>
-<li>environmental music: amplifying/using what is already there<ul>
-<li>attention restoration theory</li>
-<li>walk every day</li>
-</ul>
-</li>
-</ul> </div>
 <!--/articles-->
 
 <p class="paginator">

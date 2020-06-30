@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-          <title>5D routing matrix - masi</title>
+          <title>inverting images (pd screenshots) - masi</title>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
         <link rel="stylesheet" type="text/css" href="https://autelos.github.io/masi/theme/css/style.css" />
@@ -10,8 +10,7 @@
 
 
 
-    <meta name="tags" content="pd" />
-    <meta name="tags" content="modules" />
+    <meta name="tags" content="meta" />
 
 </head>
 
@@ -35,28 +34,21 @@
 
 <section id="content" class="body">
 
-  <div class="date">2020.06.19   <a href="https://autelos.github.io/masi/pd">pd</a>  <a href="https://autelos.github.io/masi/modules">modules</a>  </div>
+  <div class="date">2020.06.23   <a href="https://autelos.github.io/masi/meta">meta</a>  </div>
 
-  <h2><a href="https://autelos.github.io/masi/5d-routing-matrix/">5D routing matrix</a></h2>
+  <h2><a href="https://autelos.github.io/masi/inverting-images-pd-screenshots/">inverting images (pd screenshots)</a></h2>
 
 
-  <div class="entry-content"> <p>A 5D routing matrix for PD affords programatic/instruction-based access to conduct signal routing on-the-fly with variable destinations, fade-time, and scheduling (wait x-ms first).</p>
-<p>Syntax:</p>
-<pre><code>[; route &lt;out&gt; &lt;in&gt; &lt;value&gt; &lt;ms-to-fade&gt; &lt;ms-to-wait&gt;(
+  <div class="entry-content"> <p>tiny markup in markdown allows for easy client-side image-inverting</p>
+<p>CSS:</p>
+<pre><code class="css">img[src$='#pd-screenshot'] {
+  filter: invert();
+  mix-blend-mode: screen;
+}
 </code></pre>
 
-<p>This effectively decouples the patching interface from the PD GUI, allowing control to be given to, ie., the MobMuPLat touchscreen interface, which implements a grid control and 3 sliders (value, ms-to-fade, ms-to-wait).</p>
-<p>This also exposes the potential for live-coding/text-based triggering, ie:</p>
-<pre><code>[x]
-|
-[metro 100]
-|
-[; route &lt;dac~&gt; &lt;adc~ 1&gt; 1 10 0; r &lt;dac~&gt; &lt;adc~ 1&gt; 0 10 20(
-[x]
-|
-[metro 101]
-|
-[; route &lt;dac~&gt; &lt;adc~ 2&gt; 1 10 0; r &lt;dac~&gt; &lt;adc~ 2&gt; 0 10 20(
+<p>Markdown:</p>
+<pre><code class="markdown">![alt]({static}/patches/demo.pd.png#pd-screenshot)
 </code></pre> </div>
 </section>
 

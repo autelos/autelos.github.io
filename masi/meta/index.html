@@ -17,8 +17,8 @@
 
             <li><a href="https://autelos.github.io/masi/about/">about</a></li>
 
-            <li><a href="https://autelos.github.io/masi/meta">meta</a></li>
             <li><a href="https://autelos.github.io/masi/pd">pd</a></li>
+            <li><a href="https://autelos.github.io/masi/meta">meta</a></li>
             <li><a href="https://autelos.github.io/masi/field-recording">field recording</a></li>
             <li><a href="https://autelos.github.io/masi/modules">modules</a></li>
             <li><a href="https://autelos.github.io/masi/notes">notes</a></li>
@@ -29,32 +29,22 @@
   <section id="content">
 
 <!--articles-->
-  <div class="date">2020.06.30   <a href="https://autelos.github.io/masi/meta">meta</a>  </div>
+  <div class="date">2020.06.23   <a href="https://autelos.github.io/masi/meta">meta</a>  </div>
 
-  <h2><a href="https://autelos.github.io/masi/archive-meta/">archive meta</a></h2>
+  <h2><a href="https://autelos.github.io/masi/inverting-images-pd-screenshots/">inverting images (pd screenshots)</a></h2>
 
 
-  <div class="entry-content"> <h2>Contents</h2>
-<ul>
-<li>Archive<ul>
-<li>about smoothing workflow</li>
-</ul>
-</li>
-<li>Real-time Composition</li>
-</ul>
-<p>given:<br />
-- the work is rhizomatic<br />
-    - the working process is too<br />
-    - how to organize rhizomatically?<br />
-    - "All nodes are connected and each node is connected to all other nodes, where the position of the nodes is unimportant"<br />
-    - "Nomadic, where the process is as important as the outcome and the program can be changed in the middle of its execution"</p>
-<ul>
-<li>the work can/should/sometimes deal with 'masking' unpleasantness<ul>
-<li>what does it take to mask?</li>
-</ul>
-</li>
-</ul>
-<p>Holistically, this includes the masking effects of ambient soundscape, decreasing entropy, giving space for attending to emergent patterns. Revealing and exploiting elements of human perception that has utility as architecture, a surrounding influence on the state of mind.</p> </div>
+  <div class="entry-content"> <p>tiny markup in markdown allows for easy client-side image-inverting</p>
+<p>CSS:</p>
+<pre><code class="css">img[src$='#pd-screenshot'] {
+  filter: invert();
+  mix-blend-mode: screen;
+}
+</code></pre>
+
+<p>Markdown:</p>
+<pre><code class="markdown">![alt]({static}/patches/demo.pd.png#pd-screenshot)
+</code></pre> </div>
 <!--/articles-->
 
   </section>
