@@ -23,7 +23,7 @@ var wavesurfer = WaveSurfer.create({
 	cursorColor: mainColor,
 	progressColor: 'rgba(0,0,0,.1)',
 	normalize: true,
-  backend: 'MediaElement',
+  backend: 'MediaElementWebAudio',
   //splitChannels: true,
 	plugins: [
 		WaveSurfer.regions.create({ dragSelection: { slop: 5 }}),
@@ -40,6 +40,9 @@ var wavesurfer = WaveSurfer.create({
 		}),
 	],
 });
+
+wavesurfer.g = wavesurfer.backend.ac.createGain();
+wavesurfer.backend.setFilter(wavesurfer.g);
 
 $(document).ready(function(){
 
@@ -74,6 +77,7 @@ $(document).ready(function(){
 			updateTitle(title.parentNode.id, title.innerHTML);
 		}, false);
 	}
+	sfName=null;
 });
 
 function playPause(file) {
@@ -145,7 +149,6 @@ function loadVid() {
 }
 
 function loadSf(url) {
-
 	wavesurfer.load(url);
 
 	lastSfName = sfName;
@@ -513,15 +516,18 @@ wavesurfer.on('region-update-end', saveRegionsToServer);
 
 wavesurfer.on('region-in', function(region, e) {
 	if (region.attributes.label==="rm") {
-		//failed attempt to dip volume before changing playhead position...
-		let rate = 0.2;
-		for (let i = 1; i >=0 ; i-=rate) {
-			wavesurfer.setVolume(i);
-		}
-		wavesurfer.play(region.end);
-		for (let i = 0; i <=1; i+=rate) {
-			wavesurfer.setVolume(i);
-		}
+
+		var currTime = wavesurfer.backend.ac.currentTime;
+		var fadeTime = .1; //in seconds
+		var vol = wavesurfer.g.gain.value;
+		wavesurfer.g.gain.linearRampToValueAtTime(vol,currTime);
+		wavesurfer.g.gain.linearRampToValueAtTime(0,currTime+fadeTime);
+		setTimeout(function(){
+			wavesurfer.play(region.end);
+			},
+			fadeTime*1000);
+		wavesurfer.g.gain.linearRampToValueAtTime(vol,currTime+fadeTime+fadeTime);
+
 	} else {
 		// PRINT TO LOG
 		var div = document.getElementById(sfName+"-log");
