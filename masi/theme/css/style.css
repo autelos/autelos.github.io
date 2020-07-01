@@ -2,6 +2,7 @@
   --main-bg-color: #445054;
   --main-color: #000;
   --accent-color: rgba(206, 130, 75, .8);
+  --highlight-color: rgba(206, 130, 75, .1);
 
   --main-font: 'Literata', serif;
 
@@ -78,7 +79,7 @@ li {
 blockquote {
   margin: 0;
   padding: 0;
-  padding-left: 1em;
+  padding-left: 1efm;
   font-style: italic;
 }
 
@@ -180,7 +181,12 @@ div.regions {
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding-top: 1em;
+  border-top: 1px var(--main-color) solid;
+}
+
+.paginator {
+  font-style: var(--secondary-font);
+  font-size: var(--secondary-font-size);
 }
 
 #waveform {

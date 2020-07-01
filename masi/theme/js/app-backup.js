@@ -8,17 +8,21 @@ var phpUrl = "https://damasi.be/masi";
 //var phpUrl = "http://0.0.0.0:7000";
 var mediaUrl = "/masi/media/";
 var mainColor = getComputedStyle(document.documentElement).getPropertyValue('--main-color');
+var backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--main-bg-color');
 var waveBackgroundColor = 'inherit';
-var progressColor = mainColor;
+
+var accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent-color');
+var regionColor = accentColor;
+var lastRegionColor = 'rgba(0,0,0,.5)';
+
+var progressColor = accentColor;
 var lastProgressColor = mainColor;
-var regionColor = getComputedStyle(document.documentElement).getPropertyValue('--accent-color');
-var lastRegionColor = 'rgba(0,0,0,0.1)';
-var activeMediaFileColor = getComputedStyle(document.documentElement).getPropertyValue('--highlight-color');
+
 
 // init wavesurfer
 var wavesurfer = WaveSurfer.create({
 	container: document.querySelector('#waveform'),
-	height: 240,
+	height: getComputedStyle(document.documentElement).getPropertyValue('--waveform-height'),
 	backgroundColor: waveBackgroundColor,
 	waveColor: mainColor,
 	cursorColor: mainColor,
@@ -32,11 +36,11 @@ var wavesurfer = WaveSurfer.create({
 			showTime: true,
 			opacity: 1,
 			customShowTimeStyle: {
-				'background-color': getComputedStyle(document.documentElement).getPropertyValue('--main-bg-color'),
-				//color: 'grey',
-				padding: '1px',
-				'font-size': '10px',
-				'font-family': getComputedStyle(document.documentElement).getPropertyValue('--secondary-font')
+				'background-color': backgroundColor,
+				color: mainColor,
+				padding: '2px',
+				'font-family': getComputedStyle(document.documentElement).getPropertyValue('--secondary-font'),
+				'font-size': getComputedStyle(document.documentElement).getPropertyValue('--secondary-font-size')
 			}
 		}),
 	],
@@ -61,7 +65,6 @@ $(document).ready(function(){
 
 	for( let i=0; i < sf.length; i++ ) {
 		sfName = sf[i].id;
-		//console.log(sfName + " found");
 
 		sf[i].innerHTML = '<div class="progress"></div><div class="sfName"></div><div class="timestamp"></div><div class="play"></div><div class="title" contenteditable="true"></div><div class="regions"></div>';
 
@@ -88,10 +91,10 @@ function playPause(file) {
 		loadSf(mediaUrl+file);
 	}
 
-	document.getElementById(file).style.backgroundColor=activeMediaFileColor;
+	document.getElementById(file).style.color=accentColor;
 
 	if (lastSfName && lastSfName!==sfName) {
-		document.getElementById(lastSfName).style.backgroundColor='';
+		document.getElementById(lastSfName).style.color=mainColor;
 	}
 }
 
@@ -208,17 +211,6 @@ function reaperItem(start,length,name,color) {
 document.querySelector('[data-action="zoom"]').oninput = function () {
   	wavesurfer.zoom(Number(this.value));
 };
-/*
-document.getElementById("regioninput").addEventListener('change', function(e){
-    var file = this.files[0];
-    if (file) {
-        var reader = new FileReader();
-
-				reader.onload = function(e) { loadRegions(JSON.parse(reader.result).regions); }
-        reader.onerror = function (evt) {	console.error("An error ocurred reading the file: ", evt); };
-	 			reader.readAsText(file);
-    }
-  }, false);*/
 
 document.getElementById("loginput").addEventListener('change', function(e){
     var file = this.files[0];
@@ -230,35 +222,6 @@ document.getElementById("loginput").addEventListener('change', function(e){
 	 			reader.readAsText(file);
     }
   }, false);
-/*
-//load soundfile from disk
-document.getElementById("fileinput").addEventListener('change', function(e){
-      var file = this.files[0];
-
-      if (file) {
-					sfName = file.name;
-          var reader = new FileReader();
-
-          reader.onload = function (evt) {
-							document.getElementById("sfname").innerText = sfName;
-
-              // Create a Blob providing as first argument a typed array with the file buffer
-              var blob = new window.Blob([new Uint8Array(evt.target.result)]);
-
-              // Load the blob into Wavesurfer
-              wavesurfer.loadBlob(blob);
-          };
-
-          reader.onerror = function (evt) {
-              console.error("An error ocurred reading the file: ", evt);
-          };
-
-          // Read File as an ArrayBuffer
-          reader.readAsArrayBuffer(file);
-      }
-  }, false);
-*/
-
 
 // Play button in GUI
 var button = document.querySelector('[data-action="play"]');
@@ -460,7 +423,6 @@ function servedJSON(json) {
 
 			handleStartEndTime(region);
 
-
 			//not keeping in DRY here...
 			if (sf) {
 				if (region.attributes.label && region.attributes.label!="rm") { //only print regions with labels
@@ -472,18 +434,9 @@ function servedJSON(json) {
 					}
 				}
 			}
-
-
-
-			/*if (sf)
-				if (region.attributes.label && region.attributes.label!="rm")
-					div.innerHTML += formatTime(region.start) + " " + region.attributes.label + " (" + formatTime(region.end-region.start) + ")<br>";
-	  */});
-
-		//printRegionsToList(data.filename);
+		});
 	}
 }
-
 
 wavesurfer.on('region-created', handleStartEndTime);
 wavesurfer.on('region-updated', handleStartEndTime);
@@ -504,13 +457,12 @@ function loadRegions(regions) {
 	}
 
   regions.forEach(function(region) {
-      wavesurfer.addRegion(region);
+    wavesurfer.addRegion(region);
 
-			if (sf)
-				if (region.attributes.label && egion.attributes.label!="rm")
-					div.innerHTML += formatTime(region.start) + " " + region.attributes.label + " (" + formatTime(region.end-region.start) + ")<br>";
+		if (sf)
+			if (region.attributes.label && egion.attributes.label!="rm")
+				div.innerHTML += formatTime(region.start) + " " + region.attributes.label + " (" + formatTime(region.end-region.start) + ")<br>";
   });
-
 }
 
 wavesurfer.on('region-update-end', saveRegionsToServer);
@@ -518,6 +470,7 @@ wavesurfer.on('region-update-end', saveRegionsToServer);
 wavesurfer.on('region-in', function(region, e) {
 	if (region.attributes.label==="rm") {
 
+		//fade out, move playhead, fade in
 		var currTime = wavesurfer.backend.ac.currentTime;
 		var fadeTimeS = fadeTime/1000; //in seconds
 		var vol = wavesurfer.g.gain.value;

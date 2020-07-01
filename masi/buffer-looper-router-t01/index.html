@@ -32,65 +32,21 @@
   </section>
 
   <section id="content">
-<section id="content" class="body">
-
   <div class="date">2020.05.20   <a href="/masi/pd">pd</a>  <a href="/masi/modules">modules</a>  </div>
-
   <h2><a href="/masi/buffer-looper-router-t01/">Buffer Looper-Router T01</a></h2>
 
   <div class="sf" id="2020-05-20_1921.ogg"></div>
 
-  <div class="entry-content"> <p>getting back to the launchpad-looper-router-interface, checking that it works as expected after a few days away. testing with a sample</p>
+  <div class="entry-content">
+  <p>getting back to the launchpad-looper-router-interface, checking that it works as expected after a few days away. testing with a sample</p>
 <p>patch notes: sample (taiwan-junglebirds.wav) looped, buffer looped, routed into tape-shift effect with feedback, starting to find something, hit record</p>
 <p>todo:</p>
 <ul>
 <li>[x] get input routing working, so that can happen on the pad</li>
 <li>[ ] get resonanant filter+tapeshift also mapped to pad buttons</li>
 <li>[x] add record button to launchpad</li>
-</ul> </div>
-</section>
-
-<section id="wavesurfer-gui">
-  <div id="gui">
-    <a id="flip" href="">toggle waveform</a><br>
-    <a id="toggleChrome" href="">options</a>
-    <div class="chrome" style="margin-bottom:0.5em; width:200px;">
-      <button type="button"><label for="loginput">load log from disk</label></button>
-      <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
-
-      <button onclick="loadVid()" type="button">load vid</button>
-      <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
-      <button onclick="removeCloseRegions()" type="button">remove close regions</button>
-      <button onclick="saveRegions()" type="button">save regions to disk</button>
-
-      <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
-      <button onclick="exportReaperProject()" type="button">export rpp</button>
-    </div>
+</ul>
   </div>
-
-  <div id="panel">
-    <section>
-      <div id="waveform">
-        <span id="sfname"></span>
-        <div id="progress"></div>
-      </div>
-    </section>
-
-    <div class="chrome">
-      <button data-action="play">play/pause</button>
-      zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
-      <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
-    </div>
-    <input id = "inputtext" type="text" onkeyup="handle(event)">
-  </div>
-
-  <script src="/masi/theme/js/jquery-3.5.1.min.js"></script>
-  <script src="/masi/theme/js/wavesurfer.js"></script>
-  <script src="/masi/theme/js/wavesurfer.regions.min.js"></script>
-  <script src="/masi/theme/js/wavesurfer.cursor.js"></script>
-  <script src="/masi/theme/js/FileSaver.js"></script>
-  <script src="/masi/theme/js/app.js"></script>
-</section>
   </section>
 
   <section id="wavesurfer-gui">
