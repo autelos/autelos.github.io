@@ -1,38 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-        <title>masi - misc category</title>
-        <meta charset="utf-8" />
-        <meta name="generator" content="Pelican" />
-        <link rel="stylesheet" type="text/css" href="https://autelos.github.io/masi/theme/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="https://autelos.github.io/masi/theme/css/sf-style.css" />
+  <title>masi - misc category</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
+  <link rel="stylesheet" type="text/css" href="/masi/theme/css/style.css">
 </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-          <h1><a href="https://autelos.github.io/masi/">masi</a></h1>
-        </header><!-- /#banner -->
-
-        <nav id="menu"><ul>
-
-            <li><a href="https://autelos.github.io/masi/about/">about</a></li>
-
-            <li><a href="https://autelos.github.io/masi/pd">pd</a></li>
-            <li><a href="https://autelos.github.io/masi/meta">meta</a></li>
-            <li><a href="https://autelos.github.io/masi/field-recording">field recording</a></li>
-            <li><a href="https://autelos.github.io/masi/modules">modules</a></li>
-            <li><a href="https://autelos.github.io/masi/notes">notes</a></li>
-            <li><a href="https://autelos.github.io/masi/landing">landing</a></li>
-
-        </ul></nav><!-- /#menu -->
+<body>
+  <section id="nav">
+    <header>
+      <h1><a href="/masi/">masi</a></h1>
+    </header>
+    <nav id="menu"><ul>
+      <li><a href="/masi/about/">about</a></li>
+      <li><a href="/masi/meta">meta</a></li>
+      <li><a href="/masi/ul">ul</a></li>
+      <li><a href="/masi/field-recording">field recording</a></li>
+      <li><a href="/masi/pd">pd</a></li>
+      <li><a href="/masi/modules">modules</a></li>
+      <li><a href="/masi/notes">notes</a></li>
+      <li><a href="/masi/landing">landing</a></li>
+    </ul></nav>
+  </section>
 
   <section id="content">
 <h2>Articles in the misc category</h2>
 
 <!--articles-->
-  <div class="date">2020.06.13   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
+  <div class="date">2020.06.14   <a href="/masi/pd">pd</a>  </div>
 
-  <h2><a href="https://autelos.github.io/masi/routing-matrix/">routing matrix</a></h2>
+  <h2><a href="/masi/routing-matrix-pt-2/">routing matrix pt. 2</a></h2>
+
+  <div class="sf" id="2020-06-14_0939.ogg"></div>
+  <div class="sf" id="2020-06-14_0959.ogg"></div>
+  <div class="sf" id="2020-06-14_1022.ogg"></div>
+  <div class="sf" id="2020-06-14_1306.ogg"></div>
+
+  <div class="entry-content"> <p>in situ slow-evolving conducting/scheduling</p>
+<p>first thing in the morning, open up the routing-matrix patch from yesterday, pull in a looped piano recording.</p>
+<p>filtered in feedback and filtered again.</p>
+<pre><code>route tapeshift~:dac~ 1 10000
+X
+|
+metro 125
+|
+route sf~:dac~ 1 0; route sf~:dac~ 0 0 10
+</code></pre>
+
+<p><a href="/masi/patches/routing-matrix/routing-matrix.pd">patch.pd</a></p> </div>
+  <div class="date">2020.06.13   <a href="/masi/pd">pd</a>  </div>
+
+  <h2><a href="/masi/routing-matrix/">routing matrix</a></h2>
 
   <div class="sf" id="2020-06-13_1305.ogg"></div>
   <div class="sf" id="2020-06-13_1308.ogg"></div>
@@ -45,11 +64,11 @@
   <div class="sf" id="2020-06-13_2101.ogg"></div>
 
   <div class="entry-content"> <p>routing matrix with variable fade-time working</p>
-<p><a href="https://autelos.github.io/masi/patches/routing-matrix/routing-matrix.pd">patch.pd</a></p>
+<p><a href="/masi/patches/routing-matrix/routing-matrix.pd">patch.pd</a></p>
 <p>recordings feature prominent low-end ambience from traffic - how to use this? filter it out?</p> </div>
-  <div class="date">2020.06.12   <a href="https://autelos.github.io/masi/field-recording">field recording</a>  </div>
+  <div class="date">2020.06.12   <a href="/masi/field-recording">field recording</a>  </div>
 
-  <h2><a href="https://autelos.github.io/masi/wassermannsee/">Wassermannsee</a></h2>
+  <h2><a href="/masi/wassermannsee/">Wassermannsee</a></h2>
 
   <div class="sf" id="2020-06-12_1119.ogg"></div>
   <div class="sf" id="2020-06-12_1128.ogg"></div>
@@ -57,9 +76,9 @@
   <div class="sf" id="2020-06-12_2034_Wassermannsee.ogg"></div>
 
   <div class="entry-content"> <p>wind through reeds, loud ducks. off-recorder mics make cue-making (almost) silent.</p> </div>
-  <div class="date">2020.06.11   <a href="https://autelos.github.io/masi/field-recording">field recording</a>  </div>
+  <div class="date">2020.06.11   <a href="/masi/field-recording">field recording</a>  </div>
 
-  <h2><a href="https://autelos.github.io/masi/am-ginsterpfad/">Am Ginsterpfad</a></h2>
+  <h2><a href="/masi/am-ginsterpfad/">Am Ginsterpfad</a></h2>
 
   <div class="sf" id="2020-06-11_2036.ogg"></div>
   <div class="sf" id="2020-06-11_2049.ogg"></div>
@@ -74,26 +93,25 @@
 </ul>
 </li>
 </ul> </div>
-  <div class="date">2020.06.11   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
+  <div class="date">2020.06.11   <a href="/masi/pd">pd</a>  </div>
 
-  <h2><a href="https://autelos.github.io/masi/pd-in-the-park/">pd in the park</a></h2>
+  <h2><a href="/masi/pd-in-the-park/">pd in the park</a></h2>
 
   <div class="sf" id="2020-06-11_2140.ogg"></div>
 
   <div class="entry-content"> <p>how to work with droning car sounds? trying to reinforce them with sinewave organ.</p>
-<p><a href="https://autelos.github.io/masi/media/2020-06-11_2140_pd-in-the-park.pd">pd in the park patch</a></p> </div>
-  <div class="date">2020.06.09   <a href="https://autelos.github.io/masi/pd">pd</a>  <a href="https://autelos.github.io/masi/landing">landing</a>  </div>
+<p><a href="/masi/media/2020-06-11_2140_pd-in-the-park.pd">pd in the park patch</a></p> </div>
+  <div class="date">2020.06.09   <a href="/masi/pd">pd</a>  <a href="/masi/landing">landing</a>  </div>
 
-  <h2><a href="https://autelos.github.io/masi/fur-iem-graz/">für iem-graz</a></h2>
+  <h2><a href="/masi/fur-iem-graz/">für iem-graz</a></h2>
 
   <div class="sf" id="2020-06-09_121053.ogg"></div>
 
-  <div class="entry-content"> <p>slow morning play with asynchronous piano loops and tapeshift~</p>
-<p><span class="date">23:52</span><br />
-<video src="https://autelos.github.io/masi/media/2020-06-09_2352.mov" controls></video></p> </div>
-  <div class="date">2020.06.07   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
+  <div class="entry-content"> <p><span class="date">23:52</span><br />
+<video src="/masi/media/2020-06-09_2352.mov" controls></video></p> </div>
+  <div class="date">2020.06.07   <a href="/masi/pd">pd</a>  </div>
 
-  <h2><a href="https://autelos.github.io/masi/ppgrainer-t03-organ/">[pp.grainer~] T03 organ</a></h2>
+  <h2><a href="/masi/ppgrainer-t03-organ/">[pp.grainer~] T03 organ</a></h2>
 
   <div class="sf" id="2020-06-07_122700.ogg"></div>
   <div class="sf" id="2020-06-07_1356.ogg"></div>
@@ -106,44 +124,35 @@
 
 <pre><code>[pp.grainer~]&lt;:([tapeshift~].[pan~].[fade~],2)
 </code></pre> </div>
-  <div class="date">2020.06.06   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
+  <div class="date">2020.06.06   <a href="/masi/pd">pd</a>  </div>
 
-  <h2><a href="https://autelos.github.io/masi/g01/">G01</a></h2>
+  <h2><a href="/masi/g01/">G01</a></h2>
 
   <div class="sf" id="2020-06-06_211452.ogg"></div>
 
   <div class="entry-content"> <p>ma jumps on piano loops</p> </div>
-  <div class="date">2020.06.06   <a href="https://autelos.github.io/masi/pd">pd</a>  <a href="https://autelos.github.io/masi/modules">modules</a>  </div>
+  <div class="date">2020.06.06   <a href="/masi/pd">pd</a>  <a href="/masi/modules">modules</a>  </div>
 
-  <h2><a href="https://autelos.github.io/masi/pd-smoother-t01/">[pd smoother] T01</a></h2>
+  <h2><a href="/masi/pd-smoother-t01/">[pd smoother] T01</a></h2>
 
   <div class="sf" id="2020-06-06_215730.ogg"></div>
 
   <div class="entry-content"> <p>[pd smoother] handles timing for fading level to zero while changing playPos</p>
-<p><img alt="screenshot of pd-smoother" src="https://autelos.github.io/masi/patches/2020-06-06_smoother.pd.png#pd-screenshot" /></p> </div>
-  <div class="date">2020.06.05   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
+<p><img alt="screenshot of pd-smoother" src="/masi/patches/2020-06-06_smoother.pd.png#pd-screenshot" /></p> </div>
+  <div class="date">2020.06.05   <a href="/masi/pd">pd</a>  </div>
 
-  <h2><a href="https://autelos.github.io/masi/2020-06-05_102557/">2020-06-05_102557</a></h2>
+  <h2><a href="/masi/2020-06-05_102557/">2020-06-05_102557</a></h2>
 
   <div class="sf" id="2020-06-05_102557.ogg"></div>
 
-  <div class="date">2020.06.04   <a href="https://autelos.github.io/masi/pd">pd</a>  </div>
-
-  <h2><a href="https://autelos.github.io/masi/2020-06-04_221410/">2020-06-04_221410</a></h2>
-
-  <div class="sf" id="2020-06-04_221410.ogg"></div>
-
-  <div class="entry-content"> <p>patch notes: two asynchronous loops, one ma loop</p>
-<p>tapeshift~ delay on live input</p>
-<p>would be nice: easy control of tapeshift~ volume (at least)</p> </div>
 <!--/articles-->
 
 <p class="paginator">
-        <a href="https://autelos.github.io/masi/category/misc.html">&#8647;</a>
-        <a href="https://autelos.github.io/masi/category/misc.html">&laquo;</a>
+        <a href="/masi/category/misc.html">&#8647;</a>
+        <a href="/masi/category/misc.html">&laquo;</a>
     Page 2 / 4
-        <a href="https://autelos.github.io/masi/category/misc3.html">&raquo;</a>
-        <a href="https://autelos.github.io/masi/category/misc4.html">&#8649;</a>
+        <a href="/masi/category/misc3.html">&raquo;</a>
+        <a href="/masi/category/misc4.html">&#8649;</a>
 </p>
   </section>
 
@@ -151,49 +160,42 @@
     <div id="gui">
       <a id="flip" href="">toggle waveform</a><br>
       <a id="toggleChrome" href="">options</a>
-  		<div class="chrome" style="margin-bottom:0.5em; width:200px;">
-  			<!--<button type="button"><label for="fileinput">load soundfile from disk</label></button>
-  			<input type="file" id="fileinput" style="visibility:hidden;width:0px;"/>
+       <div class="chrome" style="margin-bottom:0.5em; width:200px;">
+        <button type="button"><label for="loginput">load log from disk</label></button>
+        <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
 
-  			<button type="button"><label for="regioninput">load regions from disk</label></button>
-  			<input type="file" id="regioninput" style="visibility:hidden;width:0px;"/>-->
+        <button onclick="loadVid()" type="button">load vid</button>
+        <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+        <button onclick="removeCloseRegions()" type="button">remove close regions</button>
+        <button onclick="saveRegions()" type="button">save regions to disk</button>
 
-  			<button type="button"><label for="loginput">load log from disk</label></button>
-  			<input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
-
-  			<button onclick="loadVid()" type="button">load vid</button>
-  			<button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
-  			<button onclick="removeCloseRegions()" type="button">remove close regions</button>
-  			<button onclick="saveRegions()" type="button">save regions to disk</button>
-
-  			<button onclick="saveRegionsToServer()" type="button">save regions to server</button>
-  			<button onclick="exportReaperProject()" type="button">export rpp</button>
-  		</div>
+        <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+        <button onclick="exportReaperProject()" type="button">export rpp</button>
+      </div>
     </div>
 
-  	<div id="panel">
-  		<section>
-  			<div id="waveform">
-  				<span id="sfname"></span>
-  				<div id="progress"></div>
-  			</div>
-  		</section>
+    <div id="panel">
+      <section>
+        <div id="waveform">
+          <span id="sfname"></span>
+          <div id="progress"></div>
+        </div>
+      </section>
 
-  		<div class="chrome">
-  			<button data-action="play">play/pause</button>
-  			zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
-  			<span id="time-current">0:00</span> / <span id="time-total">0:00</span>
-  		</div>
+      <div class="chrome">
+        <button data-action="play">play/pause</button>
+        zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+        <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+      </div>
       <input id = "inputtext" type="text" onkeyup="handle(event)">
-  	</div>
+    </div>
 
-  	<script src="https://autelos.github.io/masi/theme/js/jquery-3.5.1.min.js"></script>
-  	<script src="https://autelos.github.io/masi/theme/js/wavesurfer.js"></script>
-  	<script src="https://autelos.github.io/masi/theme/js/wavesurfer.regions.min.js"></script>
-  	<script src="https://autelos.github.io/masi/theme/js/wavesurfer.cursor.js"></script>
-  	<script src="https://autelos.github.io/masi/theme/js/FileSaver.js"></script>
-  	<script src="https://autelos.github.io/masi/theme/js/app.js"></script>
+    <script src="/masi/theme/js/jquery-3.5.1.min.js"></script>
+    <script src="/masi/theme/js/wavesurfer.js"></script>
+    <script src="/masi/theme/js/wavesurfer.regions.min.js"></script>
+    <script src="/masi/theme/js/wavesurfer.cursor.js"></script>
+    <script src="/masi/theme/js/FileSaver.js"></script>
+    <script src="/masi/theme/js/app.js"></script>
   </section>
-
 </body>
 </html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>file management - masi</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
+  <link rel="stylesheet" type="text/css" href="/masi/theme/css/style.css">
+
+
+
+
+    <meta name="tags" content="meta" />
+
+</head>
+
+<body>
+  <section id="nav">
+    <header>
+      <h1><a href="/masi/">masi</a></h1>
+    </header>
+    <nav id="menu"><ul>
+      <li><a href="/masi/about/">about</a></li>
+      <li><a href="/masi/meta">meta</a></li>
+      <li><a href="/masi/ul">ul</a></li>
+      <li><a href="/masi/field-recording">field recording</a></li>
+      <li><a href="/masi/pd">pd</a></li>
+      <li><a href="/masi/modules">modules</a></li>
+      <li><a href="/masi/notes">notes</a></li>
+      <li><a href="/masi/landing">landing</a></li>
+    </ul></nav>
+  </section>
+
+  <section id="content">
+<section id="content" class="body">
+
+  <div class="date">2020.06.20   <a href="/masi/meta">meta</a>  </div>
+
+  <h2><a href="/masi/file-management/">file management</a></h2>
+
+
+  <div class="entry-content"> <ul>
+<li>[x] rename files to date-created timestamp</li>
+<li>compress files to light, web-friendly version for archive</li>
+<li>[x] sound: .wav to .ogg</li>
+<li>[ ] sound: .wav to .mp3 (for ios)</li>
+<li>[ ] video: .* to 1280x720 .mp4<ul>
+<li>[ ] option to change playback speed and set+save default playspeed</li>
+</ul>
+</li>
+<li>backup orignals elsewhere</li>
+</ul>
+<p>Generally, the archive/annotator should display a light, web-friendly version of the files for viewing, and store the originals elsewhere. Part of this is a shell script that turns a folder of .wavs into .ogg:</p>
+<pre><code class="bash">#!/bin/sh
+
+#patterns matching nothing should disappear...
+shopt -s nullglob
+
+#rename *.WAV to *.wav
+for f in *.WAV; do
+  mv &quot;$f&quot; &quot;${f%.*}.wav&quot;
+done
+
+#rename *.WAV to YYYY-MM-DD_HHMMSS-*.wav
+for f in *.wav; do
+  mv -n &quot;$f&quot; &quot;$(date -r &quot;$f&quot; +&quot;%Y-%m-%d_%H%M%S-${f%.*}&quot;).wav&quot;
+done
+
+mkdir &quot;ogg&quot;
+mkdir &quot;converted&quot;
+
+#convert *.wav to .ogg
+for f in *.wav; do
+  ffmpeg -i &quot;$f&quot; &quot;ogg/${f%.*}.ogg&quot;
+  mv &quot;$f&quot; &quot;converted/$f&quot;
+done
+</code></pre>
+
+<p>save as wav-to-ogg.sh then in terminal type <code>sudo cdmod -x wav-to-ogg.sh</code> and to run type <code>./wav-to-ogg.sh</code></p>
+<p>and here's a command to list all of the .ogg files in a directory (handy for inserting into these markdown posts):</p>
+<pre><code class="bash">oggFiles=&quot;&quot;; for i in *.ogg; do oggFiles+=&quot;$i, &quot;; done; echo $oggFiles
+</code></pre>
+
+<p>A similar script will be used for compressing videos. Here though there is the question of how to deal with the slow-motion recordings (120fps captured on iPhone 5s). Maybe the annotator shows the fps and exposes the option to change playback speed, with the last-selected setting sticking?</p> </div>
+</section>
+
+<section id="wavesurfer-gui">
+  <div id="gui">
+    <a id="flip" href="">toggle waveform</a><br>
+    <a id="toggleChrome" href="">options</a>
+    <div class="chrome" style="margin-bottom:0.5em; width:200px;">
+      <button type="button"><label for="loginput">load log from disk</label></button>
+      <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
+
+      <button onclick="loadVid()" type="button">load vid</button>
+      <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+      <button onclick="removeCloseRegions()" type="button">remove close regions</button>
+      <button onclick="saveRegions()" type="button">save regions to disk</button>
+
+      <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+      <button onclick="exportReaperProject()" type="button">export rpp</button>
+    </div>
+  </div>
+
+  <div id="panel">
+    <section>
+      <div id="waveform">
+        <span id="sfname"></span>
+        <div id="progress"></div>
+      </div>
+    </section>
+
+    <div class="chrome">
+      <button data-action="play">play/pause</button>
+      zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+      <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+    </div>
+    <input id = "inputtext" type="text" onkeyup="handle(event)">
+  </div>
+
+  <script src="/masi/theme/js/jquery-3.5.1.min.js"></script>
+  <script src="/masi/theme/js/wavesurfer.js"></script>
+  <script src="/masi/theme/js/wavesurfer.regions.min.js"></script>
+  <script src="/masi/theme/js/wavesurfer.cursor.js"></script>
+  <script src="/masi/theme/js/FileSaver.js"></script>
+  <script src="/masi/theme/js/app.js"></script>
+</section>
+  </section>
+
+  <section id="wavesurfer-gui">
+    <div id="gui">
+      <a id="flip" href="">toggle waveform</a><br>
+      <a id="toggleChrome" href="">options</a>
+       <div class="chrome" style="margin-bottom:0.5em; width:200px;">
+        <button type="button"><label for="loginput">load log from disk</label></button>
+        <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
+
+        <button onclick="loadVid()" type="button">load vid</button>
+        <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+        <button onclick="removeCloseRegions()" type="button">remove close regions</button>
+        <button onclick="saveRegions()" type="button">save regions to disk</button>
+
+        <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+        <button onclick="exportReaperProject()" type="button">export rpp</button>
+      </div>
+    </div>
+
+    <div id="panel">
+      <section>
+        <div id="waveform">
+          <span id="sfname"></span>
+          <div id="progress"></div>
+        </div>
+      </section>
+
+      <div class="chrome">
+        <button data-action="play">play/pause</button>
+        zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+        <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+      </div>
+      <input id = "inputtext" type="text" onkeyup="handle(event)">
+    </div>
+
+    <script src="/masi/theme/js/jquery-3.5.1.min.js"></script>
+    <script src="/masi/theme/js/wavesurfer.js"></script>
+    <script src="/masi/theme/js/wavesurfer.regions.min.js"></script>
+    <script src="/masi/theme/js/wavesurfer.cursor.js"></script>
+    <script src="/masi/theme/js/FileSaver.js"></script>
+    <script src="/masi/theme/js/app.js"></script>
+  </section>
+</body>
+</html>

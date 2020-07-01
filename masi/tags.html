@@ -1,34 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-        <title>masi - Tags</title>
-        <meta charset="utf-8" />
-        <meta name="generator" content="Pelican" />
-        <link rel="stylesheet" type="text/css" href="https://autelos.github.io/masi/theme/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="https://autelos.github.io/masi/theme/css/sf-style.css" />
+  <title>masi - Tags</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
+  <link rel="stylesheet" type="text/css" href="/masi/theme/css/style.css">
 </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-          <h1><a href="https://autelos.github.io/masi/">masi</a></h1>
-        </header><!-- /#banner -->
+<body>
+  <section id="nav">
+    <header>
+      <h1><a href="/masi/">masi</a></h1>
+    </header>
+    <nav id="menu"><ul>
+      <li><a href="/masi/about/">about</a></li>
+      <li><a href="/masi/meta">meta</a></li>
+      <li><a href="/masi/ul">ul</a></li>
+      <li><a href="/masi/field-recording">field recording</a></li>
+      <li><a href="/masi/pd">pd</a></li>
+      <li><a href="/masi/modules">modules</a></li>
+      <li><a href="/masi/notes">notes</a></li>
+      <li><a href="/masi/landing">landing</a></li>
+    </ul></nav>
+  </section>
 
-        <nav id="menu"><ul>
-
-            <li><a href="https://autelos.github.io/masi/about/">about</a></li>
-
-            <li><a href="https://autelos.github.io/masi/pd">pd</a></li>
-            <li><a href="https://autelos.github.io/masi/meta">meta</a></li>
-            <li><a href="https://autelos.github.io/masi/field-recording">field recording</a></li>
-            <li><a href="https://autelos.github.io/masi/modules">modules</a></li>
-            <li><a href="https://autelos.github.io/masi/notes">notes</a></li>
-            <li><a href="https://autelos.github.io/masi/landing">landing</a></li>
-
-        </ul></nav><!-- /#menu -->
-
+  <section id="content">
     <!--<h1>Tags for masi</h1>-->
     <dl>
-        <dt><a href="https://autelos.github.io/masi/field-recording">field recording</a></dt>
+        <dt><a href="/masi/field-recording">field recording</a></dt>
         <dd>allgäu waydown</dd>
         <dd>in the rain</dd>
         <dd>allgäu</dd>
@@ -37,24 +36,25 @@
         <dd>Am Ginsterpfad</dd>
         <dd>Bozen T02</dd>
         <dd>Bozen T01</dd>
-        <dt><a href="https://autelos.github.io/masi/landing">landing</a></dt>
+        <dt><a href="/masi/landing">landing</a></dt>
         <dd>train to allgäu</dd>
         <dd>für iem-graz</dd>
         <dd>KHG T02</dd>
         <dd>Launchpad Buffer Looper T01</dd>
         <dd>Bozen</dd>
-        <dt><a href="https://autelos.github.io/masi/meta">meta</a></dt>
+        <dt><a href="/masi/meta">meta</a></dt>
+        <dd>listening to tim shaw on listening</dd>
         <dd>inverting images (pd screenshots)</dd>
-        <dt><a href="https://autelos.github.io/masi/modules">modules</a></dt>
+        <dd>file management</dd>
+        <dt><a href="/masi/modules">modules</a></dt>
         <dd>5D routing matrix</dd>
         <dd>[pd smoother] T01</dd>
         <dd>krupp gm7 and the dogs outside</dd>
         <dd>Buffer Looper-Router T01</dd>
         <dd>Figure-Ground Delayline Modulator</dd>
-        <dt><a href="https://autelos.github.io/masi/notes">notes</a></dt>
+        <dt><a href="/masi/notes">notes</a></dt>
         <dd>transcriptions to try</dd>
-        <dt><a href="https://autelos.github.io/masi/pd">pd</a></dt>
-        <dd>routing mtx feedback</dd>
+        <dt><a href="/masi/pd">pd</a></dt>
         <dd>5D routing matrix</dd>
         <dd>train to allgäu</dd>
         <dd>routing matrix pt. 2</dd>
@@ -76,6 +76,52 @@
         <dd>mawamama plastic bag->water</dd>
         <dd>sine/piano drone</dd>
         <dd>Figure-Ground Delayline Modulator</dd>
+        <dt><a href="/masi/ul">ul</a></dt>
+        <dd>mnmlma</dd>
+        <dd>feedback matrix</dd>
     </dl>
+  </section>
+
+  <section id="wavesurfer-gui">
+    <div id="gui">
+      <a id="flip" href="">toggle waveform</a><br>
+      <a id="toggleChrome" href="">options</a>
+       <div class="chrome" style="margin-bottom:0.5em; width:200px;">
+        <button type="button"><label for="loginput">load log from disk</label></button>
+        <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
+
+        <button onclick="loadVid()" type="button">load vid</button>
+        <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+        <button onclick="removeCloseRegions()" type="button">remove close regions</button>
+        <button onclick="saveRegions()" type="button">save regions to disk</button>
+
+        <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+        <button onclick="exportReaperProject()" type="button">export rpp</button>
+      </div>
+    </div>
+
+    <div id="panel">
+      <section>
+        <div id="waveform">
+          <span id="sfname"></span>
+          <div id="progress"></div>
+        </div>
+      </section>
+
+      <div class="chrome">
+        <button data-action="play">play/pause</button>
+        zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+        <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+      </div>
+      <input id = "inputtext" type="text" onkeyup="handle(event)">
+    </div>
+
+    <script src="/masi/theme/js/jquery-3.5.1.min.js"></script>
+    <script src="/masi/theme/js/wavesurfer.js"></script>
+    <script src="/masi/theme/js/wavesurfer.regions.min.js"></script>
+    <script src="/masi/theme/js/wavesurfer.cursor.js"></script>
+    <script src="/masi/theme/js/FileSaver.js"></script>
+    <script src="/masi/theme/js/app.js"></script>
+  </section>
 </body>
 </html>

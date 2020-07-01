@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>listening to tim shaw on listening - masi</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
+  <link rel="stylesheet" type="text/css" href="/masi/theme/css/style.css">
+
+
+
+
+    <meta name="tags" content="meta" />
+
+</head>
+
+<body>
+  <section id="nav">
+    <header>
+      <h1><a href="/masi/">masi</a></h1>
+    </header>
+    <nav id="menu"><ul>
+      <li><a href="/masi/about/">about</a></li>
+      <li><a href="/masi/meta">meta</a></li>
+      <li><a href="/masi/ul">ul</a></li>
+      <li><a href="/masi/field-recording">field recording</a></li>
+      <li><a href="/masi/pd">pd</a></li>
+      <li><a href="/masi/modules">modules</a></li>
+      <li><a href="/masi/notes">notes</a></li>
+      <li><a href="/masi/landing">landing</a></li>
+    </ul></nav>
+  </section>
+
+  <section id="content">
+<section id="content" class="body">
+
+  <div class="date">2020.06.27   <a href="/masi/meta">meta</a>  </div>
+
+  <h2><a href="/masi/listening-to-tim-shaw-on-listening/">listening to tim shaw on listening</a></h2>
+
+  <div class="sf" id="2020-06-27_211535_mb-fan.ogg"></div>
+
+  <div class="entry-content"> <p>notes while listening to <a href="https://www.mixcloud.com/resonanceextra/the-field-recording-show-8-wandering-sunday-14th-june-2020/">tim shaw on listening and field recording</a></p>
+<ul>
+<li>indeterminancy, uncertainty</li>
+<li>studio composiiton with recorded sound as medium</li>
+<li>recording environmental sound, much richer to practice responding to specific sites/themes outside of studio</li>
+<li>listening being the key practice of the work</li>
+<li>field recording not as a documentary of one place to another<ul>
+<li>more as live, performative</li>
+</ul>
+</li>
+<li>traditionally: go somewhere with mics, sit, press record, bring it back to studio, edit/layer, (infinite amnt of things</li>
+<li>performativity: walking to the site, setting up, gestures aren't visible. dislocation between making and presentation. how to fold together?<ul>
+<li>record, compose, improvise with the soundscapes that move through</li>
+<li>delete recordings at the end of the walk<ul>
+<li>flatten presentation and process, all mistakes like handling noise</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>field recording as act of performance</li>
+<li>headphones allow dynamics to come-in - am i hearing it in the world or in real time?</li>
+<li>shifting time/memory</li>
+<li>start with omni-directional mics, then take recordings using contact/hydro/electromic</li>
+<li>system is malleable and shifting, like the sound-scape, always shifting, indeterminancy to them</li>
+<li>i always try to carry a recorder on me, i decide to start when something interests me, finding interesting resonant spaces, or attach a contact mic to</li>
+<li>starts by walking and seeking with the ear and eye</li>
+<li>how long do you let it roll for? as composition in itself,</li>
+<li>it's not about archiving, possesion, it's about the process, and the making and the act of it is often more interesting than the recording itself</li>
+<li>'i'm very bad at working in a studio, on a computer..'</li>
+<li>once the recording hits the computer ,those ossibilities freeze me, personally find it difficult to jusitify those decisions</li>
+<li>using this process to learn the space, how does it react? so it's expansive - what ar eth possibilites, int he most holistic way?</li>
+<li>not going into a space with too many ideas, being open to the unpredictability</li>
+<li>openness, allowing those unexpected events to be just as meaningful</li>
+</ul> </div>
+</section>
+
+<section id="wavesurfer-gui">
+  <div id="gui">
+    <a id="flip" href="">toggle waveform</a><br>
+    <a id="toggleChrome" href="">options</a>
+    <div class="chrome" style="margin-bottom:0.5em; width:200px;">
+      <button type="button"><label for="loginput">load log from disk</label></button>
+      <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
+
+      <button onclick="loadVid()" type="button">load vid</button>
+      <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+      <button onclick="removeCloseRegions()" type="button">remove close regions</button>
+      <button onclick="saveRegions()" type="button">save regions to disk</button>
+
+      <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+      <button onclick="exportReaperProject()" type="button">export rpp</button>
+    </div>
+  </div>
+
+  <div id="panel">
+    <section>
+      <div id="waveform">
+        <span id="sfname"></span>
+        <div id="progress"></div>
+      </div>
+    </section>
+
+    <div class="chrome">
+      <button data-action="play">play/pause</button>
+      zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+      <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+    </div>
+    <input id = "inputtext" type="text" onkeyup="handle(event)">
+  </div>
+
+  <script src="/masi/theme/js/jquery-3.5.1.min.js"></script>
+  <script src="/masi/theme/js/wavesurfer.js"></script>
+  <script src="/masi/theme/js/wavesurfer.regions.min.js"></script>
+  <script src="/masi/theme/js/wavesurfer.cursor.js"></script>
+  <script src="/masi/theme/js/FileSaver.js"></script>
+  <script src="/masi/theme/js/app.js"></script>
+</section>
+  </section>
+
+  <section id="wavesurfer-gui">
+    <div id="gui">
+      <a id="flip" href="">toggle waveform</a><br>
+      <a id="toggleChrome" href="">options</a>
+       <div class="chrome" style="margin-bottom:0.5em; width:200px;">
+        <button type="button"><label for="loginput">load log from disk</label></button>
+        <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
+
+        <button onclick="loadVid()" type="button">load vid</button>
+        <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+        <button onclick="removeCloseRegions()" type="button">remove close regions</button>
+        <button onclick="saveRegions()" type="button">save regions to disk</button>
+
+        <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+        <button onclick="exportReaperProject()" type="button">export rpp</button>
+      </div>
+    </div>
+
+    <div id="panel">
+      <section>
+        <div id="waveform">
+          <span id="sfname"></span>
+          <div id="progress"></div>
+        </div>
+      </section>
+
+      <div class="chrome">
+        <button data-action="play">play/pause</button>
+        zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+        <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+      </div>
+      <input id = "inputtext" type="text" onkeyup="handle(event)">
+    </div>
+
+    <script src="/masi/theme/js/jquery-3.5.1.min.js"></script>
+    <script src="/masi/theme/js/wavesurfer.js"></script>
+    <script src="/masi/theme/js/wavesurfer.regions.min.js"></script>
+    <script src="/masi/theme/js/wavesurfer.cursor.js"></script>
+    <script src="/masi/theme/js/FileSaver.js"></script>
+    <script src="/masi/theme/js/app.js"></script>
+  </section>
+</body>
+</html>

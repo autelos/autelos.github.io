@@ -1,73 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-          <title>masi - about</title>
-        <meta charset="utf-8" />
-        <meta name="generator" content="Pelican" />
-        <link rel="stylesheet" type="text/css" href="https://autelos.github.io/masi/theme/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="https://autelos.github.io/masi/theme/css/sf-style.css" />
-
+    <title>masi - about</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
+  <link rel="stylesheet" type="text/css" href="/masi/theme/css/style.css">
 
 </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-          <h1><a href="https://autelos.github.io/masi/">masi</a></h1>
-        </header><!-- /#banner -->
+<body>
+  <section id="nav">
+    <header>
+      <h1><a href="/masi/">masi</a></h1>
+    </header>
+    <nav id="menu"><ul>
+      <li class="active"><a href="/masi/about/">about</a></li>
+      <li><a href="/masi/meta">meta</a></li>
+      <li><a href="/masi/ul">ul</a></li>
+      <li><a href="/masi/field-recording">field recording</a></li>
+      <li><a href="/masi/pd">pd</a></li>
+      <li><a href="/masi/modules">modules</a></li>
+      <li><a href="/masi/notes">notes</a></li>
+      <li><a href="/masi/landing">landing</a></li>
+    </ul></nav>
+  </section>
 
-        <nav id="menu"><ul>
-
-            <li class="active"><a href="https://autelos.github.io/masi/about/">about</a></li>
-
-            <li><a href="https://autelos.github.io/masi/pd">pd</a></li>
-            <li><a href="https://autelos.github.io/masi/meta">meta</a></li>
-            <li><a href="https://autelos.github.io/masi/field-recording">field recording</a></li>
-            <li><a href="https://autelos.github.io/masi/modules">modules</a></li>
-            <li><a href="https://autelos.github.io/masi/notes">notes</a></li>
-            <li><a href="https://autelos.github.io/masi/landing">landing</a></li>
-
-        </ul></nav><!-- /#menu -->
-
-    <h1>about</h1>
-    
-
-    <p>_ is a live archive/annotator/organizer of place language experiments. slow-evolving sounds in a process that is itself slow-evolving, a system for remembering and remembering to remember:</p>
+  <section id="content">
+  <div id="title"><h1>about</h1></div>
+  <blockquote>
+<p>From a simplicity in the constructions and structures of slow-evolving soundscape emerge affordances that reward different modes of listening and attention – what initially seems monotonous can be interesting and complex. Emergence seems an energy-efficient way of deriving complexity from basic elements, revealing and exploiting perceptual qualities that implicate a design-oriented consideration to slow-evolving soundscape as ambience-making, surrounding influence, a tint on the state of mind.</p>
+</blockquote>
+<p>_ is a live archive/annotator/organizer of place language experiments. slow-evolving sounds in a process that is itself slow-evolving, a system for remembering and remembering to remember:</p>
 <ul>
 <li>rhizomatic interferences in perceiver-environment feedback-loop dialogues</li>
-<li>aesthetics of the spaces in-between - what emerges when meandering along the way</li>
-<li>changing delay times</li>
-<li>breaks</li>
-<li>isomorphisms</li>
-<li>self-referential structures</li>
+<li>aesthetics of the spaces in-between - emergence in meanderings</li>
+<li>spaces in-between, breaks, delaylines</li>
+<li>isomorphisms and self-referential structures</li>
+<li>vertical sound</li>
+<li>masking, entropy decreasing, affording space for meandering attention</li>
 <li>extended duration in musical composition</li>
-<li>modules to improvise/real-time compose with</li>
-<li>interference filtered-&gt;filtered again</li>
+<li>_ modules to improvise/real-time compose with</li>
+<li>interference patterns filtered-&gt;filtered again</li>
 </ul>
-<p>working towards:</p>
+<p>working towards a prototype of a live archiving/annotating/working tool, system for in situ soundscape mediation</p>
 <ul>
-<li>a prototype of a live archiving/annotating/working tool, containing:</li>
-<li>devices/blocks that form a start on an in situ system running on a portable device:<ul>
-<li>5D routing-conducting matrix with sequencing/scheduling/fades</li>
+<li>working sound modules running on an ultra-portable device:</li>
+<li>5D routing-conducting matrix with sequencing/scheduling/fades<ul>
 <li>affords slow-evolving conducting/xfading between</li>
-<li>slow-evolving conducting/xfading between</li>
-<li>ma_modules</li>
+</ul>
+</li>
+<li>_ modules<ul>
 <li>buffer looper~</li>
 <li>a/sync looper~</li>
 <li>rhythmic router</li>
 <li>jumping playhead</li>
 </ul>
 </li>
-<li>experiments with these processes situated in context:<ul>
+<li>experiments with these processes in situ:</li>
 <li>slow-walking</li>
 <li>small room with a piano</li>
 <li>KHG</li>
 <li>quietude</li>
-<li>interference filtered-&gt;filtered again</li>
-<li>slow-evolving conducting/xfading between</li>
-<li>system for in situ soundscape mediation</li>
-</ul>
-</li>
 </ul>
 
+  </section>
+
+  <section id="wavesurfer-gui">
+    <div id="gui">
+      <a id="flip" href="">toggle waveform</a><br>
+      <a id="toggleChrome" href="">options</a>
+       <div class="chrome" style="margin-bottom:0.5em; width:200px;">
+        <button type="button"><label for="loginput">load log from disk</label></button>
+        <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
+
+        <button onclick="loadVid()" type="button">load vid</button>
+        <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+        <button onclick="removeCloseRegions()" type="button">remove close regions</button>
+        <button onclick="saveRegions()" type="button">save regions to disk</button>
+
+        <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+        <button onclick="exportReaperProject()" type="button">export rpp</button>
+      </div>
+    </div>
+
+    <div id="panel">
+      <section>
+        <div id="waveform">
+          <span id="sfname"></span>
+          <div id="progress"></div>
+        </div>
+      </section>
+
+      <div class="chrome">
+        <button data-action="play">play/pause</button>
+        zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+        <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+      </div>
+      <input id = "inputtext" type="text" onkeyup="handle(event)">
+    </div>
+
+    <script src="/masi/theme/js/jquery-3.5.1.min.js"></script>
+    <script src="/masi/theme/js/wavesurfer.js"></script>
+    <script src="/masi/theme/js/wavesurfer.regions.min.js"></script>
+    <script src="/masi/theme/js/wavesurfer.cursor.js"></script>
+    <script src="/masi/theme/js/FileSaver.js"></script>
+    <script src="/masi/theme/js/app.js"></script>
+  </section>
 </body>
 </html>
