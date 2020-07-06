@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>masi - pd tag</title>
+    <title>masi - pd tag</title>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
   <link rel="stylesheet" type="text/css" href="/masi/theme/css/style.css">
+
 </head>
 
 <body>
@@ -13,39 +14,259 @@
       <h1><a href="/masi/">masi</a></h1>
     </header>
     <nav id="menu"><ul>
-      <li><a href="/masi/about/">about</a></li>
-      <li><a href="/masi/meta">meta</a></li>
-      <li><a href="/masi/ul">ul</a></li>
-      <li><a href="/masi/field-recording">field recording</a></li>
-      <li><a href="/masi/pd">pd</a></li>
-      <li><a href="/masi/modules">modules</a></li>
-      <li><a href="/masi/notes">notes</a></li>
-      <li><a href="/masi/landing">landing</a></li>
+      <li><a href="/masi/about/">/about</a></li>
+      <li><a href="/masi/category/annotator.html">/annotator</a></li>
+      <li><a href="/masi/category/notes.html">/notes</a></li>
+      <li><a href="/masi/category/sounds.html">/sounds</a></li>
+      <li><a href="/masi/ul">//ul</a></li>
+      <li><a href="/masi/field-recording">//field recording</a></li>
+      <li><a href="/masi/pd">//pd</a></li>
+      <li><a href="/masi/modules">//modules</a></li>
     </ul></nav>
   </section>
 
   <section id="content">
+  <div class="date">2020.06.19   <a href="/masi/pd">pd</a>  <a href="/masi/modules">modules</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/5d-routing-matrix/">5D routing matrix</a></h2>
 
-<!--articles-->
-  <div class="date">2020.01.23   <a href="/masi/pd">pd</a>  <a href="/masi/modules">modules</a>  </div>
 
+  <div class="entry-content">
+  <p>A 5D routing matrix for PD affords programatic/instruction-based access to conduct signal routing on-the-fly with variable destinations, fade-time, and scheduling (wait x-ms first).</p>
+<p>Syntax:</p>
+<pre><code>[; route &lt;out&gt; &lt;in&gt; &lt;value&gt; &lt;ms-to-fade&gt; &lt;ms-to-wait&gt;(
+</code></pre>
+
+<p>This effectively decouples the patching interface from the PD GUI, allowing control to be given to, ie., the MobMuPLat touchscreen interface, which implements a grid control and 3 sliders (value, ms-to-fade, ms-to-wait).</p>
+<p>This also exposes the potential for live-coding/text-based triggering, ie:</p>
+<pre><code>[x]
+|
+[metro 100]
+|
+[; route &lt;dac~&gt; &lt;adc~ 1&gt; 1 10 0; r &lt;dac~&gt; &lt;adc~ 1&gt; 0 10 20(
+[x]
+|
+[metro 101]
+|
+[; route &lt;dac~&gt; &lt;adc~ 2&gt; 1 10 0; r &lt;dac~&gt; &lt;adc~ 2&gt; 0 10 20(
+</code></pre>
+  </div>
+  <div class="date">2020.06.16   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/train-to-allgau/">train to allgäu</a></h2>
+
+  <div class="sf" id="2020-06-16_0133.ogg"></div>
+
+  <div class="entry-content">
+  <p><img alt="pd in the train" src="/masi/media/2020-06-16_083333.jpg" /></p>
+<p>a space in-between, a space on the way. mediating the loud train ride through a macbook microphone and earlier piano sample to test functionality of the patch accidentally re-situates the listening experience as active and real-time.</p>
+<blockquote>
+<p>the presence of everything, nothing shouts importance ... quiet is quieting ... (Gordon Hempten)</p>
+</blockquote>
+  </div>
+  <div class="date">2020.06.14   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/routing-matrix-pt-2/">routing matrix pt. 2</a></h2>
+
+  <div class="sf" id="2020-06-14_0939.ogg"></div>
+  <div class="sf" id="2020-06-14_0959.ogg"></div>
+  <div class="sf" id="2020-06-14_1022.ogg"></div>
+  <div class="sf" id="2020-06-14_1306.ogg"></div>
+
+  <div class="entry-content">
+  <p>in situ slow-evolving conducting/scheduling</p>
+<p>first thing in the morning, open up the routing-matrix patch from yesterday, pull in a looped piano recording.</p>
+<p>filtered in feedback and filtered again.</p>
+<pre><code>route tapeshift~:dac~ 1 10000
+X
+|
+metro 125
+|
+route sf~:dac~ 1 0; route sf~:dac~ 0 0 10
+</code></pre>
+
+<p><a href="/masi/patches/routing-matrix/routing-matrix.pd">patch.pd</a></p>
+  </div>
+  <div class="date">2020.06.13   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/routing-matrix/">routing matrix</a></h2>
+
+  <div class="sf" id="2020-06-13_1305.ogg"></div>
+  <div class="sf" id="2020-06-13_1308.ogg"></div>
+  <div class="sf" id="2020-06-13_1317.ogg"></div>
+  <div class="sf" id="2020-06-13_1318.ogg"></div>
+  <div class="sf" id="2020-06-13_1322.ogg"></div>
+  <div class="sf" id="2020-06-13_1642.ogg"></div>
+  <div class="sf" id="2020-06-13_1805_stadtwald-crickets.ogg"></div>
+  <div class="sf" id="2020-06-13_2042.ogg"></div>
+  <div class="sf" id="2020-06-13_2101.ogg"></div>
+
+  <div class="entry-content">
+  <p>routing matrix with variable fade-time working</p>
+<p><a href="/masi/patches/routing-matrix/routing-matrix.pd">patch.pd</a></p>
+<p>recordings feature prominent low-end ambience from traffic - how to use this? filter it out?</p>
+  </div>
+  <div class="date">2020.06.11   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/pd-in-the-park/">pd in the park</a></h2>
+
+  <div class="sf" id="2020-06-11_2140.ogg"></div>
+
+  <div class="entry-content">
+  <p>how to work with droning car sounds? trying to reinforce/mask them with sinewave organ.</p>
+<p><img alt="pd in the park screenshot" src="/masi/patches/2020-06-11_2140_pd-in-the-park.pd.png#pd-screenshot" /></p>
+<p><a href="/masi/patches/2020-06-11_2140_pd-in-the-park.pd">pd in the park patch</a></p>
+  </div>
+  <div class="date">2020.06.09   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/fur-iem-graz/">für iem-graz</a></h2>
+
+  <div class="sf" id="2020-06-09_121053.ogg"></div>
+
+  <div class="entry-content">
+  <p>and later, 23:52:</p>
+<video src="/masi/media/2020-06-09_2352.mov" controls></video>
+  </div>
+  <div class="date">2020.06.07   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/ppgrainer-t03-organ/">[pp.grainer~] T03 organ</a></h2>
+
+  <div class="sf" id="2020-06-07_122700.ogg"></div>
+  <div class="sf" id="2020-06-07_1356.ogg"></div>
+  <div class="sf" id="2020-06-07_145600.ogg"></div>
+  <div class="sf" id="2020-06-07_194200_grainer-vox-test.ogg"></div>
+
+  <div class="entry-content">
+  <p>testing sequencer with pp.grainer~ and KHG organ sample</p>
+<pre><code>process=khg-organ.wav:pp.grainer~
+</code></pre>
+
+<pre><code>[pp.grainer~]&lt;:([tapeshift~].[pan~].[fade~],2)
+</code></pre>
+  </div>
+  <div class="date">2020.06.06   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/g01/">G01</a></h2>
+
+  <div class="sf" id="2020-06-06_211452.ogg"></div>
+
+  <div class="entry-content">
+  <p>ma jumps on piano loops</p>
+  </div>
+  <div class="date">2020.06.06   <a href="/masi/pd">pd</a>  <a href="/masi/modules">modules</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/pd-smoother-t01/">[pd smoother] T01</a></h2>
+
+  <div class="sf" id="2020-06-06_215730.ogg"></div>
+
+  <div class="entry-content">
+  <p>[pd smoother] handles timing for fading level to zero while changing playPos</p>
+<p><img alt="screenshot of pd-smoother" src="/masi/patches/2020-06-06_smoother.pd.png#pd-screenshot" /></p>
+  </div>
+  <div class="date">2020.06.05   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/2020-06-05_102557/">2020-06-05_102557</a></h2>
+
+  <div class="sf" id="2020-06-05_102557.ogg"></div>
+
+  <div class="date">2020.06.04   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/2020-06-04_221410/">2020-06-04_221410</a></h2>
+
+  <div class="sf" id="2020-06-04_221410.ogg"></div>
+
+  <div class="entry-content">
+  <p>patch notes: two asynchronous loops, one ma loop</p>
+<p>tapeshift~ delay on live input</p>
+<p>would be nice: easy control of tapeshift~ volume (at least)</p>
+  </div>
+  <div class="date">2020.05.30   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/krupp-gm7-and-the-dogs-outside/">krupp gm7 and the dogs outside</a></h2>
+
+  <div class="sf" id="2020-05-30_142454.mp3"></div>
+
+  <div class="entry-content">
+  <p>testing chord with rhymthic 1/8 playpos jumping as carpet</p>
+<p>listened through through schmalfußs tape-IR. consider feeding through, re-recording?</p>
+<p>todo: add playpos-jumping module</p>
+  </div>
+  <div class="date">2020.05.25   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/2020-05-25_175236/">2020-05-25_175236</a></h2>
+
+  <div class="sf" id="2020-05-25_175236.ogg"></div>
+
+  <div class="entry-content">
+  <p>past sound as rhythmic pulse</p>
+<p>spring between random segments of the loop</p>
+<pre><code>every 1/8, jumping 1/8*lengthOfLoop * random(8)
+</code></pre>
+  </div>
+  <div class="date">2020.05.22   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/2020-05-22_174851/">2020-05-22_174851</a></h2>
+
+  <div class="sf" id="2020-05-22_174851.ogg"></div>
+
+  <div class="entry-content">
+  <p>1 mic in room with piano with loops and tapeshift</p>
+<p>fix:</p>
+<ul>
+<li>[x] changing cycle length after buffer loop is made removes sound</li>
+</ul>
+<p>todo:</p>
+<ul>
+<li>[x] autogenerate meta.md</li>
+<li>[x] include file automatically</li>
+<li>[x] include date automatically</li>
+<li>[ ] convert to mp3?</li>
+<li>[x] offer voice memo feature? /</li>
+<li>[ ] auto-open text editor with meta file?</li>
+</ul>
+  </div>
+  <div class="date">2020.05.20   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/buffer-looper-router/">Buffer Looper-Router</a></h2>
+
+  <div class="sf" id="2020-05-20_1921.ogg"></div>
+
+  <div class="entry-content">
+  <p>getting back to the launchpad-looper-router-interface, checking that it works as expected after a few days away. testing with a sample</p>
+<p>patch notes: sample (taiwan-junglebirds.wav) looped, buffer looped, routed into tape-shift effect with feedback, starting to find something, hit record</p>
+<p>todo:</p>
+<ul>
+<li>[x] get input routing working, so that can happen on the pad</li>
+<li>[ ] get resonanant filter+tapeshift also mapped to pad buttons</li>
+<li>[x] add record button to launchpad</li>
+</ul>
+  </div>
+  <div class="date">2020.05.11   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/buffer-looper-on-launchpad-d01/">Buffer Looper on Launchpad D01</a></h2>
+
+  <div class="sf" id="2020-05-11_2200_P17.ogg"></div>
+
+  <div class="date">2020.03.10   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/trainsketch-taiwan/">Trainsketch Taiwan</a></h2>
+
+  <div class="sf" id="2020-03-10_171703_taiwan-trainsketch.ogg"></div>
+
+  <div class="entry-content">
+  <p><a href="/masi/patches/taiwan-trainsketch.pd">taiwan-trainsketch.pd</a></p>
+  </div>
+  <div class="date">2020.02.15   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/trumpet-drone-in-wallraf-richartz-museum/">Trumpet Drone in Wallraf-Richartz Museum</a></h2>
+
+  <div class="sf" id="2020-02-15_182316_felix-wallraf.ogg"></div>
+
+  <div class="date">2020.02.14   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/crinkly-plastic-bag-water-sound/">crinkly plastic bag -> water sound</a></h2>
+
+  <div class="sf" id="2020-02-14_200851_marie-plasticbag.ogg"></div>
+
+  <div class="date">2020.02.02   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/sinepiano-drone/">sine/piano drone</a></h2>
+
+  <div class="sf" id="2020-02-02_154031_sinedrone_1.ogg"></div>
+
+  <div class="date">2020.01.23   <a href="/masi/pd">pd</a>  <a href="/masi/modules">modules</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
   <h2><a href="/masi/figure-ground-delayline-modulator/">Figure-Ground Delayline Modulator</a></h2>
 
   <div class="sf" id="2020-02-05_225924-mawamama-t01.ogg"></div>
 
-  <div class="entry-content"> <p>the length of a sound-object 'figure' modulates the length of a delayline<br />
+  <div class="entry-content">
+  <p>the length of a sound-object figure modulates the length of a delayline<br />
 sounds received are fed back at varying, controllable, later times<br />
 varying the change in speed pitches the sound being fed back</p>
 <p><img alt="screenshot" src="/masi/patches/figure-ground-delayline-modulator.pd.png#pd-screenshot" /><br />
 <a href="/masi/patches/figure-ground-delayline-modulator.pd">figure-ground-delayline-modulator.pd</a><br />
-<a href="/masi/patches/figure-ground-delayline-modulator-help.pd">figure-ground-delayline-modulator-help.pd</a></p> </div>
-<!--/articles-->
-
-<p class="paginator">
-        <a href="/masi/pd/index.html">&#8647;</a>
-        <a href="/masi/pd/index2.html">&laquo;</a>
-    Page 3 / 3
-</p>
+<a href="/masi/patches/figure-ground-delayline-modulator-help.pd">figure-ground-delayline-modulator-help.pd</a></p>
+  </div>
   </section>
 
   <section id="wavesurfer-gui">

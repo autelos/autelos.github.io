@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>masi - meta tag</title>
+    <title>masi - meta tag</title>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
   <link rel="stylesheet" type="text/css" href="/masi/theme/css/style.css">
+
 </head>
 
 <body>
@@ -21,19 +22,20 @@
       <li><a href="/masi/modules">modules</a></li>
       <li><a href="/masi/notes">notes</a></li>
       <li><a href="/masi/landing">landing</a></li>
+      <li><a href="/masi/category/annotator.html">annotator</a></li>
+      <li><a href="/masi/category/misc.html">misc</a></li>
+      <li><a href="/masi/category/notes.html">notes</a></li>
     </ul></nav>
   </section>
 
   <section id="content">
-
-<!--articles-->
   <div class="date">2020.06.27   <a href="/masi/meta">meta</a>  </div>
-
   <h2><a href="/masi/listening-to-tim-shaw-on-listening/">listening to tim shaw on listening</a></h2>
 
   <div class="sf" id="2020-06-27_211535_mb-fan.ogg"></div>
 
-  <div class="entry-content"> <p>notes while listening to <a href="https://www.mixcloud.com/resonanceextra/the-field-recording-show-8-wandering-sunday-14th-june-2020/">tim shaw on listening and field recording</a></p>
+  <div class="entry-content">
+  <p>notes while listening to <a href="https://www.mixcloud.com/resonanceextra/the-field-recording-show-8-wandering-sunday-14th-june-2020/">tim shaw on listening and field recording</a></p>
 <ul>
 <li>indeterminancy, uncertainty</li>
 <li>studio composiiton with recorded sound as medium</li>
@@ -66,13 +68,14 @@
 <li>using this process to learn the space, how does it react? so it's expansive - what ar eth possibilites, int he most holistic way?</li>
 <li>not going into a space with too many ideas, being open to the unpredictability</li>
 <li>openness, allowing those unexpected events to be just as meaningful</li>
-</ul> </div>
+</ul>
+  </div>
   <div class="date">2020.06.23   <a href="/masi/meta">meta</a>  </div>
-
   <h2><a href="/masi/inverting-images-pd-screenshots/">inverting images (pd screenshots)</a></h2>
 
 
-  <div class="entry-content"> <p>tiny markup in markdown allows for easy client-side image-inverting</p>
+  <div class="entry-content">
+  <p>tiny markup in markdown allows for easy client-side image-inverting</p>
 <p>CSS:</p>
 <pre><code class="css">img[src$='#pd-screenshot'] {
   filter: invert();
@@ -82,13 +85,14 @@
 
 <p>Markdown:</p>
 <pre><code class="markdown">![alt]({static}/patches/demo.pd.png#pd-screenshot)
-</code></pre> </div>
+</code></pre>
+  </div>
   <div class="date">2020.06.20   <a href="/masi/meta">meta</a>  </div>
-
   <h2><a href="/masi/file-management/">file management</a></h2>
 
 
-  <div class="entry-content"> <ul>
+  <div class="entry-content">
+  <ul>
 <li>[x] rename files to date-created timestamp</li>
 <li>compress files to light, web-friendly version for archive</li>
 <li>[x] sound: .wav to .ogg</li>
@@ -130,9 +134,8 @@ done
 <pre><code class="bash">oggFiles=&quot;&quot;; for i in *.ogg; do oggFiles+=&quot;$i, &quot;; done; echo $oggFiles
 </code></pre>
 
-<p>A similar script will be used for compressing videos. Here though there is the question of how to deal with the slow-motion recordings (120fps captured on iPhone 5s). Maybe the annotator shows the fps and exposes the option to change playback speed, with the last-selected setting sticking?</p> </div>
-<!--/articles-->
-
+<p>A similar script will be used for compressing videos. Here though there is the question of how to deal with the slow-motion recordings (120fps captured on iPhone 5s). Maybe the annotator shows the fps and exposes the option to change playback speed, with the last-selected setting sticking?</p>
+  </div>
   </section>
 
   <section id="wavesurfer-gui">

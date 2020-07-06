@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>masi - Articles by Martin Simpson</title>
+    <title>masi - Articles by Martin Simpson</title>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
   <link rel="stylesheet" type="text/css" href="/masi/theme/css/style.css">
+
 </head>
 
 <body>
@@ -13,27 +14,333 @@
       <h1><a href="/masi/">masi</a></h1>
     </header>
     <nav id="menu"><ul>
-      <li><a href="/masi/about/">about</a></li>
-      <li><a href="/masi/meta">meta</a></li>
-      <li><a href="/masi/ul">ul</a></li>
-      <li><a href="/masi/field-recording">field recording</a></li>
-      <li><a href="/masi/pd">pd</a></li>
-      <li><a href="/masi/modules">modules</a></li>
-      <li><a href="/masi/notes">notes</a></li>
-      <li><a href="/masi/landing">landing</a></li>
+      <li><a href="/masi/about/">/about</a></li>
+      <li><a href="/masi/category/annotator.html">/annotator</a></li>
+      <li><a href="/masi/category/notes.html">/notes</a></li>
+      <li><a href="/masi/category/sounds.html">/sounds</a></li>
+      <li><a href="/masi/ul">//ul</a></li>
+      <li><a href="/masi/field-recording">//field recording</a></li>
+      <li><a href="/masi/pd">//pd</a></li>
+      <li><a href="/masi/modules">//modules</a></li>
     </ul></nav>
   </section>
 
   <section id="content">
-<h2>Articles by Martin Simpson</h2>
+  <div class="date">2020.07.06  /<a href="/masi/category/annotator.html">annotator</a></div>
+  <h2><a href="/masi/annotator-descriptiondolist/">annotator description/dolist</a></h2>
 
-<!--articles-->
-  <div class="date">2020.06.18   <a href="/masi/notes">notes</a>  </div>
 
+  <div class="entry-content">
+  <p>_ archive/annotator presents recordings with possibly defined start position, end position, highlighted/annotate regions, and regions marked for removal (which are skipped over). it offers an easy collaborative in-browser possibility of annotatating and non-destructively presenting snippets in the context of their longer recordings.</p>
+<p>how to use:</p>
+<ul>
+<li>click on recording to load soundfile, waveform, and start playing</li>
+<li>click and drag on waveform to create and select region</li>
+<li>type to annotate (some commands are interpreted):</li>
+<li><code>start</code><ul>
+<li>sets start position</li>
+</ul>
+</li>
+<li><code>end</code><ul>
+<li>sets end position</li>
+</ul>
+</li>
+<li><code>rm</code><ul>
+<li>skips region with fade-in/fade-out</li>
+<li>currently set to 500 ms fade</li>
+<li>[ ] add variable fade-in/fade-out times<ul>
+<li>eg. <code>rm 500</code></li>
+</ul>
+</li>
+<li>[ ] add crossfade</li>
+</ul>
+</li>
+</ul>
+<p>Note: adding/changing annotations is currently password-protected</p>
+  </div>
+  <div class="date">2020.07.04  /<a href="/masi/category/notes.html">notes</a></div>
+  <h2><a href="/masi/notes-on-_analysing-audible-ecosystems-and-emergent-sound-structures-in-discipios-music_-renaud-meric-makis-solomos/">Notes on _Analysing Audible Ecosystems and Emergent Sound Structures in DiScipio’s Music_ (Renaud Meric, Makis Solomos)</a></h2>
+
+
+  <div class="entry-content">
+  <h1>Emergence in audibly-structured soundscape</h1>
+<pre><code class="dot">digraph G {
+  rankdir=LR
+
+  subgraph cluster_0 {
+    label = &quot;situ.in/space&quot;
+    audiosystem -&gt; &quot;imprint in space&quot; -&gt; &quot;perciever-performer&quot; -&gt; { audiosystem &quot;imprint in space&quot; }
+
+    { &quot;imprint in space&quot; audiosystem } -&gt; &quot;field recorder&quot;
+  }
+}
+</code></pre>
+
+<p><em>Figure: Emergence in place-language improvisation</em></p>
+<p>modules for real-time composition of audibly-structured soundscape</p>
+<p>A theoretical counterpart to the notion of audible ecosystems is the idea of emergent sound structures. The macroform emerges from interactions of the microforms.</p>
+<pre><code class="dot">digraph G{
+  node [shape=oval, len=2];
+
+  space -&gt; { &quot;perciever-performer&quot; } -&gt; space
+
+  space -&gt; input
+  &quot;perciever-performer&quot; -&gt; { input }
+
+  subgraph cluster_0 {
+    style=&quot;rounded, dotted&quot;
+    label = &quot;real-time audio processor&quot;
+    input -&gt; process -&gt; output
+  }
+
+  output -&gt; space
+
+  label = &quot;emergent macroform from microform interaction&quot;
+
+}
+</code></pre>
+
+<blockquote>
+<p>While  composing  with  an  ecosystemic  approach,  the  composer  creates  an  audio system that interacts with the environment (i.e. space). This space, in which and from which music emerges, is also the listener’s space. Thus what emerges is the result of a confrontation between  the  listener’s  cognitive  system and  the  audio  system  used  in  the  musical  work.  The emergent  sound  is  difficult  to  define:  its  general  outline  is  unpredictable  and  unstable;  it  is dependent on a dynamic musical space, which is constructed by active listening and an active audio  system  simultaneously.</p>
+<p>focusing on the ephemeral moment in which music emerges  in  the  interaction  between  the  listener  and  the  product  of  the  audio  system  inside  a specific space.</p>
+<p>in reality, we don’t listen to sound but to its own “imprint” (empreinte), in the sense of the word developed by Georges Didi-Huberman (2008).</p>
+</blockquote>
+<p>A real-time composition is to let  "the  musical (macro-level)  structure  emerge  from  sound  itself  and  its  internal  organization  (micro-level)" [^1].</p>
+<blockquote>
+<p>in  his  own  music, Di  Scipio  opted  for  complex  dynamic  systems:  “Chaos  and  the dynamics of complex systems, as accessible with iterated numerical processes, represented for me a way to compose small sonic units such that a higher-level sonority would manifest itself in the process” (Di Scipio inAnderson, 2005)</p>
+<p>In one of his first articles (Di Scipio, 1994), he elaborated a “theory of sonological  emergence”,  whereby  form  (macroform)  is  viewed  as  “a  process  of  timbre formation” (Di Scipio, 1994: 205)</p>
+<p>The  idea  of  emergent  sound  structures  is  related  to  the  elaboration  of  a sub-symbolic theory.  In  the “theory  of  sonological  emergence”,  the  emergence  of  a  higher level  should happen  through  grains  and  samples,  neither  of  which  are  symbols,  as  they  are  located  on  a low level (cf. Di Scipio, 1994: 207). With composed interactions (cf. infra), Di Scipio puts the interaction at the signal level: all the information exchanges have a sonic nature (cf. Di Scipio, 2003:  272).  We  can  draw  a  parallel  between  this  strategy  and  the  model  of  emergence  in cognitive  science.  To  the  question  “What  is  cognition?”  the  “computationalist”  model answers “Data processing: the manipulation of symbols from rules” (Varela, 1996: 42), while the  emergence  model  answers  “The  emergence  of  global  states  in  a  network  of  simple components” (Varela, 1996: 77). Regarding music, the issue at stake here is as follows: if we want the higher level (the macroform) to appear as an emergence and not as an independent construction,  we  have  to  work  only  at  the  lower  level,  abandoning  the  intermediate  level, which is the level of symbols.</p>
+<p>According to emergence theory, the emergence of sound structures is possible because of the fact that the composer develops systems (in the sense of cybernetics) close to living systems, which are characterized by their capacity for auto-organization</p>
+</blockquote>
+<p>[^1]: Renaud Meric, Makis Solomos: Analysing Audible Ecosystems and Emergent Sound Structures in DiScipio’s Music</p>
+  </div>
+  <div class="date">2020.06.27  /<a href="/masi/category/notes.html">notes</a></div>
+  <h2><a href="/masi/listening-to-tim-shaw-on-listening/">listening to tim shaw on listening</a></h2>
+
+  <div class="sf" id="2020-06-27_211535_mb-fan.ogg"></div>
+
+  <div class="entry-content">
+  <p>notes while listening to <a href="https://www.mixcloud.com/resonanceextra/the-field-recording-show-8-wandering-sunday-14th-june-2020/">tim shaw on listening and field recording</a></p>
+<ul>
+<li>indeterminancy, uncertainty</li>
+<li>studio composiiton with recorded sound as medium</li>
+<li>recording environmental sound, much richer to practice responding to specific sites/themes outside of studio</li>
+<li>listening being the key practice of the work</li>
+<li>field recording not as a documentary of one place to another<ul>
+<li>more as live, performative</li>
+</ul>
+</li>
+<li>traditionally: go somewhere with mics, sit, press record, bring it back to studio, edit/layer, (infinite amnt of things</li>
+<li>performativity: walking to the site, setting up, gestures aren't visible. dislocation between making and presentation. how to fold together?<ul>
+<li>record, compose, improvise with the soundscapes that move through</li>
+<li>delete recordings at the end of the walk<ul>
+<li>flatten presentation and process, all mistakes like handling noise</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>field recording as act of performance</li>
+<li>headphones allow dynamics to come-in - am i hearing it in the world or in real time?</li>
+<li>shifting time/memory</li>
+<li>start with omni-directional mics, then take recordings using contact/hydro/electromic</li>
+<li>system is malleable and shifting, like the sound-scape, always shifting, indeterminancy to them</li>
+<li>i always try to carry a recorder on me, i decide to start when something interests me, finding interesting resonant spaces, or attach a contact mic to</li>
+<li>starts by walking and seeking with the ear and eye</li>
+<li>how long do you let it roll for? as composition in itself,</li>
+<li>it's not about archiving, possesion, it's about the process, and the making and the act of it is often more interesting than the recording itself</li>
+<li>'i'm very bad at working in a studio, on a computer..'</li>
+<li>once the recording hits the computer ,those ossibilities freeze me, personally find it difficult to jusitify those decisions</li>
+<li>using this process to learn the space, how does it react? so it's expansive - what ar eth possibilites, int he most holistic way?</li>
+<li>not going into a space with too many ideas, being open to the unpredictability</li>
+<li>openness, allowing those unexpected events to be just as meaningful</li>
+</ul>
+  </div>
+  <div class="date">2020.06.26   <a href="/masi/ul">ul</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/mnmlma/">mnmlma</a></h2>
+
+  <div class="sf" id="2020-06-26_141933_ma-iphone-piano.ogg"></div>
+  <div class="sf" id="2020-06-26_170559_mnml-ma-piano-2.ogg"></div>
+
+  <div class="entry-content">
+  <p>testing the patch running running simply on iphone using built-in mic. the lightness and lack of cable connections afford an intuitive movement of the integrated mic as dry/wet modulation.</p>
+<pre><code>tapeshift~ = pitch -12, window ~100, delay ~100
+process = adc~:tapeshift~:dac~
+</code></pre>
+  </div>
+  <div class="date">2020.06.25   <a href="/masi/ul">ul</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/feedback-matrix/">feedback matrix</a></h2>
+
+  <div class="sf" id="2020-06-24_110512_feedback-1.ogg"></div>
+  <div class="sf" id="2020-06-24_110956_feedback-2.ogg"></div>
+
+  <div class="date">2020.06.24  /<a href="/masi/category/notes.html">notes</a></div>
+  <h2><a href="/masi/recording-soundscapes/">recording soundscapes</a></h2>
+
+
+  <div class="entry-content">
+  <p>attempting to capture soundscapes of a "genuine but ephemeral set of circumstances existing in a precise moment of time," rather than soundscapes "meticulously fabricated and controlled in the vacuum of an audio editor".<a href="Swift">^1</a></p>
+<blockquote>
+<p>actual events from a specific time and place ... a moment’s explicit actuality and serendipitous fragility. (Swift 8)</p>
+<p>... a soundscape is not simply a sum of all these sounds; rather it is a particular subset filtered through the context of a given environmental condition (Swift 6)</p>
+</blockquote>
+<p>Curiously, wishing to capture these events often blocks or these events from occurring. This could be an example of the observer effect, a "common phenomenon where the act of observation can alter the situation being observed." (Swift 3) Perhaps the psychic attention to recording takes valuable attention away from the actual act, a moment of flow, a sort of reset.</p>
+<p>Autotelic free play on an instrument -&gt; maybe a moment, groove, emerges - though to capture this! -&gt; stop playing, set up recorder, try to find it again, takes some time, energy is distracted, and the recording then captures this difference and distraction, not the original moment of free play and discovery.</p>
+<p>Several strategies have been considered:</p>
+<ul>
+<li>a recorder ready to start at the click of a button (requiring minimal attention)</li>
+<li>a recorder always running</li>
+<li>a buffer recorder (capturing the last x-seconds, after the fact)</li>
+</ul>
+<p>Setting these to run still requires some forethought, whereas the moments occur seemingly unexpectedly/unpredictably, and most notably while not recording. A possible possible solution is to intrinsically integrate the recorder into the sound ecosystem so that recording is a seamless act with listening while using the system.</p>
+<blockquote>
+<p>One of Bernie Krause's tenets is that sounds should experienced in the context of their environment rather than attempting to isolate the sound. (Swift 10)</p>
+</blockquote>
+  </div>
+  <div class="date">2020.06.23  /<a href="/masi/category/annotator.html">annotator</a></div>
+  <h2><a href="/masi/inverting-images-pd-screenshots/">inverting images (pd screenshots)</a></h2>
+
+
+  <div class="entry-content">
+  <p>tiny markup in markdown allows for easy client-side image-inverting</p>
+<p>CSS:</p>
+<pre><code class="css">img[src$='#pd-screenshot'] {
+  filter: invert();
+  mix-blend-mode: screen;
+}
+</code></pre>
+
+<p>Markdown:</p>
+<pre><code class="markdown">![alt]({static}/patches/demo.pd.png#pd-screenshot)
+</code></pre>
+  </div>
+  <div class="date">2020.06.20   <a href="/masi/field-recording">field recording</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/allgau-waydown/">allgäu waydown</a></h2>
+
+  <div class="sf" id="2020-06-20_084248.ogg"></div>
+  <div class="sf" id="2020-06-20_084248[vm].ogg"></div>
+  <div class="sf" id="2020-06-20_084726.ogg"></div>
+  <div class="sf" id="2020-06-20_090718.ogg"></div>
+
+  <div class="date">2020.06.20  /<a href="/masi/category/annotator.html">annotator</a></div>
+  <h2><a href="/masi/file-management/">file management</a></h2>
+
+
+  <div class="entry-content">
+  <ul>
+<li>[x] rename files to date-created timestamp</li>
+<li>compress files to light, web-friendly version for archive</li>
+<li>[x] sound: .wav to .ogg</li>
+<li>[ ] sound: .wav to .mp3 (for ios)</li>
+<li>[ ] video: .* to 1280x720 .mp4<ul>
+<li>[ ] option to change playback speed and set+save default playspeed</li>
+</ul>
+</li>
+<li>backup orignals elsewhere</li>
+</ul>
+<p>Generally, the archive/annotator should display a light, web-friendly version of the files for viewing, and store the originals elsewhere. Part of this is a shell script that turns a folder of .wavs into .ogg:</p>
+<pre><code class="bash">#!/bin/sh
+
+#patterns matching nothing should disappear...
+shopt -s nullglob
+
+#rename *.WAV to *.wav
+for f in *.WAV; do
+  mv &quot;$f&quot; &quot;${f%.*}.wav&quot;
+done
+
+#rename *.WAV to YYYY-MM-DD_HHMMSS-*.wav
+for f in *.wav; do
+  mv -n &quot;$f&quot; &quot;$(date -r &quot;$f&quot; +&quot;%Y-%m-%d_%H%M%S-${f%.*}&quot;).wav&quot;
+done
+
+mkdir &quot;ogg&quot;
+mkdir &quot;converted&quot;
+
+#convert *.wav to .ogg
+for f in *.wav; do
+  ffmpeg -i &quot;$f&quot; &quot;ogg/${f%.*}.ogg&quot;
+  mv &quot;$f&quot; &quot;converted/$f&quot;
+done
+</code></pre>
+
+<p>save as wav-to-ogg.sh then in terminal type <code>sudo cdmod -x wav-to-ogg.sh</code> and to run type <code>./wav-to-ogg.sh</code></p>
+<p>and here's a command to list all of the .ogg files in a directory (handy for inserting into these markdown posts):</p>
+<pre><code class="bash">oggFiles=&quot;&quot;; for i in *.ogg; do oggFiles+=&quot;$i, &quot;; done; echo $oggFiles
+</code></pre>
+
+<p>A similar script will be used for compressing videos. Here though there is the question of how to deal with the slow-motion recordings (120fps captured on iPhone 5s). Maybe the annotator shows the fps and exposes the option to change playback speed, with the last-selected setting sticking?</p>
+  </div>
+  <div class="date">2020.06.19   <a href="/masi/pd">pd</a>  <a href="/masi/modules">modules</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/5d-routing-matrix/">5D routing matrix</a></h2>
+
+
+  <div class="entry-content">
+  <p>A 5D routing matrix for PD affords programatic/instruction-based access to conduct signal routing on-the-fly with variable destinations, fade-time, and scheduling (wait x-ms first).</p>
+<p>Syntax:</p>
+<pre><code>[; route &lt;out&gt; &lt;in&gt; &lt;value&gt; &lt;ms-to-fade&gt; &lt;ms-to-wait&gt;(
+</code></pre>
+
+<p>This effectively decouples the patching interface from the PD GUI, allowing control to be given to, ie., the MobMuPLat touchscreen interface, which implements a grid control and 3 sliders (value, ms-to-fade, ms-to-wait).</p>
+<p>This also exposes the potential for live-coding/text-based triggering, ie:</p>
+<pre><code>[x]
+|
+[metro 100]
+|
+[; route &lt;dac~&gt; &lt;adc~ 1&gt; 1 10 0; r &lt;dac~&gt; &lt;adc~ 1&gt; 0 10 20(
+[x]
+|
+[metro 101]
+|
+[; route &lt;dac~&gt; &lt;adc~ 2&gt; 1 10 0; r &lt;dac~&gt; &lt;adc~ 2&gt; 0 10 20(
+</code></pre>
+  </div>
+  <div class="date">2020.06.19   <a href="/masi/field-recording">field recording</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/in-the-rain/">in the rain</a></h2>
+
+  <div class="sf" id="2020-06-19_1935.ogg"></div>
+  <div class="sf" id="2020-06-19_1939.ogg"></div>
+  <div class="sf" id="2020-06-19_1954.ogg"></div>
+
+  <div class="entry-content">
+  <p><img alt="rain setup" src="/masi/media/2020-06-19_183336.jpg" /></p>
+  </div>
+  <div class="date">2020.06.18   <a href="/masi/field-recording">field recording</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/allgau/">allgäu</a></h2>
+
+  <div class="sf" id="2020-06-18_1124.ogg"></div>
+  <div class="sf" id="2020-06-18_1232.ogg"></div>
+  <div class="sf" id="2020-06-18_1233.ogg"></div>
+  <div class="sf" id="2020-06-18_1238.ogg"></div>
+  <div class="sf" id="2020-06-18_1240.ogg"></div>
+  <div class="sf" id="2020-06-18_1701.ogg"></div>
+  <div class="sf" id="2020-06-18_1805.ogg"></div>
+
+  <div class="date">2020.06.18  /<a href="/masi/category/notes.html">notes</a></div>
+  <h2><a href="/masi/archiving-process/">archiving process</a></h2>
+
+
+  <div class="entry-content">
+  <p>(voice memo transcription, need to clean)</p>
+<p>the archiving process is to have the original raw file, with maybe some markers at the beginning fo the file to talk in what the context of the thing is (first section is meta description). to audition, drop it into a folder that compresses the original file, drops the original onto a hard drive. and it's available for audition in the annotator. layers to configure/toggle:</p>
+<p>-timestamp<br />
+-place<br />
+-mark points of time/regions<br />
+    -tag/make notes on these markers</p>
+<p>That's an annotation added in the process of reviewing. In the process of making/creating the moment you can easily make a marker or start and end a region, which saves some time, then when listening back you already have a place to start watching/listening.</p>
+<p>In addition to the manually entered annotation, any interactions with the patches are logged with a line which is the information-preserved-transformation of that interaction. so the interaction is say: route the mic to the speaker, fade up in 10 secs to 50%, do that in first in 5 seconds. this is a simple single line instruction, and this is written down in that way, possibly also as a human-readable, possibly easy to type, format. and this is saved as a log file and can also be toggled, shown on and off in the annotations.</p>
+<p>the benefit of also keeping track of all these digital interactions as instructions is one has the easy possibility to change later. what would have happen if we didn't trigger this? so you can remix it later by running it through the patch again, in real time, in this case loading the original file.</p>
+<p>the patch saves three files:<br />
+-text file: log and annotations<br />
+-sound: raw, straight from the microphone<br />
+-sound: from patch, exactly what's sent to speakers</p>
+<p>with the first two elements, we can recreate the third file, from the list of log instructions. then it can be revisited.</p>
+  </div>
+  <div class="date">2020.06.18  /<a href="/masi/category/notes.html">notes</a></div>
   <h2><a href="/masi/transcriptions-to-try/">transcriptions to try</a></h2>
 
 
-  <div class="entry-content"> <p>transcribed from pocketbook in reverse chronological order</p>
+  <div class="entry-content">
+  <p>transcribed from pocketbook in reverse chronological order</p>
 <ul>
 <li>[x] 5D routing matrix<ul>
 <li>on the fly routing patching control</li>
@@ -91,26 +398,26 @@
 <li>walk every day</li>
 </ul>
 </li>
-</ul> </div>
-  <div class="date">2020.06.16   <a href="/masi/pd">pd</a>  <a href="/masi/landing">landing</a>  </div>
-
+</ul>
+  </div>
+  <div class="date">2020.06.16   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
   <h2><a href="/masi/train-to-allgau/">train to allgäu</a></h2>
 
   <div class="sf" id="2020-06-16_0133.ogg"></div>
 
-  <div class="entry-content"> <p><img alt="pd in the train" src="/masi/media/2020-06-16_083333.jpg" /></p>
+  <div class="entry-content">
+  <p><img alt="pd in the train" src="/masi/media/2020-06-16_083333.jpg" /></p>
 <p>a space in-between, a space on the way. mediating the loud train ride through a macbook microphone and earlier piano sample to test functionality of the patch accidentally re-situates the listening experience as active and real-time.</p>
 <blockquote>
 <p>the presence of everything, nothing shouts importance ... quiet is quieting ... (Gordon Hempten)</p>
-</blockquote> </div>
-  <div class="date">2020.06.14   <a href="/masi/field-recording">field recording</a>  </div>
-
+</blockquote>
+  </div>
+  <div class="date">2020.06.14   <a href="/masi/field-recording">field recording</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
   <h2><a href="/masi/ginsterpfad-ambience/">ginsterpfad ambience</a></h2>
 
   <div class="sf" id="2020-06-14_2055_ginsterpfad-ambience.ogg"></div>
 
-  <div class="date">2020.06.14   <a href="/masi/pd">pd</a>  </div>
-
+  <div class="date">2020.06.14   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
   <h2><a href="/masi/routing-matrix-pt-2/">routing matrix pt. 2</a></h2>
 
   <div class="sf" id="2020-06-14_0939.ogg"></div>
@@ -118,7 +425,8 @@
   <div class="sf" id="2020-06-14_1022.ogg"></div>
   <div class="sf" id="2020-06-14_1306.ogg"></div>
 
-  <div class="entry-content"> <p>in situ slow-evolving conducting/scheduling</p>
+  <div class="entry-content">
+  <p>in situ slow-evolving conducting/scheduling</p>
 <p>first thing in the morning, open up the routing-matrix patch from yesterday, pull in a looped piano recording.</p>
 <p>filtered in feedback and filtered again.</p>
 <pre><code>route tapeshift~:dac~ 1 10000
@@ -129,9 +437,9 @@ metro 125
 route sf~:dac~ 1 0; route sf~:dac~ 0 0 10
 </code></pre>
 
-<p><a href="/masi/patches/routing-matrix/routing-matrix.pd">patch.pd</a></p> </div>
-  <div class="date">2020.06.13   <a href="/masi/pd">pd</a>  </div>
-
+<p><a href="/masi/patches/routing-matrix/routing-matrix.pd">patch.pd</a></p>
+  </div>
+  <div class="date">2020.06.13   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
   <h2><a href="/masi/routing-matrix/">routing matrix</a></h2>
 
   <div class="sf" id="2020-06-13_1305.ogg"></div>
@@ -144,11 +452,12 @@ route sf~:dac~ 1 0; route sf~:dac~ 0 0 10
   <div class="sf" id="2020-06-13_2042.ogg"></div>
   <div class="sf" id="2020-06-13_2101.ogg"></div>
 
-  <div class="entry-content"> <p>routing matrix with variable fade-time working</p>
+  <div class="entry-content">
+  <p>routing matrix with variable fade-time working</p>
 <p><a href="/masi/patches/routing-matrix/routing-matrix.pd">patch.pd</a></p>
-<p>recordings feature prominent low-end ambience from traffic - how to use this? filter it out?</p> </div>
-  <div class="date">2020.06.12   <a href="/masi/field-recording">field recording</a>  </div>
-
+<p>recordings feature prominent low-end ambience from traffic - how to use this? filter it out?</p>
+  </div>
+  <div class="date">2020.06.12   <a href="/masi/field-recording">field recording</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
   <h2><a href="/masi/wassermannsee/">Wassermannsee</a></h2>
 
   <div class="sf" id="2020-06-12_1119.ogg"></div>
@@ -156,9 +465,10 @@ route sf~:dac~ 1 0; route sf~:dac~ 0 0 10
   <div class="sf" id="2020-06-12_1856.ogg"></div>
   <div class="sf" id="2020-06-12_2034_Wassermannsee.ogg"></div>
 
-  <div class="entry-content"> <p>wind through reeds, loud ducks. off-recorder mics make cue-making (almost) silent.</p> </div>
-  <div class="date">2020.06.11   <a href="/masi/field-recording">field recording</a>  </div>
-
+  <div class="entry-content">
+  <p>wind through reeds, loud ducks. off-recorder mics make cue-making (almost) silent.</p>
+  </div>
+  <div class="date">2020.06.11   <a href="/masi/field-recording">field recording</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
   <h2><a href="/masi/am-ginsterpfad/">Am Ginsterpfad</a></h2>
 
   <div class="sf" id="2020-06-11_2036.ogg"></div>
@@ -166,32 +476,33 @@ route sf~:dac~ 1 0; route sf~:dac~ 0 0 10
   <div class="sf" id="2020-06-11_2131.ogg"></div>
   <div class="sf" id="2020-06-12_1856.ogg"></div>
 
-  <div class="entry-content"> <p>walking soundscape, slowly-changing filters as attention-prompts. elements:</p>
+  <div class="entry-content">
+  <p>walking soundscape, slowly-changing filters as attention-prompts. elements:</p>
 <ul>
 <li>footstep rhythm</li>
-<li>car drone<ul>
-<li>how to work with?</li>
+<li>how to deal with traffic drone?</li>
 </ul>
-</li>
-</ul> </div>
-  <div class="date">2020.06.11   <a href="/masi/pd">pd</a>  </div>
-
+  </div>
+  <div class="date">2020.06.11   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
   <h2><a href="/masi/pd-in-the-park/">pd in the park</a></h2>
 
   <div class="sf" id="2020-06-11_2140.ogg"></div>
 
-  <div class="entry-content"> <p>how to work with droning car sounds? trying to reinforce them with sinewave organ.</p>
-<p><a href="/masi/media/2020-06-11_2140_pd-in-the-park.pd">pd in the park patch</a></p> </div>
-  <div class="date">2020.06.09   <a href="/masi/pd">pd</a>  <a href="/masi/landing">landing</a>  </div>
-
+  <div class="entry-content">
+  <p>how to work with droning car sounds? trying to reinforce/mask them with sinewave organ.</p>
+<p><img alt="pd in the park screenshot" src="/masi/patches/2020-06-11_2140_pd-in-the-park.pd.png#pd-screenshot" /></p>
+<p><a href="/masi/patches/2020-06-11_2140_pd-in-the-park.pd">pd in the park patch</a></p>
+  </div>
+  <div class="date">2020.06.09   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
   <h2><a href="/masi/fur-iem-graz/">für iem-graz</a></h2>
 
   <div class="sf" id="2020-06-09_121053.ogg"></div>
 
-  <div class="entry-content"> <p><span class="date">23:52</span><br />
-<video src="/masi/media/2020-06-09_2352.mov" controls></video></p> </div>
-  <div class="date">2020.06.07   <a href="/masi/pd">pd</a>  </div>
-
+  <div class="entry-content">
+  <p>and later, 23:52:</p>
+<video src="/masi/media/2020-06-09_2352.mov" controls></video>
+  </div>
+  <div class="date">2020.06.07   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
   <h2><a href="/masi/ppgrainer-t03-organ/">[pp.grainer~] T03 organ</a></h2>
 
   <div class="sf" id="2020-06-07_122700.ogg"></div>
@@ -199,21 +510,198 @@ route sf~:dac~ 1 0; route sf~:dac~ 0 0 10
   <div class="sf" id="2020-06-07_145600.ogg"></div>
   <div class="sf" id="2020-06-07_194200_grainer-vox-test.ogg"></div>
 
-  <div class="entry-content"> <p>testing sequencer with pp.grainer~ and KHG organ sample</p>
+  <div class="entry-content">
+  <p>testing sequencer with pp.grainer~ and KHG organ sample</p>
 <pre><code>process=khg-organ.wav:pp.grainer~
 </code></pre>
 
 <pre><code>[pp.grainer~]&lt;:([tapeshift~].[pan~].[fade~],2)
-</code></pre> </div>
-<!--/articles-->
+</code></pre>
+  </div>
+  <div class="date">2020.06.06   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/g01/">G01</a></h2>
 
-<p class="paginator">
-        <a href="/masi/author/martin-simpson.html">&#8647;</a>
-        <a href="/masi/author/martin-simpson.html">&laquo;</a>
-    Page 2 / 4
-        <a href="/masi/author/martin-simpson3.html">&raquo;</a>
-        <a href="/masi/author/martin-simpson4.html">&#8649;</a>
-</p>
+  <div class="sf" id="2020-06-06_211452.ogg"></div>
+
+  <div class="entry-content">
+  <p>ma jumps on piano loops</p>
+  </div>
+  <div class="date">2020.06.06   <a href="/masi/pd">pd</a>  <a href="/masi/modules">modules</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/pd-smoother-t01/">[pd smoother] T01</a></h2>
+
+  <div class="sf" id="2020-06-06_215730.ogg"></div>
+
+  <div class="entry-content">
+  <p>[pd smoother] handles timing for fading level to zero while changing playPos</p>
+<p><img alt="screenshot of pd-smoother" src="/masi/patches/2020-06-06_smoother.pd.png#pd-screenshot" /></p>
+  </div>
+  <div class="date">2020.06.05   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/2020-06-05_102557/">2020-06-05_102557</a></h2>
+
+  <div class="sf" id="2020-06-05_102557.ogg"></div>
+
+  <div class="date">2020.06.04   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/2020-06-04_221410/">2020-06-04_221410</a></h2>
+
+  <div class="sf" id="2020-06-04_221410.ogg"></div>
+
+  <div class="entry-content">
+  <p>patch notes: two asynchronous loops, one ma loop</p>
+<p>tapeshift~ delay on live input</p>
+<p>would be nice: easy control of tapeshift~ volume (at least)</p>
+  </div>
+  <div class="date">2020.05.30   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/krupp-gm7-and-the-dogs-outside/">krupp gm7 and the dogs outside</a></h2>
+
+  <div class="sf" id="2020-05-30_142454.mp3"></div>
+
+  <div class="entry-content">
+  <p>testing chord with rhymthic 1/8 playpos jumping as carpet</p>
+<p>listened through through schmalfußs tape-IR. consider feeding through, re-recording?</p>
+<p>todo: add playpos-jumping module</p>
+  </div>
+  <div class="date">2020.05.25   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/2020-05-25_175236/">2020-05-25_175236</a></h2>
+
+  <div class="sf" id="2020-05-25_175236.ogg"></div>
+
+  <div class="entry-content">
+  <p>past sound as rhythmic pulse</p>
+<p>spring between random segments of the loop</p>
+<pre><code>every 1/8, jumping 1/8*lengthOfLoop * random(8)
+</code></pre>
+  </div>
+  <div class="date">2020.05.22   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/2020-05-22_174851/">2020-05-22_174851</a></h2>
+
+  <div class="sf" id="2020-05-22_174851.ogg"></div>
+
+  <div class="entry-content">
+  <p>1 mic in room with piano with loops and tapeshift</p>
+<p>fix:</p>
+<ul>
+<li>[x] changing cycle length after buffer loop is made removes sound</li>
+</ul>
+<p>todo:</p>
+<ul>
+<li>[x] autogenerate meta.md</li>
+<li>[x] include file automatically</li>
+<li>[x] include date automatically</li>
+<li>[ ] convert to mp3?</li>
+<li>[x] offer voice memo feature? /</li>
+<li>[ ] auto-open text editor with meta file?</li>
+</ul>
+  </div>
+  <div class="date">2020.05.20   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/buffer-looper-router/">Buffer Looper-Router</a></h2>
+
+  <div class="sf" id="2020-05-20_1921.ogg"></div>
+
+  <div class="entry-content">
+  <p>getting back to the launchpad-looper-router-interface, checking that it works as expected after a few days away. testing with a sample</p>
+<p>patch notes: sample (taiwan-junglebirds.wav) looped, buffer looped, routed into tape-shift effect with feedback, starting to find something, hit record</p>
+<p>todo:</p>
+<ul>
+<li>[x] get input routing working, so that can happen on the pad</li>
+<li>[ ] get resonanant filter+tapeshift also mapped to pad buttons</li>
+<li>[x] add record button to launchpad</li>
+</ul>
+  </div>
+  <div class="date">2020.05.14  /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/khg-t02/">KHG T02</a></h2>
+
+  <div class="sf" id="2020-05-14_KHG-1.ogg"></div>
+  <div class="sf" id="2020-05-14_KHG-2.ogg"></div>
+  <div class="sf" id="2020-05-14_KHG-3.ogg"></div>
+  <div class="sf" id="2020-05-14_KHG-4.ogg"></div>
+  <div class="sf" id="2020-05-14_KHG-5.ogg"></div>
+  <div class="sf" id="2020-05-14_KHG-6.ogg"></div>
+  <div class="sf" id="2020-05-14_KHG-7.ogg"></div>
+  <div class="sf" id="2020-05-14_KHG-8.ogg"></div>
+
+  <div class="entry-content">
+  <p><img alt="khg setup" src="/masi/media/2020-05-14_161030.jpg" /></p>
+  </div>
+  <div class="date">2020.05.11   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/buffer-looper-on-launchpad-d01/">Buffer Looper on Launchpad D01</a></h2>
+
+  <div class="sf" id="2020-05-11_2200_P17.ogg"></div>
+
+  <div class="date">2020.03.10   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/trainsketch-taiwan/">Trainsketch Taiwan</a></h2>
+
+  <div class="sf" id="2020-03-10_171703_taiwan-trainsketch.ogg"></div>
+
+  <div class="entry-content">
+  <p><a href="/masi/patches/taiwan-trainsketch.pd">taiwan-trainsketch.pd</a></p>
+  </div>
+  <div class="date">2020.02.15   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/trumpet-drone-in-wallraf-richartz-museum/">Trumpet Drone in Wallraf-Richartz Museum</a></h2>
+
+  <div class="sf" id="2020-02-15_182316_felix-wallraf.ogg"></div>
+
+  <div class="date">2020.02.14   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/crinkly-plastic-bag-water-sound/">crinkly plastic bag -> water sound</a></h2>
+
+  <div class="sf" id="2020-02-14_200851_marie-plasticbag.ogg"></div>
+
+  <div class="date">2020.02.02   <a href="/masi/pd">pd</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/sinepiano-drone/">sine/piano drone</a></h2>
+
+  <div class="sf" id="2020-02-02_154031_sinedrone_1.ogg"></div>
+
+  <div class="date">2020.01.23   <a href="/masi/pd">pd</a>  <a href="/masi/modules">modules</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/figure-ground-delayline-modulator/">Figure-Ground Delayline Modulator</a></h2>
+
+  <div class="sf" id="2020-02-05_225924-mawamama-t01.ogg"></div>
+
+  <div class="entry-content">
+  <p>the length of a sound-object figure modulates the length of a delayline<br />
+sounds received are fed back at varying, controllable, later times<br />
+varying the change in speed pitches the sound being fed back</p>
+<p><img alt="screenshot" src="/masi/patches/figure-ground-delayline-modulator.pd.png#pd-screenshot" /><br />
+<a href="/masi/patches/figure-ground-delayline-modulator.pd">figure-ground-delayline-modulator.pd</a><br />
+<a href="/masi/patches/figure-ground-delayline-modulator-help.pd">figure-ground-delayline-modulator-help.pd</a></p>
+  </div>
+  <div class="date">2019.12.07  /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/bozen/">Bozen</a></h2>
+
+  <div class="sf" id="2019-12-07_Bozen_F01.ogg"></div>
+  <div class="sf" id="2019-12-07_Bozen_F02.ogg"></div>
+
+  <div class="entry-content">
+  <p>(todo: insert visuals!)</p>
+<p>A handheld zoom capturing a waterfalls fed through Microbrute sequenced filter formed the basis for later keyboard overdubs.</p>
+  </div>
+  <div class="date">2019.12.05   <a href="/masi/field-recording">field recording</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/bozen-t02/">Bozen T02</a></h2>
+
+  <div class="sf" id="2019-12-05_122648-LR.ogg"></div>
+  <div class="sf" id="2019-12-05_122912-LR.ogg"></div>
+  <div class="sf" id="2019-12-05_122912-Tr1.ogg"></div>
+
+  <div class="entry-content">
+  <p><img alt="microbrute snow" src="/masi/media/2019-12-06.jpg" /><br />
+<img alt="microbrute stream" src="/masi/media/2019-12-05_114608.jpg" /></p>
+  </div>
+  <div class="date">2019.12.03   <a href="/masi/field-recording">field recording</a>   /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/bozen-t01/">Bozen T01</a></h2>
+
+  <div class="sf" id="2019-12-03_121832-Tr2.ogg"></div>
+  <div class="sf" id="2019-12-03_122620-Tr2.ogg"></div>
+  <div class="sf" id="2019-12-03_185142-LR.ogg"></div>
+  <div class="sf" id="2019-12-03_185338-LR.ogg"></div>
+  <div class="sf" id="2019-12-03_185454-LR.ogg"></div>
+
+  <div class="date">2019.11.29  /<a href="/masi/category/sounds.html">sounds</a></div>
+  <h2><a href="/masi/where-it-started/">where it started</a></h2>
+
+  <div class="sf" id="2019-11-29_Soundscape2_paulstretch.mp3"></div>
+
+  <div class="entry-content">
+  <p>(todo: insert soundscape no. 2)</p>
+<p>Looped trumpet and piano free play, and paulstretched snippet.</p>
+  </div>
   </section>
 
   <section id="wavesurfer-gui">

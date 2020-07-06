@@ -14,60 +14,107 @@
       <h1><a href="/masi/">masi</a></h1>
     </header>
     <nav id="menu"><ul>
-      <li><a href="/masi/about/">about</a></li>
-      <li><a href="/masi/meta">meta</a></li>
-      <li><a href="/masi/ul">ul</a></li>
-      <li><a href="/masi/field-recording">field recording</a></li>
-      <li><a href="/masi/pd">pd</a></li>
-      <li><a href="/masi/modules">modules</a></li>
-      <li><a href="/masi/notes">notes</a></li>
-      <li><a href="/masi/landing">landing</a></li>
+      <li><a href="/masi/about/">/about</a></li>
+      <li><a href="/masi/category/annotator.html">/annotator</a></li>
+      <li><a href="/masi/category/notes.html">/notes</a></li>
+      <li><a href="/masi/category/sounds.html">/sounds</a></li>
+      <li><a href="/masi/ul">//ul</a></li>
+      <li><a href="/masi/field-recording">//field recording</a></li>
+      <li><a href="/masi/pd">//pd</a></li>
+      <li><a href="/masi/modules">//modules</a></li>
     </ul></nav>
   </section>
 
   <section id="content">
   <div id="title"><h1>meta</h1></div>
   <h3>method</h3>
-<p>sound journal:<br />
-- meander<br />
-- fiddle<br />
-- capture<br />
-- process</p>
+<pre><code class="dot">digraph {
+  graph [mindist=0.1]
+  node [shape=&quot;rect&quot;, style=&quot;rounded&quot;]
+  meander -&gt; fiddle -&gt; process -&gt; capture -&gt; &quot;sound journal&quot; -&gt; meander
+
+  subgraph cluster_0 {
+    style=dotted
+    &quot;sound journal&quot;
+    label=&quot;live archive&quot;
+  }
+}
+</code></pre>
+
 <h3>questions</h3>
 <ul>
 <li>can the capture and processing happen in real-time?</li>
+<li>(yes)</li>
 <li>how can the capture process and processing be optimized?</li>
-<li>how to revisit the moment?</li>
+<li>what does it mean to revisit the moment?</li>
 </ul>
 <h3>rhizomes</h3>
-<p>developing instruments for improvisation, or real-time composition<br />
-electro-acoustics:: , an acoustic instrument somehow merged with electronic technology</p>
-<p>listening is a creative act, can discover music anywhere</p>
-<p>extended duration in musical composition</p>
-<p>micro time - things that go beyond the level of notes</p>
-<p><insert filed recording in artscience></p>
+<p>given a rhizomatic working process, how to organize?</p>
 <blockquote>
-<p>'Place Language' seeks to both inspire a renewed interest in our surroundings and reinvigorate our appreciated for the audible textures &amp; patterns that characterize a place...</p>
+<p>All nodes are connected and each node is connected to all other nodes, where the position of the nodes is unimportant"</p>
 </blockquote>
-<p>field recordings soft fascinations, perceiving, attending to subtlety and nuance, documenting emergence in rhizomatic interferences in the ambient environement</p>
+<p>"Nomadic, where the process is as important as the outcome and the program can be changed in the middle of its execution"</p>
+<p>```dot engine=circo<br />
+graph {<br />
+  graph [mindist=0]<br />
+    feedback -- {improvisation -- "free play" "performance ecosystem"}<br />
+    "performance ecosystem" -- { "strategisch-geplänte spontänitatet" -- "real-time composition" "field recording" -- listening}<br />
+    listening -- { responding -- attention }<br />
+    ambience -- {"music for soft fascnications" "place language"}<br />
+    improvisation -- {"real-time composition" meandering } -- walking -- "place language"<br />
+    buffer -- delay -- "performance ecosystem"<br />
+    archive -- attention<br />
+    minimalism -- "self-reference" -- recursion -- isomorphism<br />
+    delay -- feedback<br />
+  "unendlichkeit &lt; unbegrenztheit"<br />
+  "acoustic ecology"<br />
+}</p>
+<pre><code>
+developing instruments for improvisation, or real-time composition
+
+electro-acoustics: an acoustic instrument somehow merged with electronic technology
+
+research interests:
+
+* listening as a creative act, to discover music anywhere
+* field recording as composition
+* extended duration in musical composition
+* micro time - things that go beyond the level of notes
+
+&lt;insert filed recording in artscience&gt;
+
+&gt; 'Place Language' seeks to both inspire a renewed interest in our surroundings and reinvigorate our appreciated for the audible textures &amp; patterns that characterize a place...
+
+```dot
+graph {
+  node [shape=none]
+  &quot;listener&quot; -- {&quot;soft fascinations&quot; &quot;subtlety and nuance&quot;}
+  &quot;field recorder&quot;
+  subgraph cluster_0{
+    style=dotted
+    &quot;soft fascinations&quot;
+    &quot;subtlety and nuance&quot;
+  }
+  label=&quot;emergence in rhizomatic interferences&quot;
+}
+</code></pre>
+
+<p>The workshop <em>Catching the Light</em> from Marion Tränkle describes a similar process:</p>
+<p><code>dot engine=circo
+digraph {
+  mindist=0
+  experimentation -&gt; observation -&gt; documentation -&gt; experimentation
+}</code></p>
 <blockquote>
-<p>Catching the Light<br />
-Marion Tränkle</p>
-<p>Experimentation – observation – documentation. In this workshop we will cycle through a process of making work, starting from fiddling and free-flow experimentation to razor sharp selection and decision making. Taking the medium of light as our field of experimentation, we will discover how ideas can take shape and how observation and documentation can inform further actions and the sharpening of those ideas.<br />
-The workshop claims fiddling as an important tool for art making, and looks for ways to draw constructive consequences from it. Therefore, documentation and recording of this process will be an important aspect of the workshop. Please bring your cameras and sketchbooks.</p>
+<p>Experimentation – observation – documentation. In this workshop we will cycle through a process of making work, starting from fiddling and free-flow experimentation to razor sharp selection and decision making ... ideas can take shape and how observation and documentation can inform further actions and the sharpening of those ideas.</p>
 </blockquote>
-<p>unendlichkeit &lt; unbegrenztheit</p>
 <h3>literature</h3>
 <ul>
 <li>Emergence in Complex Phoenomena (Varese)</li>
 <li>The Soundscape (Schaefer)</li>
 <li>Deep Listening (Oliveros)</li>
-<li>Gödel, Escher, Bach<br></li>
+<li>Gödel, Escher, Bach</li>
 </ul>
-<h1>process archive</h1>
-<p>(dima)<br />
-(fema)<br />
-(bozen)</p>
 
   </section>
 

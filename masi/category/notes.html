@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>masi - notes category</title>
+    <title>masi - notes category</title>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
   <link rel="stylesheet" type="text/css" href="/masi/theme/css/style.css">
+
 </head>
 
 <body>
@@ -13,33 +14,124 @@
       <h1><a href="/masi/">masi</a></h1>
     </header>
     <nav id="menu"><ul>
-      <li><a href="/masi/about/">about</a></li>
-      <li><a href="/masi/meta">meta</a></li>
-      <li><a href="/masi/ul">ul</a></li>
-      <li><a href="/masi/field-recording">field recording</a></li>
-      <li><a href="/masi/pd">pd</a></li>
-      <li><a href="/masi/modules">modules</a></li>
-      <li><a href="/masi/notes">notes</a></li>
-      <li><a href="/masi/landing">landing</a></li>
+      <li><a href="/masi/about/">/about</a></li>
+      <li><a href="/masi/category/annotator.html">/annotator</a></li>
+      <li><a href="/masi/category/notes.html">/notes</a></li>
+      <li><a href="/masi/category/sounds.html">/sounds</a></li>
+      <li><a href="/masi/ul">//ul</a></li>
+      <li><a href="/masi/field-recording">//field recording</a></li>
+      <li><a href="/masi/pd">//pd</a></li>
+      <li><a href="/masi/modules">//modules</a></li>
     </ul></nav>
   </section>
 
   <section id="content">
-<h2>Articles in the notes category</h2>
+  <div class="date">2020.07.04  /<a href="/masi/category/notes.html">notes</a></div>
+  <h2><a href="/masi/notes-on-_analysing-audible-ecosystems-and-emergent-sound-structures-in-discipios-music_-renaud-meric-makis-solomos/">Notes on _Analysing Audible Ecosystems and Emergent Sound Structures in DiScipio’s Music_ (Renaud Meric, Makis Solomos)</a></h2>
 
-<!--articles-->
-  <div class="date">2020.06.24 </div>
 
+  <div class="entry-content">
+  <h1>Emergence in audibly-structured soundscape</h1>
+<pre><code class="dot">digraph G {
+  rankdir=LR
+
+  subgraph cluster_0 {
+    label = &quot;situ.in/space&quot;
+    audiosystem -&gt; &quot;imprint in space&quot; -&gt; &quot;perciever-performer&quot; -&gt; { audiosystem &quot;imprint in space&quot; }
+
+    { &quot;imprint in space&quot; audiosystem } -&gt; &quot;field recorder&quot;
+  }
+}
+</code></pre>
+
+<p><em>Figure: Emergence in place-language improvisation</em></p>
+<p>modules for real-time composition of audibly-structured soundscape</p>
+<p>A theoretical counterpart to the notion of audible ecosystems is the idea of emergent sound structures. The macroform emerges from interactions of the microforms.</p>
+<pre><code class="dot">digraph G{
+  node [shape=oval, len=2];
+
+  space -&gt; { &quot;perciever-performer&quot; } -&gt; space
+
+  space -&gt; input
+  &quot;perciever-performer&quot; -&gt; { input }
+
+  subgraph cluster_0 {
+    style=&quot;rounded, dotted&quot;
+    label = &quot;real-time audio processor&quot;
+    input -&gt; process -&gt; output
+  }
+
+  output -&gt; space
+
+  label = &quot;emergent macroform from microform interaction&quot;
+
+}
+</code></pre>
+
+<blockquote>
+<p>While  composing  with  an  ecosystemic  approach,  the  composer  creates  an  audio system that interacts with the environment (i.e. space). This space, in which and from which music emerges, is also the listener’s space. Thus what emerges is the result of a confrontation between  the  listener’s  cognitive  system and  the  audio  system  used  in  the  musical  work.  The emergent  sound  is  difficult  to  define:  its  general  outline  is  unpredictable  and  unstable;  it  is dependent on a dynamic musical space, which is constructed by active listening and an active audio  system  simultaneously.</p>
+<p>focusing on the ephemeral moment in which music emerges  in  the  interaction  between  the  listener  and  the  product  of  the  audio  system  inside  a specific space.</p>
+<p>in reality, we don’t listen to sound but to its own “imprint” (empreinte), in the sense of the word developed by Georges Didi-Huberman (2008).</p>
+</blockquote>
+<p>A real-time composition is to let  "the  musical (macro-level)  structure  emerge  from  sound  itself  and  its  internal  organization  (micro-level)" [^1].</p>
+<blockquote>
+<p>in  his  own  music, Di  Scipio  opted  for  complex  dynamic  systems:  “Chaos  and  the dynamics of complex systems, as accessible with iterated numerical processes, represented for me a way to compose small sonic units such that a higher-level sonority would manifest itself in the process” (Di Scipio inAnderson, 2005)</p>
+<p>In one of his first articles (Di Scipio, 1994), he elaborated a “theory of sonological  emergence”,  whereby  form  (macroform)  is  viewed  as  “a  process  of  timbre formation” (Di Scipio, 1994: 205)</p>
+<p>The  idea  of  emergent  sound  structures  is  related  to  the  elaboration  of  a sub-symbolic theory.  In  the “theory  of  sonological  emergence”,  the  emergence  of  a  higher level  should happen  through  grains  and  samples,  neither  of  which  are  symbols,  as  they  are  located  on  a low level (cf. Di Scipio, 1994: 207). With composed interactions (cf. infra), Di Scipio puts the interaction at the signal level: all the information exchanges have a sonic nature (cf. Di Scipio, 2003:  272).  We  can  draw  a  parallel  between  this  strategy  and  the  model  of  emergence  in cognitive  science.  To  the  question  “What  is  cognition?”  the  “computationalist”  model answers “Data processing: the manipulation of symbols from rules” (Varela, 1996: 42), while the  emergence  model  answers  “The  emergence  of  global  states  in  a  network  of  simple components” (Varela, 1996: 77). Regarding music, the issue at stake here is as follows: if we want the higher level (the macroform) to appear as an emergence and not as an independent construction,  we  have  to  work  only  at  the  lower  level,  abandoning  the  intermediate  level, which is the level of symbols.</p>
+<p>According to emergence theory, the emergence of sound structures is possible because of the fact that the composer develops systems (in the sense of cybernetics) close to living systems, which are characterized by their capacity for auto-organization</p>
+</blockquote>
+<p>[^1]: Renaud Meric, Makis Solomos: Analysing Audible Ecosystems and Emergent Sound Structures in DiScipio’s Music</p>
+  </div>
+  <div class="date">2020.06.27  /<a href="/masi/category/notes.html">notes</a></div>
+  <h2><a href="/masi/listening-to-tim-shaw-on-listening/">listening to tim shaw on listening</a></h2>
+
+  <div class="sf" id="2020-06-27_211535_mb-fan.ogg"></div>
+
+  <div class="entry-content">
+  <p>notes while listening to <a href="https://www.mixcloud.com/resonanceextra/the-field-recording-show-8-wandering-sunday-14th-june-2020/">tim shaw on listening and field recording</a></p>
+<ul>
+<li>indeterminancy, uncertainty</li>
+<li>studio composiiton with recorded sound as medium</li>
+<li>recording environmental sound, much richer to practice responding to specific sites/themes outside of studio</li>
+<li>listening being the key practice of the work</li>
+<li>field recording not as a documentary of one place to another<ul>
+<li>more as live, performative</li>
+</ul>
+</li>
+<li>traditionally: go somewhere with mics, sit, press record, bring it back to studio, edit/layer, (infinite amnt of things</li>
+<li>performativity: walking to the site, setting up, gestures aren't visible. dislocation between making and presentation. how to fold together?<ul>
+<li>record, compose, improvise with the soundscapes that move through</li>
+<li>delete recordings at the end of the walk<ul>
+<li>flatten presentation and process, all mistakes like handling noise</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>field recording as act of performance</li>
+<li>headphones allow dynamics to come-in - am i hearing it in the world or in real time?</li>
+<li>shifting time/memory</li>
+<li>start with omni-directional mics, then take recordings using contact/hydro/electromic</li>
+<li>system is malleable and shifting, like the sound-scape, always shifting, indeterminancy to them</li>
+<li>i always try to carry a recorder on me, i decide to start when something interests me, finding interesting resonant spaces, or attach a contact mic to</li>
+<li>starts by walking and seeking with the ear and eye</li>
+<li>how long do you let it roll for? as composition in itself,</li>
+<li>it's not about archiving, possesion, it's about the process, and the making and the act of it is often more interesting than the recording itself</li>
+<li>'i'm very bad at working in a studio, on a computer..'</li>
+<li>once the recording hits the computer ,those ossibilities freeze me, personally find it difficult to jusitify those decisions</li>
+<li>using this process to learn the space, how does it react? so it's expansive - what ar eth possibilites, int he most holistic way?</li>
+<li>not going into a space with too many ideas, being open to the unpredictability</li>
+<li>openness, allowing those unexpected events to be just as meaningful</li>
+</ul>
+  </div>
+  <div class="date">2020.06.24  /<a href="/masi/category/notes.html">notes</a></div>
   <h2><a href="/masi/recording-soundscapes/">recording soundscapes</a></h2>
 
 
-  <div class="entry-content"> <blockquote>
-<p>... a soundscape is not simply a sum of all these sounds; rather it is a particular subset filtered through the context of a given environmental condition (Swift 6)</p>
-<p>representing actual events from a specific time and place ... can convey both a moment’s explicit actuality and serendipitous fragility. (Swift 8)</p>
-</blockquote>
-<p>attempting to capture soundscapes of a "genuine but ephemeral set of circumstances existing in a precise moment of time," rather than soundscapes "meticulously fabricated and controlled in the vacuum of an audio editor". Swift describes this further:</p>
+  <div class="entry-content">
+  <p>attempting to capture soundscapes of a "genuine but ephemeral set of circumstances existing in a precise moment of time," rather than soundscapes "meticulously fabricated and controlled in the vacuum of an audio editor".<a href="Swift">^1</a></p>
 <blockquote>
-<p>Field recording's authenticity is derived from a genuine but ephemeral set of circumstances existing in a precise moment of time, whereas the contrived scenario is fabricated, developed, and controlled in the vacuum of an audio editor. (Swift 7)</p>
+<p>actual events from a specific time and place ... a moment’s explicit actuality and serendipitous fragility. (Swift 8)</p>
+<p>... a soundscape is not simply a sum of all these sounds; rather it is a particular subset filtered through the context of a given environmental condition (Swift 6)</p>
 </blockquote>
 <p>Curiously, wishing to capture these events often blocks or these events from occurring. This could be an example of the observer effect, a "common phenomenon where the act of observation can alter the situation being observed." (Swift 3) Perhaps the psychic attention to recording takes valuable attention away from the actual act, a moment of flow, a sort of reset.</p>
 <p>Autotelic free play on an instrument -&gt; maybe a moment, groove, emerges - though to capture this! -&gt; stop playing, set up recorder, try to find it again, takes some time, energy is distracted, and the recording then captures this difference and distraction, not the original moment of free play and discovery.</p>
@@ -51,75 +143,94 @@
 </ul>
 <p>Setting these to run still requires some forethought, whereas the moments occur seemingly unexpectedly/unpredictably, and most notably while not recording. A possible possible solution is to intrinsically integrate the recorder into the sound ecosystem so that recording is a seamless act with listening while using the system.</p>
 <blockquote>
-<p>Acoustic Ecology, the study of human interactions to sounds in an environment; and Psychoacoustics, the study of perceptions and reactions to sound (“What is soundscape ecology?” 1215)</p>
 <p>One of Bernie Krause's tenets is that sounds should experienced in the context of their environment rather than attempting to isolate the sound. (Swift 10)</p>
-</blockquote> </div>
-  <div class="date">2020.06.23   <a href="/masi/meta">meta</a>  </div>
-
-  <h2><a href="/masi/inverting-images-pd-screenshots/">inverting images (pd screenshots)</a></h2>
-
-
-  <div class="entry-content"> <p>tiny markup in markdown allows for easy client-side image-inverting</p>
-<p>CSS:</p>
-<pre><code class="css">img[src$='#pd-screenshot'] {
-  filter: invert();
-  mix-blend-mode: screen;
-}
-</code></pre>
-
-<p>Markdown:</p>
-<pre><code class="markdown">![alt]({static}/patches/demo.pd.png#pd-screenshot)
-</code></pre> </div>
-  <div class="date">2020.06.20   <a href="/masi/meta">meta</a>  </div>
-
-  <h2><a href="/masi/file-management/">file management</a></h2>
+</blockquote>
+  </div>
+  <div class="date">2020.06.18  /<a href="/masi/category/notes.html">notes</a></div>
+  <h2><a href="/masi/archiving-process/">archiving process</a></h2>
 
 
-  <div class="entry-content"> <ul>
-<li>[x] rename files to date-created timestamp</li>
-<li>compress files to light, web-friendly version for archive</li>
-<li>[x] sound: .wav to .ogg</li>
-<li>[ ] sound: .wav to .mp3 (for ios)</li>
-<li>[ ] video: .* to 1280x720 .mp4<ul>
-<li>[ ] option to change playback speed and set+save default playspeed</li>
+  <div class="entry-content">
+  <p>(voice memo transcription, need to clean)</p>
+<p>the archiving process is to have the original raw file, with maybe some markers at the beginning fo the file to talk in what the context of the thing is (first section is meta description). to audition, drop it into a folder that compresses the original file, drops the original onto a hard drive. and it's available for audition in the annotator. layers to configure/toggle:</p>
+<p>-timestamp<br />
+-place<br />
+-mark points of time/regions<br />
+    -tag/make notes on these markers</p>
+<p>That's an annotation added in the process of reviewing. In the process of making/creating the moment you can easily make a marker or start and end a region, which saves some time, then when listening back you already have a place to start watching/listening.</p>
+<p>In addition to the manually entered annotation, any interactions with the patches are logged with a line which is the information-preserved-transformation of that interaction. so the interaction is say: route the mic to the speaker, fade up in 10 secs to 50%, do that in first in 5 seconds. this is a simple single line instruction, and this is written down in that way, possibly also as a human-readable, possibly easy to type, format. and this is saved as a log file and can also be toggled, shown on and off in the annotations.</p>
+<p>the benefit of also keeping track of all these digital interactions as instructions is one has the easy possibility to change later. what would have happen if we didn't trigger this? so you can remix it later by running it through the patch again, in real time, in this case loading the original file.</p>
+<p>the patch saves three files:<br />
+-text file: log and annotations<br />
+-sound: raw, straight from the microphone<br />
+-sound: from patch, exactly what's sent to speakers</p>
+<p>with the first two elements, we can recreate the third file, from the list of log instructions. then it can be revisited.</p>
+  </div>
+  <div class="date">2020.06.18  /<a href="/masi/category/notes.html">notes</a></div>
+  <h2><a href="/masi/transcriptions-to-try/">transcriptions to try</a></h2>
+
+
+  <div class="entry-content">
+  <p>transcribed from pocketbook in reverse chronological order</p>
+<ul>
+<li>[x] 5D routing matrix<ul>
+<li>on the fly routing patching control</li>
+<li>log of interactions affords easy real-time scripting interface<ul>
+<li>'limiter' of too much clipping could undo last interaction from log?<ul>
+<li>although this only works if feedback was caused by digital interaction, not change to audio in</li>
+<li>sequencer interface for phone</li>
 </ul>
 </li>
-<li>backup orignals elsewhere</li>
 </ul>
-<p>Generally, the archive/annotator should display a light, web-friendly version of the files for viewing, and store the originals elsewhere. Part of this is a shell script that turns a folder of .wavs into .ogg:</p>
-<pre><code class="bash">#!/bin/sh
-
-#patterns matching nothing should disappear...
-shopt -s nullglob
-
-#rename *.WAV to *.wav
-for f in *.WAV; do
-  mv &quot;$f&quot; &quot;${f%.*}.wav&quot;
-done
-
-#rename *.WAV to YYYY-MM-DD_HHMMSS-*.wav
-for f in *.wav; do
-  mv -n &quot;$f&quot; &quot;$(date -r &quot;$f&quot; +&quot;%Y-%m-%d_%H%M%S-${f%.*}&quot;).wav&quot;
-done
-
-mkdir &quot;ogg&quot;
-mkdir &quot;converted&quot;
-
-#convert *.wav to .ogg
-for f in *.wav; do
-  ffmpeg -i &quot;$f&quot; &quot;ogg/${f%.*}.ogg&quot;
-  mv &quot;$f&quot; &quot;converted/$f&quot;
-done
-</code></pre>
-
-<p>save as wav-to-ogg.sh then in terminal type <code>sudo cdmod -x wav-to-ogg.sh</code> and to run type <code>./wav-to-ogg.sh</code></p>
-<p>and here's a command to list all of the .ogg files in a directory (handy for inserting into these markdown posts):</p>
-<pre><code class="bash">oggFiles=&quot;&quot;; for i in *.ogg; do oggFiles+=&quot;$i, &quot;; done; echo $oggFiles
-</code></pre>
-
-<p>A similar script will be used for compressing videos. Here though there is the question of how to deal with the slow-motion recordings (120fps captured on iPhone 5s). Maybe the annotator shows the fps and exposes the option to change playback speed, with the last-selected setting sticking?</p> </div>
-<!--/articles-->
-
+</li>
+</ul>
+</li>
+<li>stopping at the places in between</li>
+<li>walking soundscape<ul>
+<li>footstep rhythm</li>
+<li>car drone<ul>
+<li>how to work with?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[x] make marker in patch</li>
+<li>pd log</li>
+<li>ma - empty containers</li>
+<li>rhythmic moving playheads<ul>
+<li>how to deal with clicks?<ul>
+<li>[x] pd-smoother (envelope)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>buffer recorder recalls ephemeral moments</li>
+<li>moving image as lo-fi sound processor/convolver</li>
+<li>ultralight setup<ul>
+<li>[x] pd x mobmuplat</li>
+</ul>
+</li>
+<li>diffusion and routing as percussion (ambisonic/further away/filtered)</li>
+<li>emergence in gifs, live-arppegio-code</li>
+<li>emergence on the border of control</li>
+<li>sound object delay line... blurring figure-ground by delaying figure-ground<ul>
+<li>[x]</li>
+<li>delayline changing speed can be octave/interval</li>
+<li>moving delayline as rhythmic/textural harmonizer</li>
+<li>gesture -&gt; rhythmic delay texture</li>
+<li>slow gestures as play with space/time</li>
+<li>texture from multiple delay lines,</li>
+<li>delay line, listening again</li>
+<li>when changing delay line length, fade it out / have variable gain</li>
+</ul>
+</li>
+<li>environmental music: amplifying/using what is already there<ul>
+<li>attention restoration theory</li>
+<li>walk every day</li>
+</ul>
+</li>
+</ul>
+  </div>
   </section>
 
   <section id="wavesurfer-gui">
