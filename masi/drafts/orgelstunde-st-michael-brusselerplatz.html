@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Orgelstunde, St. Michael, Brüsselerplatz - masi</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Literata:regular,italic,bold|Roboto+Mono:wght@450">
+  <link rel="stylesheet" type="text/css" href="/masi/theme/css/style.css">
+
+
+
+
+
+</head>
+
+<body>
+  <section id="nav">
+    <header>
+      <h1><a href="/masi/">masi</a></h1>
+    </header>
+    <nav id="menu"><ul>
+      <li><a href="/masi/about/">/about</a></li>
+      <li><a href="/masi/category/annotator.html">/annotator</a></li>
+      <li><a href="/masi/category/notes.html">/notes</a></li>
+      <li><a href="/masi/category/sounds.html">/sounds</a></li>
+      <li><a href="/masi/ul">//ul</a></li>
+      <li><a href="/masi/field-recording">//field recording</a></li>
+      <li><a href="/masi/pd">//pd</a></li>
+      <li><a href="/masi/modules">//modules</a></li>
+    </ul></nav>
+  </section>
+
+  <section id="content">
+  <div class="date">2020.07.07 </div>
+  <h2><a href="/masi/drafts/orgelstunde-st-michael-brusselerplatz.html">Orgelstunde, St. Michael, Brüsselerplatz</a></h2>
+
+  <div class="sf" id="2020-07-07_BrüsselerPlatzOrgel_1.mp3"></div>
+  <div class="sf" id="2020-07-07_BrüsselerPlatzOrgel_2.mp3"></div>
+  <div class="sf" id="2020-07-07_BrüsselerPlatzOrgel_3.mp3"></div>
+
+  <div class="entry-content">
+  <video src="/masi/media/2020-07-07_191631.mp4#vertical" controls></video>
+
+<video src="/masi/media/2020-07-07_185128.mp4" controls></video>
+
+<p>A serendipitous organ hour at the St. Michaels church in Brüsseler Platz. Standing in the middle of the church, kids play outside, filter through, reverberate. Victor switches the organ on, a low hum, a deep breath fills the space. Soft flutes tumble in, strings and bass sounds smoothly drift into eachother.</p>
+<p>Victor invites us upstairs for an organ hour with the <em>Baroque Synthesizer</em>, displaying the voice options assigned to three keyboards, foot pedals, volume pedal, flexible coupling.</p>
+<p>for next time:<br />
+- try a two stereo-mic setup:<br />
+  - in front of organ (in player's position) to capture wide stereo image<br />
+  - in middle of church, for reverb, outside sound, trumpet<br />
+- felix free to move around the space with trumpet</p>
+  </div>
+  </section>
+
+  <section id="wavesurfer-gui">
+    <div id="gui">
+      <a id="flip" href="">toggle waveform</a><br>
+      <a id="toggleChrome" href="">options</a>
+       <div class="chrome" style="margin-bottom:0.5em; width:200px;">
+        <button type="button"><label for="loginput">load log from disk</label></button>
+        <input type="file" id="loginput" style="visibility:hidden;width:0px;"/>
+
+        <button onclick="loadVid()" type="button">load vid</button>
+        <button onclick="offsetRegions(-44.322)" type="button">offset regions</button>
+        <button onclick="removeCloseRegions()" type="button">remove close regions</button>
+        <button onclick="saveRegions()" type="button">save regions to disk</button>
+
+        <button onclick="saveRegionsToServer()" type="button">save regions to server</button>
+        <button onclick="exportReaperProject()" type="button">export rpp</button>
+      </div>
+    </div>
+
+    <div id="panel">
+      <section>
+        <div id="waveform">
+          <span id="sfname"></span>
+          <div id="progress"></div>
+        </div>
+      </section>
+
+      <div class="chrome">
+        <button data-action="play">play/pause</button>
+        zoom: <input data-action="zoom" type="range" min="1" max="400" value="0" style="width: 300px" />
+        <span id="time-current">0:00</span> / <span id="time-total">0:00</span>
+      </div>
+      <input id = "inputtext" type="text" onkeyup="handle(event)">
+    </div>
+
+    <script src="/masi/theme/js/jquery-3.5.1.min.js"></script>
+    <script src="/masi/theme/js/wavesurfer.js"></script>
+    <script src="/masi/theme/js/wavesurfer.regions.min.js"></script>
+    <script src="/masi/theme/js/wavesurfer.cursor.js"></script>
+    <script src="/masi/theme/js/FileSaver.js"></script>
+    <script src="/masi/theme/js/app.js"></script>
+  </section>
+</body>
+</html>

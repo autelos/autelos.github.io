@@ -40,11 +40,6 @@ body, #panel {
   margin-bottom: var(--waveform-height);
 }
 
-img[src$='#pd-screenshot'] {
-  /*filter: invert();*/
-  mix-blend-mode: multiply;
-}
-
 .date {
   margin-top: 6em;
 }
@@ -76,7 +71,7 @@ li {
 blockquote {
   margin: 0;
   padding: 0;
-  padding-left: 1efm;
+  padding-left: 1em;
   font-style: italic;
 }
 
@@ -90,7 +85,16 @@ p a {
 }
 
 img, video, audio {
-  max-width:100%;
+  max-width: 100%;
+}
+
+img[src$='#pd-screenshot'] {
+  /*filter: invert();*/
+  mix-blend-mode: multiply;
+}
+
+video[src$='#vertical'] {
+  width: 60%;
 }
 
 input[type="checkbox"] {
@@ -182,7 +186,7 @@ div.regions {
 }
 
 .paginator {
-  font-style: var(--secondary-font);
+  font-family: var(--secondary-font);
   font-size: var(--secondary-font-size);
 }
 
